@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Gnaathi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #header{
+                position: relative;
+                min-width: 1340px;
+            }
+            
+            #header{
+                position: relative;
+            }
+
+            #header img{
+                position: absolute;
+           
+            }
+
+            #header-background{
+                height: 200px;
+                width: 100%;
+            }
+
+            #logo{
+                height: 100px;
+                top:30px;
+                left:50px;
+            }
+
+            #clock{
+                position: absolute;
+                right:220px;
+                top:50px;
+            }
+
+            #door{
+                position: absolute;
+                right:60px;
+                top:66px;
+            }
+
+            body{
+                margin:0;
+            }
+            
+            #body {
+                top:227px;
+                margin-top: 0px;
+                position: absolute;
+                width: 100%;
+                min-width: 1300px;
+            }
+
+            #body div{
+                position: absolute;
+            }
+
+            #tv-container{
+                left:0;
+            }
+
+            #screen-container{
+                right:0;
+            }
+
+            #middle-container{
+                top:50px;
+                right:350px;
+            }
+
+            #mom{
+                position: absolute;
+                z-index: 0;
+                right: 450px;
+                top:-40px;
+            }
+            
+            #wiki-button{
+               z-index: 0;
+               position: absolute;
+               right:400px;
+               top:-50px;
+            }
+            
+            #wiki-button:hover{
+                opacity: 0.6;
+            }
+            
+            #wiki-button:hover+#mom{
+                opacity: 0.8;
+            }
+            
+            #table{
+                position:relative;
+                z-index: 1;
+            }
+            
+            #table:hover{
+                opacity: 0.8;
+            }
+            
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <div id='header'>
+                <img id='header-background' src="img/websiteready_0007_headerback.png" alt="header back">
+                <img id='logo' src="img/websiteready_0006_logo.png" alt="logo">
+                <img id='door' src="img/websiteready_0000_settings1.png" alt="door">
+                <img id='clock' src="img/websiteready_0001_clock.png" alt="clock">
+            </div>
+        </header>
+        <div id="body">
+            <div id="tv-container">
+                <img src="img/websiteready_0008_TV.png" alt="tv">
+            </div>
+            <div id="middle-container">              
+                <img id='mom' src="img/websiteready_0004_mom.png" alt="mom">
+                <img id='wiki-button' src="img/websiteready_0004_wiki.png" alt="wiki">
+                <img onclick="alert('You clicked forum')" id='table' src="img/websiteready_0003_chair-3.png" alt="table">
+                <img src="img/websiteready_0005_dad.png" alt="table">
+            </div>
+            <div id="screen-container">
+                <img src="img/websiteready_0002_projector.png" alt="screen">
+            </div>
+        </div>
+    </body>
+</html>
