@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>Gnaathi</title>
@@ -11,6 +7,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             #header{
+                height:200px;
                 position: relative;
                 min-width: 1340px;
             }
@@ -34,29 +31,61 @@ and open the template in the editor.
                 top:30px;
                 left:50px;
             }
-
+            
             #clock{
                 position: absolute;
-                right:220px;
-                top:50px;
+                right:400px;
+                top:30px;
             }
-
+            
+            #logout{
+                position: absolute;
+                top:65px;
+                right:70px;
+            }
             #door{
                 position: absolute;
-                right:60px;
-                top:66px;
+                right:80px;
+                top:80px;
             }
-
+            
+            #door:hover{
+                opacity: 0.8;
+            }
+            
+            #door:hover+#logout{
+                opacity: 0.8;
+            }
+            
+            #setting{
+                position: absolute;
+                right:140px;
+                top:130px;
+            }
+            
+            #setting:hover{
+                opacity: 0.85;
+            }
+            
+            #picture{
+                position: absolute;
+                right:220px;
+                top:30px;
+            }
+            
+            #picture:hover{
+                opacity: 0.85;
+            }
+            
             body{
                 margin:0;
             }
             
             #body {
-                top:227px;
                 margin-top: 0px;
                 position: absolute;
                 width: 100%;
-                min-width: 1300px;
+                min-width: 1340px;
             }
 
             #body div{
@@ -64,10 +93,12 @@ and open the template in the editor.
             }
 
             #tv-container{
+                top:50px;
                 left:0;
             }
 
             #screen-container{
+                top:50px;
                 right:0;
             }
 
@@ -80,31 +111,58 @@ and open the template in the editor.
                 position: absolute;
                 z-index: 0;
                 right: 450px;
-                top:-40px;
+                top:-100px;
             }
             
             #wiki-button{
                z-index: 0;
                position: absolute;
                right:400px;
-               top:-50px;
+               top:-70px;
             }
             
             #wiki-button:hover{
-                opacity: 0.6;
+                opacity: 0.85;
             }
             
             #wiki-button:hover+#mom{
-                opacity: 0.8;
+                opacity: 0.85;
             }
             
             #table{
+                top:-10px;
                 position:relative;
                 z-index: 1;
             }
             
+            #dad{
+                position: relative;
+            }
+            
+            #dad:hover{
+                opacity: 0.85;
+            }
+            
             #table:hover{
-                opacity: 0.8;
+                opacity: 0.9;
+            }
+            
+            #tv-screen{
+                position: absolute;
+                background-color: red;
+                width:92%;
+                height:55%;
+                left:14px;
+                top:30px;
+            }
+            
+            #projector-screen{
+                position: absolute;
+                background-color: red;
+                width:96%;
+                height:53%;
+                left:8px;
+                top:12px;
             }
             
         </style>
@@ -113,24 +171,30 @@ and open the template in the editor.
     <body>
         <header>
             <div id='header'>
-                <img id='header-background' src="img/websiteready_0007_headerback.png" alt="header back">
-                <img id='logo' src="img/websiteready_0006_logo.png" alt="logo">
-                <img id='door' src="img/websiteready_0000_settings1.png" alt="door">
-                <img id='clock' src="img/websiteready_0001_clock.png" alt="clock">
+                <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
+                <a href="index.html"><img id='logo' src="img/edit/websiteedit_0008_logo.png" alt="logo"></a>
+                <img id='picture' src="img/edit/websiteedit_0006_picture.png" alt="picture">
+                <img id='setting' src="img/edit/websiteedit_0000_settings.png" alt="setting">
+                <img id='clock' src="img/edit/websiteedit_0001_clock.png" alt="clock">
+                <div id='door'><img src="img/edit/websiteedit_0007_door.png" alt="door"></div> 
+                <div id='logout'><img src="img/edit/websiteedit_0004_----Logout.png" alt="logout"></div>
+                             
             </div>
         </header>
         <div id="body">
             <div id="tv-container">
-                <img src="img/websiteready_0008_TV.png" alt="tv">
+                <div id="tv-screen"></div>
+                <img src="img/edit/websiteedit_0011_TV.png" alt="tv">
             </div>
-            <div id="middle-container">              
-                <img id='mom' src="img/websiteready_0004_mom.png" alt="mom">
-                <img id='wiki-button' src="img/websiteready_0004_wiki.png" alt="wiki">
-                <img onclick="alert('You clicked forum')" id='table' src="img/websiteready_0003_chair-3.png" alt="table">
-                <img src="img/websiteready_0005_dad.png" alt="table">
+            <div id="middle-container">                         
+                <img id='wiki-button' src="img/edit/websiteready_0004_wiki.png" alt="wiki">
+                <img id='mom' src="img/edit/websiteready_0004_mom.png" alt="mom">
+                <img onclick="alert('You clicked forum')" id='table' src="img/edit/websiteedit_0003_table.png" alt="table">
+                <img id='dad' src="img/edit/websiteready_0005_dad.png" alt="table">
             </div>
             <div id="screen-container">
-                <img src="img/websiteready_0002_projector.png" alt="screen">
+                <div id="projector-screen"></div>
+                <img src="img/edit/websiteready_0002_projector.png" alt="screen">
             </div>
         </div>
     </body>
