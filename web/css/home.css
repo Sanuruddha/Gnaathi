@@ -1,0 +1,157 @@
+#header{
+    height:200px;
+    position: relative;
+    min-width: 1340px;
+}
+
+#header{
+    position: relative;
+}
+
+#header img{
+    position: absolute;
+
+}
+
+#header-background{
+    height: 200px;
+    width: 100%;
+}
+
+#logo{
+    height: 100px;
+    top:30px;
+    left:50px;
+}
+
+#clock{
+    position: absolute;
+    right:400px;
+    top:30px;
+}
+
+#logout{
+    position: absolute;
+    top:112px;
+    right:170px;
+}
+#door{
+    position: absolute;
+    right:80px;
+    top:80px;
+}
+
+#door:hover{
+    opacity: 0.8;
+}
+
+#door:hover+#logout{
+    opacity: 0.8;
+}
+
+#login{
+    position: absolute;
+    right:117px;
+    top:130px;
+    height:47px;
+}
+
+#login:hover{
+    opacity: 0.85;
+}
+
+#picture{
+    position: absolute;
+    right:220px;
+    top:30px;
+}
+
+#picture:hover{
+    opacity: 0.85;
+}
+
+body{
+    margin:0;
+}
+
+#body {
+    margin-top: 0px;
+    position: absolute;
+    width: 100%;
+    min-width: 1340px;
+}
+
+#body div{
+    position: absolute;
+}
+
+#tv-container{
+    top:50px;
+    left:0;
+}
+
+#screen-container{
+    top:50px;
+    right:0;
+}
+
+#middle-container{
+    top:50px;
+    right:350px;
+}
+
+#mom{
+    position: absolute;
+    z-index: 0;
+    right: 450px;
+    top:-100px;
+}
+
+#wiki-button{
+    z-index: 0;
+    position: absolute;
+    right:400px;
+    top:-70px;
+}
+
+#wiki:hover{
+   opacity: 0.85;
+}
+
+
+#table{
+    top:-10px;
+    position:relative;
+    z-index: 1;
+}
+
+#dad{
+    position: relative;
+}
+
+#dad:hover{
+    opacity: 0.85;
+}
+
+#table:hover{
+    opacity: 0.9;
+}
+
+#tv-screen{
+    position: absolute;
+    background-color: red;
+    width:92%;
+    height:55%;
+    left:14px;
+    top:30px;
+}
+
+#projector-screen{
+    position: absolute;
+    background-color: red;
+    width:96%;
+    height:53%;
+    left:8px;
+    top:12px;
+}
+
