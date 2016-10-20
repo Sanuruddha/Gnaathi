@@ -35,11 +35,36 @@
         <div class="container-fluid" id="long-container">
             <div class="row">
                 <div class="col-sm-12">
-                    FORUM
+                    <div id="wiki-header"><font id="wiki-title">Welcome to Gnaathi Wiki !</font></div>
                 </div>
                 <div class="col-sm-12">
-                    <div id="wiki-left"></div><div class="devider"></div><!--
-                    --><div id="wiki-middle"></div><div class="devider"></div><!--
+                    <div id="wiki-left">
+                        <img>
+                    </div><div class="devider"></div><!--
+                    --><div id="wiki-middle"><div id="article-container">
+                            <h1>Did you know these 10 facts about diabetes? ...</h1>
+                            <ul>
+                                <li>About one third of all people with diabetes do not know they have the disease.</li>
+
+                                <li>Type 2 diabetes often does not have any symptoms.</li>
+
+                                <li>Only about five percent of all people with diabetes have type 1 diabetes.</li>
+
+                                <li>If you are at risk, type 2 diabetes can be prevented with moderate weight loss (10?15 pounds) and 30 minutes of moderate physical activity (such as brisk walking) each day.</li>
+
+                                <li>A meal plan for a person with diabetes isn?t very different than that which is recommended for people without diabetes.</li>
+
+                                <li>Diabetes is the leading cause of blindness in working-age adults.</li>
+
+                                <li>People with diabetes are twice as likely to develop heart disease than someone without diabetes.</li>
+
+                                <li>Good control of diabetes significantly reduces the risk of developing complications and prevents complications from getting worse.</li>
+
+                                <li>Bariatric surgery can reduce the symptoms of diabetes in obese people.</li>
+
+                                <li>Diabetes costs $174 billion annually, including $116 billion in direct medical expenses. </li>
+                            </ul>
+                        </div></div><div class="devider"></div><!--
                     --><div id="wiki-right"></div>
                 </div>
             </div>

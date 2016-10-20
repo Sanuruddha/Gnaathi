@@ -79,33 +79,10 @@ body{
     position: absolute;
     width: 100%;
     min-width: 1340px;
+    height:100%;
 }
 
-#body div{
-    position: absolute;
-}
 
-#tv-container{
-    top:50px;
-    left:0;
-}
-
-#screen-container{
-    top:50px;
-    right:0;
-}
-
-#middle-container{
-    top:50px;
-    right:350px;
-}
-
-#mom{
-    position: absolute;
-    z-index: 0;
-    right: 450px;
-    top:-100px;
-}
 
 #wiki-button{
     z-index: 0;
@@ -120,13 +97,24 @@ body{
 
 
 #table{
-    top:-10px;
-    position:relative;
-    z-index: 1;
+    position:absolute;
+    z-index: 3;
+    left:0px;
+    top:120px;
+}
+
+#mom{
+    position: absolute;
+    z-index: 2;
+    left: 470px;
+    top:60px;
 }
 
 #dad{
     position: relative;
+    top:100px;
+    left:310px;
+    z-index: 0;
 }
 
 #dad:hover{
@@ -140,18 +128,35 @@ body{
 #tv-screen{
     position: absolute;
     background-color: red;
-    width:92%;
-    height:55%;
-    left:14px;
+    width:93%;
+    height:56%;
+    left:13px;
     top:30px;
 }
 
 #projector-screen{
     position: absolute;
     background-color: red;
-    width:96%;
+    width:92%;
     height:53%;
-    left:8px;
-    top:12px;
+    right:20px;
+    top:32px;
+}
+#screen-container img{
+    width:100%;
+    top:20px;
+    position: relative;
+    z-index: -1;
 }
 
+.col-sm-6{
+    padding:0;
+}
+#tv-container{
+    top:10px;
+    position: absolute;
+}
+
+.col-sm-3{
+    padding-left:0;
+}
