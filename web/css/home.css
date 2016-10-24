@@ -71,7 +71,9 @@
 }
 
 body{
+    position: relative;
     margin:0;
+    height:100%;
 }
 
 #body {
@@ -84,15 +86,21 @@ body{
 
 
 
-#wiki-button{
-    z-index: 0;
-    position: absolute;
-    right:400px;
-    top:-70px;
-}
+
 
 #wiki:hover{
+    position: absolute;
    opacity: 0.85;
+   z-index: 2;
+}
+
+
+
+#wiki-button{
+    z-index: 2;
+    position: absolute;
+    left:450px;
+    top:-70px;
 }
 
 
@@ -100,26 +108,9 @@ body{
     position:absolute;
     z-index: 3;
     left:0px;
-    top:120px;
-}
-
-#mom{
-    position: absolute;
-    z-index: 2;
-    left: 470px;
     top:60px;
 }
 
-#dad{
-    position: relative;
-    top:100px;
-    left:310px;
-    z-index: 0;
-}
-
-#dad:hover{
-    opacity: 0.85;
-}
 
 #table:hover{
     opacity: 0.9;
