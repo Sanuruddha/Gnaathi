@@ -163,7 +163,7 @@ body{
 
 #wiki-left{
     display: inline-block;
-    background-color: #f1efef;
+    background-color: #f8f8f8;
     width:20%;
     height: 100%;
 }
@@ -176,6 +176,7 @@ body{
     top:0;
     position: absolute;
     left:20%;
+    max-width:60%;
 }
 
 #wiki-right{
@@ -211,4 +212,15 @@ body{
     top:20px;
     border-left:1px solid  #a6e1ec;
     border-right: 1px solid  #a6e1ec;
+}
+
+#category-list{
+    left:20%;
+    position: relative; 
+   
+}
+
+#category-list a{
+    
+    cursor: pointer;
 }

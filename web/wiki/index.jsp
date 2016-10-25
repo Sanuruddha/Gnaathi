@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="wiki.css">
         <link rel="stylesheet" href="../css/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script  type="text/javascript" src="wiki.js"></script>
     </head>
     <body>
         <header>
@@ -20,6 +22,16 @@
 
             </div>
         </header>
+        <%
+            String topic = request.getParameter("topic");
+            if (topic != null) {
+                String url=topic+"/"+topic+".html";
+                RequestDispatcher rd = request.getRequestDispatcher(url);
+                rd.forward(request, response);
+            }
+
+        %>
+
         <div id="body">
             <div id="tv-container">
                 <div id="tv-screen"></div>
@@ -39,7 +51,17 @@
                 </div>
                 <div class="col-sm-12">
                     <div id="wiki-left">
-                        <img>
+                        <img src="">
+                        <div>
+                            <font>Topics</font>
+
+                            <ul id="category-list">
+                                <li><a onclick="loadArticle('cancer')">Cancer</a></li>
+                                <li><a onclick="loadArticle('diabetes')">Diabetes</a></li>
+                                <li><a onclick="loadArticle('hiv')">HIV</a></li>
+                                <li><a onclick="loadArticle('dengue')">Dengue</a></li>
+                            </ul>
+                        </div>
                     </div><div class="devider"></div><!--
                     --><div id="wiki-middle"><div id="article-container">
                             <h1>Did you know these 10 facts about diabetes? ...</h1>
