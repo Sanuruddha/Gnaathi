@@ -67,7 +67,7 @@
                         </div>
                     </div><div class="devider"></div><!--
                     --><div id="wiki-middle"><div id="article-container">
-                            <h1>Did you know these 10 facts about diabetes? ...</h1>
+                            <h2>Did you know these 10 facts about diabetes? ...</h2>
                             <ul>
                                 <li>About one third of all people with diabetes do not know they have the disease.</li>
 

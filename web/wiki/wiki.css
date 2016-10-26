@@ -179,6 +179,10 @@ body{
     max-width:60%;
 }
 
+#wiki-middle *{
+    padding:10px;
+}
+
 #wiki-right{
     display: inline-block;
     background-color: #f1f1f1;
@@ -204,7 +208,7 @@ body{
 }
 
 #article-container li,#article-container h1{
-    margin: 20px;
+    margin: 10px;
 }
 
 #article-container{
