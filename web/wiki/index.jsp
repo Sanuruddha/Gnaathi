@@ -4,6 +4,10 @@
         <title>Gnaathi</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="cancer/article.css">
+        <link rel="stylesheet" href="diabetes/article.css">
+        <link rel="stylesheet" href="dengue/article.css">
         <link rel="stylesheet" href="wiki.css">
         <link rel="stylesheet" href="../css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

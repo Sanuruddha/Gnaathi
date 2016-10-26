@@ -8,6 +8,7 @@
 	padding-right: 5%;
 }
 
+
 #head{
 	background-image: url("14102044_1271831849494925_568381134_n.jpg");
 	background-repeat: round;
@@ -61,7 +62,7 @@ p{
 	font-color:black;
 }
 
-img{
+#diabetes-body img{
 	
 	width: 50%;
 	align-self: center;
