@@ -16,7 +16,7 @@
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
-                <a href="home.html"><img id='logo' src="img/edit/websiteedit_0008_logo.png" alt="logo"></a>
+                <a href="../home.html"><img id='logo' src="img/edit/websiteedit_0008_logo.png" alt="logo"></a>
                 <img id='picture' src="img/edit/websiteedit_0006_picture.png" alt="picture">
                 <img id='login' src="img/edit/websiteedit_0000_settings.png" alt="login">
                 <img id='clock' src="img/edit/websiteedit_0001_clock.png" alt="clock">

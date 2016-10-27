@@ -1,44 +1,87 @@
-#header{
-    height:200px;
+
+
+body{
     position: relative;
-    min-width: 1340px;
+    height: 100vh;
+
+}
+
+header{
+    height:20%;
+    width:100%
 }
 
 #header{
     position: relative;
-}
-
-#header img{
-    position: absolute;
-
+    width:100%;
+    height:100%;
 }
 
 #header-background{
-    height: 200px;
+    z-index: 0;
+    position: absolute;
+    height: auto;
     width: 100%;
 }
 
 #logo{
-    height: 100px;
-    top:30px;
-    left:50px;
+    z-index: 1;
+    position: absolute;
+    height: auto;
+    width:30%;
 }
 
 #clock{
+    height:auto;
+    width:5%;
+    right:30%;
+    top:0;
     position: absolute;
-    right:400px;
-    top:30px;
+    z-index: 1;
 }
 
-#logout{
+
+#picture{
     position: absolute;
-    top:112px;
-    right:170px;
+    height:auto;
+    width:10%;
+    right:15%;
 }
-#door{
+
+#picture:hover{
+    opacity: 0.85;
+}
+
+#login{
     position: absolute;
-    right:80px;
-    top:80px;
+    right:10%;
+    top:110%;
+    height:auto;
+    width: 3%;
+}
+
+#login:hover{
+    opacity: 0.85;
+}
+
+#door{
+    height:auto;
+    width:100%;
+    position: absolute;
+    right:2%;
+    bottom:20%;
+}
+
+#door{
+    display: block;
+}
+
+#door img{
+    height:auto;
+    width:5%;
+    position: absolute;
+    right:2%;
+    
 }
 
 #door:hover{
@@ -49,31 +92,12 @@
     opacity: 0.8;
 }
 
-#login{
+#logout{
     position: absolute;
-    right:117px;
-    top:130px;
-    height:47px;
-}
-
-#login:hover{
-    opacity: 0.85;
-}
-
-#picture{
-    position: absolute;
-    right:220px;
-    top:30px;
-}
-
-#picture:hover{
-    opacity: 0.85;
-}
-
-body{
-    position: relative;
-    margin:0;
-    height:100%;
+    height:auto;
+    width:3%;
+    top:65%;
+    left:91.6%;
 }
 
 #body {
@@ -84,18 +108,33 @@ body{
     height:100%;
 }
 
+#tv-container{
+    width:20%;
+    float:left;
+}
 
+#tv-screen{
+    position: absolute;
+    width:93%;
+    height:56%;
+    left:13px;
+    top:30px;
+}
 
+#middle-container{
+    float:left;
+    width:60%;
+}
 
+#middle-container img{
+    width:50%;
+}
 
 #wiki:hover{
     position: absolute;
-   opacity: 0.85;
-   z-index: 2;
+    opacity: 0.85;
+    z-index: 2;
 }
-
-
-
 #wiki-button{
     z-index: 2;
     position: absolute;
@@ -116,38 +155,23 @@ body{
     opacity: 0.9;
 }
 
-#tv-screen{
-    position: absolute;
-    background-color: red;
-    width:93%;
-    height:56%;
-    left:13px;
-    top:30px;
-}
 
 #projector-screen{
     position: absolute;
-    background-color: red;
     width:92%;
     height:53%;
     right:20px;
     top:32px;
+}
+
+#screen-container{
+    float:left;
+    width:18%;
+    height:auto;
 }
 #screen-container img{
     width:100%;
     top:20px;
     position: relative;
     z-index: -1;
-}
-
-.col-sm-6{
-    padding:0;
-}
-#tv-container{
-    top:10px;
-    position: absolute;
-}
-
-.col-sm-3{
-    padding-left:0;
 }
