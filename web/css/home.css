@@ -3,6 +3,20 @@ body{
     height: 100vh;
 }
 
+#loginform-container{
+    position: fixed;
+    top:0;
+    left: 0;
+    width:0;
+    height: 100vh;
+    z-index: 1;
+}
+
+#loginform-container *{
+    width: inherit;
+}
+
+
 header{
     position: relative;
     height:25%;
@@ -128,7 +142,6 @@ header{
     left:20%;
     width:60%;
     height:100%;
-    bottom:0;
 }
 
 #middle-container img{
@@ -168,11 +181,6 @@ header{
 }
 
 
-#table:hover{
-    opacity: 0.9;
-}
-
-
 #projector-screen{
     position: absolute;
     width:92%;
@@ -181,12 +189,14 @@ header{
     top:32px;
 }
 
-#screen-container{
-    float:left;
-    width:18%;
+#right-container{
+    position: absolute;
+    left:80%;
+    top:0;
+    width:20%;
     height:auto;
 }
-#screen-container img{
+#right-container img{
     width:100%;
     top:20px;
     position: relative;

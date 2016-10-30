@@ -6,8 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/home.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script  type="text/javascript" src="js/home.js"></script>
     </head>
     <body>
+        <div id="loginform-container">
+            <form action="loginprocess.jsp" method="post">
+                User Name:<input type="text" name="uname" placeholder="User name">
+                Password:<input type="password" name="pword" placeholder="Password">
+            </form>
+        </div>
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
@@ -27,18 +35,18 @@
 
 
             <div id="middle-container">                         
-                <img id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
+                <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
                 <img id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
-                <img onclick="alert('You clicked forum')" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
+                <img onclick="" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
 
             </div>
-            <!--
+            
             <div>
-                <div id="screen-container">
+                <div id="right-container">
                     <div id="projector-screen"></div>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                 </div>
-            </div>-->
+            </div>
         </div>
 
     </body>

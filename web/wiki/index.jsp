@@ -40,7 +40,7 @@
                 <div id="tv-screen"></div>
                 <img src="img/edit/websiteedit_0011_TV.png" alt="tv">
             </div>
-            <div id="middle-container">        
+            <div id="middle-container"><p id="jump-to"></p><img id="forum-img" src="img/forum/forum_0000_Layer-8.png" alt="forum">      
             </div>
             <div id="screen-container">
                 <div id="projector-screen"></div>

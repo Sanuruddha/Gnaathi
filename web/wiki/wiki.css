@@ -96,8 +96,20 @@ body{
 }
 
 #middle-container{
+    position: relative;
     top:50px;
     right:350px;
+}
+
+#forum-img{
+    position: relative;
+    top:120px;
+}
+
+#jump-to{
+    top:200px;
+    position: absolute;
+    z-index: 5;
 }
 
 #mom{
