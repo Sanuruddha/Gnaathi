@@ -3,5 +3,8 @@ function loadWiki(){
 }
 
 $(document).ready(function(){$( "#login" ).click(function() {
-  $( "#loginform-container" ).css("width","100%");
+        if($( "#loginform-container" ).css("display")==="none")
+            $( "#loginform-container" ).css("display","block");
+        else
+            $( "#loginform-container" ).css("display","none");
 });});

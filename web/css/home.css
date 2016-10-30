@@ -4,18 +4,37 @@ body{
 }
 
 #loginform-container{
-    position: fixed;
-    top:0;
-    left: 0;
-    width:0;
-    height: 100vh;
-    z-index: 1;
+    background-color: #6ca7b8;
+    text-align: center;
+    position:absolute;
+    display:none;
+    top:25%;
+    left: 30%;
+    width:40%;
+    height: 50%;
+    z-index: 10;
+    opacity: 0.95;
+    
+}
+#loginform-container form{
+    width: 100%;
+    height: 50%;
+    margin-top: 10%;
+    
 }
 
-#loginform-container *{
-    width: inherit;
+#loginform-container form *{
+    padding: 10px;
+    margin: 20px;
 }
 
+#loginform-container {
+    color: white;
+}
+
+#loginform-container input{
+    color:black;
+}
 
 header{
     position: relative;
