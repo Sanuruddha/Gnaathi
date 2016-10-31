@@ -1,17 +1,21 @@
-<%-- 
-    Document   : loginprocess
-    Created on : Oct 30, 2016, 11:38:33 PM
-    Author     : Lock
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%@page import="bean.LoginDao"%>  
+<jsp:useBean id="obj" class="bean.User"/>  
+
+<jsp:setProperty property="*" name="obj"/> 
+
+<%
+    boolean status= LoginDao.validate(obj);
+    if (status){
+        session.setAttribute("session", "TRUE");
+        session.setAttribute("user",obj);
+        
+%>
+<jsp:forward page="home.jsp"></jsp:forward>
+<%
+} else {
+session.setAttribute("invalidlogin","TRUE");
+}
+%>  
+<jsp:forward page="index.jsp"/>
+ 

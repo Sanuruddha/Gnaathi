@@ -14,7 +14,7 @@ body{
     height: 50%;
     z-index: 10;
     opacity: 0.95;
-    
+    border-radius: 10px;
 }
 #loginform-container form{
     width: 100%;
