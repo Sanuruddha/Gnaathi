@@ -2,23 +2,9 @@
 	animation:ease-in;
 	text-align: justify;
 	border: double;
-	border-color:orange;
 	border-width: 20%;
 	padding-left: 5%;
 	padding-right: 5%;
-}
-
-#head{
-	background-image: url("14102044_1271831849494925_568381134_n.jpg");
-	background-repeat: round;
-	height: 40%;
-	width: 100%;
-	font-size: 200%;
-	font-size-adjust: inherit;
-	font-weight: 100%;
-	font-family: Algerian;
-	border-color: black;
-	border-width: 10%;
 }
 
 #wrap{
@@ -31,7 +17,7 @@
 
 .nav{
 	border-style: outset;
-	border-color: #FF7400;
+        border-color: #f2f2f2;
 	border-width: 30%;
 	font-family: Broadway;
 	font-size: 120%;
