@@ -5,9 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="wiki.css">
-        <link rel="stylesheet" href="cancer/article.css">
-        <link rel="stylesheet" href="diabetes/article.css">
-        <link rel="stylesheet" href="dengue/article.css">
+        <link rel="stylesheet" href="article.css">
         <link rel="stylesheet" href="../css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script  type="text/javascript" src="wiki.js"></script>
@@ -16,11 +14,11 @@
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
-                <a href="../home.html"><img id='logo' src="img/edit/websiteedit_0008_logo.png" alt="logo"></a>
+                <a href="../home.jsp"><img id='logo' src="img/edit/websiteedit_0008_logo.png" alt="logo"></a>
                 <img id='picture' src="img/edit/websiteedit_0006_picture.png" alt="picture">
                 <img id='login' src="img/edit/websiteedit_0000_settings.png" alt="login">
                 <img id='clock' src="img/edit/websiteedit_0001_clock.png" alt="clock">
-                <a href="index.html"><div id='door'><img src="img/edit/websiteedit_0007_door.png" alt="door"></div></a>
+                <a href="../logout.jsp"><div id='door'><img src="img/edit/websiteedit_0007_door.png" alt="door"></div></a>
                 <div id='logout'><img src="img/edit/websiteedit_0004_----Logout.png" alt="logout"></div>
 
             </div>

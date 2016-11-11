@@ -3,9 +3,12 @@
 	text-align: justify;
 	border: double;
 	border-color:orange;
-	border-width: 20%;
 	padding-left: 5%;
 	padding-right: 5%;
+}
+
+h3 {
+    text-decoration: underline;
 }
 
 
@@ -31,9 +34,7 @@
 }
 
 .nav{
-	border-style: outset;
-	border-color: #FF7400;
-	border-width: 30%;
+	
 	font-family: Broadway;
 	font-size: 120%;
         background-color: #d5f9e7;
