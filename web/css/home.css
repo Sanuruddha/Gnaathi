@@ -215,10 +215,10 @@ header{
 
 #projector-screen{
     position: absolute;
-    width:92%;
-    height:53%;
-    right:20px;
-    top:32px;
+    width:95%;
+    height:40%;
+    right:2%;
+    top:3%;
 }
 
 #right-container{

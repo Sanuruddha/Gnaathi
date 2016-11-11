@@ -67,7 +67,9 @@
 
             <div>
                 <div id="right-container">
-                    <div id="projector-screen"></div>
+                    <div id="projector-screen">
+                        <img style="z-index: 6;width: 100%;height: 100%;" src="gallery/images/1.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> 
+                    </div>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                 </div>
             </div>
