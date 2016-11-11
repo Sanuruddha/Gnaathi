@@ -9,11 +9,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/registerform.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script  type="text/javascript" src="js/home.js"></script>
     </head>
     <body>
-
+        <div id="registerform-container">
+            <%@include file="registerform.html"%>
+        </div>
+        
         <div id="loginform-container">
             <form action="loginprocess.jsp" method="post">
                 <table style="margin: auto">
@@ -29,7 +33,7 @@
                     </tr>
                     <tr>
                         <td colspan="2"> 
-                            <a onclick="showRegisterform()">Create account</a>
+                            <a onclick="openNav()">Create account</a>
                         </td>
                     </tr>
                 </table>

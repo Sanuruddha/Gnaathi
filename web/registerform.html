@@ -1,10 +1,15 @@
 <div id = "myNav" class = "overlay"><!-- Button to close the overlay navigation -->
-    <a id="close-button" href = "javascript:void(0)" class = "closebtn" onclick = "closeNav()" >&times;</a>
+    
 
     <!-- Overlay content -->
     <div class = "overlay-content" >
         <form id="register-form" action="registerprocess.jsp" method="post" onsubmit="return validateMyForm();">
             <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a id="close-button" href = "javascript:void(0)" class = "closebtn" onclick = "closeNav()" >&times;</a></td>
+                </tr>
                 <tr>
                     <td><div ID="register-label1">Email:</div></td>
                     <td><input ID="email-field" type="text" name="email" onkeyup="validateEmail()" onclick="validateEmail()"/></td>
@@ -36,8 +41,13 @@
                 <tr><td><div id="additional-label"></div></td>
                     <td><div id="additional-input"></div></td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td rowspan="2"><input id="register-submit" type="submit" value="Register"/></td>
+                </tr>
+                <tr></tr>
             </table>
-            <input id="register-submit" type="submit" value="Register"/>
+            
         </form>
     </div>
 

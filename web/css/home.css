@@ -3,6 +3,11 @@ body{
     height: 100vh;
 }
 
+#loginform-container form a:hover{
+    cursor: pointer;   
+}
+
+
 #loginform-container{
     background-color: #6ca7b8;
     text-align: center;
@@ -17,10 +22,9 @@ body{
     border-radius: 10px;
 }
 #loginform-container form{
+    margin-top: 30px;
     width: 100%;
-    height: 60%;
-    
-    
+    height: 60%; 
 }
 
 #loginform-container form *{
