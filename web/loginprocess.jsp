@@ -10,6 +10,10 @@
     if (status){
         session.setAttribute("session", "TRUE");
         session.setAttribute("user",obj);
+        if(obj.getUserType()==0){
+            RequestDispatcher rs=request.getRequestDispatcher("adminpanel.php");
+            rs.forward(request, response);
+        }
         
 %>
 <jsp:forward page="userhome.jsp"></jsp:forward>
