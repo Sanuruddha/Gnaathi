@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="bean.LoginDao"%>  
 <jsp:useBean id="obj" class="bean.User"/>  
@@ -11,9 +10,10 @@
         session.setAttribute("session", "TRUE");
         session.setAttribute("user",obj);
         if(obj.getUserType()==0){
-            RequestDispatcher rs=request.getRequestDispatcher("adminpanel.php");
+            RequestDispatcher rs=request.getRequestDispatcher("adminpanel.jsp");
             rs.forward(request, response);
         }
+    
         
 %>
 <jsp:forward page="userhome.jsp"></jsp:forward>
