@@ -29,7 +29,6 @@ public class RegisterDao {
             ps.setInt(4,bean.getUserType());
             
             int rows=ps.executeUpdate();
-            System.out.println("Came here too");
             
             if(rows!=0)
                 return true;

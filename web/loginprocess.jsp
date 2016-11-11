@@ -5,22 +5,23 @@
 <jsp:setProperty property="*" name="obj"/> 
 
 <%
-    boolean status= LoginDao.validate(obj);
-    if (status){
+    boolean status = LoginDao.validate(obj,session);
+    if (status) {
         session.setAttribute("session", "TRUE");
-        session.setAttribute("user",obj);
-        if(obj.getUserType()==0){
-            RequestDispatcher rs=request.getRequestDispatcher("adminpanel.jsp");
+        session.setAttribute("user", obj);
+        if (session.getAttribute("user_type").equals(0)) {
+            RequestDispatcher rs = request.getRequestDispatcher("adminpanel.jsp");
+            rs.forward(request, response);
+        } else if (session.getAttribute("user_type").equals(1)) {
+            RequestDispatcher rs = request.getRequestDispatcher("userhome.jsp");
             rs.forward(request, response);
         }
-    
-        
-%>
-<jsp:forward page="userhome.jsp"></jsp:forward>
-<%
-} else {
-session.setAttribute("invalidlogin","TRUE");
-}
+
+    } else {
+        session.setAttribute("invalidlogin", "TRUE");
+        RequestDispatcher rs = request.getRequestDispatcher("home.jsp");
+        rs.forward(request, response);
+    }
 %>  
-<jsp:forward page="home.jsp"/>
+
 

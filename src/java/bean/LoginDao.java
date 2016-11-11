@@ -1,10 +1,11 @@
 package bean;
 
 import java.sql.*;
+import javax.servlet.http.HttpSession;
 
 public class LoginDao {
 
-    public static boolean validate(User bean) {
+    public static boolean validate(User bean,HttpSession session) {
         boolean status = false;
         try {
             Connection con = ConnectionProvider.getCon();
@@ -18,6 +19,10 @@ public class LoginDao {
             ResultSet rs = ps.executeQuery();
             
             status = rs.next();
+            
+            if(status){
+                session.setAttribute("user_type",rs.getInt("user_type"));
+            }
         } catch (Exception e) {
         }
         return status;
