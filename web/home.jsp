@@ -1,4 +1,7 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <title>Gnaathi</title>
@@ -10,7 +13,7 @@
         <script  type="text/javascript" src="js/home.js"></script>
     </head>
     <body>
-        
+
         <div id="loginform-container">
             <form action="loginprocess.jsp" method="post">
                 <table style="margin: auto">
@@ -30,7 +33,7 @@
                         </td>
                     </tr>
                 </table>
-                
+
             </form>
         </div>
         <header>
@@ -57,7 +60,7 @@
                 <img onclick="" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
 
             </div>
-            
+
             <div>
                 <div id="right-container">
                     <div id="projector-screen"></div>
@@ -68,3 +71,4 @@
 
     </body>
 </html>
+

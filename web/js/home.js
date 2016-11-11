@@ -8,3 +8,7 @@ $(document).ready(function(){$( "#login" ).click(function() {
         else
             $( "#loginform-container" ).css("display","none");
 });});
+
+function showRegisterform(){
+    
+}

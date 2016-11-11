@@ -1,0 +1,44 @@
+<div id = "myNav" class = "overlay"><!-- Button to close the overlay navigation -->
+    <a id="close-button" href = "javascript:void(0)" class = "closebtn" onclick = "closeNav()" >&times;</a>
+
+    <!-- Overlay content -->
+    <div class = "overlay-content" >
+        <form id="register-form" action="registerprocess.jsp" method="post" onsubmit="return validateMyForm();">
+            <table>
+                <tr>
+                    <td><div ID="register-label1">Email:</div></td>
+                    <td><input ID="email-field" type="text" name="email" onkeyup="validateEmail()" onclick="validateEmail()"/></td>
+                    <td><div class="before-validation" ID="email-val-icon"></div></td>
+                </tr>
+                <tr>
+                    <td><div ID="register-label2">Preferred-Name:</div></td>
+                    <td><input ID="name-field" type="text" name="user_name" onclick="validateName()" onkeypress="validateName()" onchange="validateName()"/></td>
+                    <td><div class="before-validation" ID="name-val-icon"></div></td>
+                </tr> 
+                <tr>
+                    <td><div ID="register-label3">Password:</div></td>
+                    <td><input ID="password-field" type="password" name="password" onkeyup="validatePassword()"/></td>
+                    <td><div class="before-validation" ID="password-val-icon"></div></td>
+                </tr>
+                <tr>
+                    <td><div ID="register-label4">Retype-password:</div></td>
+                    <td><input ID="repassword-field" type="password" name="retype-password"/></td>
+                    <td><div class="before-validation" ID="repassword-val-icon"></div></td>
+                </tr>
+                <tr>
+                    <td><div ID="register-label5">Select-category:</div></td>
+                    <td><select name="user_type" onchange="processSelect(this.value)">
+                            <option value='1'>Regular</option>
+                            <option value='2'>Researcher</option>
+                            <option value='3'>Medical-Center</option>
+                        </select></td>
+                </tr>
+                <tr><td><div id="additional-label"></div></td>
+                    <td><div id="additional-input"></div></td>
+                </tr>
+            </table>
+            <input id="register-submit" type="submit" value="Register"/>
+        </form>
+    </div>
+
+</div>

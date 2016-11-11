@@ -11,21 +11,21 @@ body{
     top:25%;
     left: 35%;
     width:30%;
-    height: 45%;
+    height: 40%;
     z-index: 10;
     opacity: 0.95;
     border-radius: 10px;
 }
 #loginform-container form{
     width: 100%;
-    height: 70%;
+    height: 60%;
     
     
 }
 
 #loginform-container form *{
-    padding: 10px;
-    margin: 20px;
+    padding: 5px;
+    margin: 10px;
 }
 
 #loginform-container {

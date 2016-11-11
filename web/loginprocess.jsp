@@ -18,5 +18,5 @@
 session.setAttribute("invalidlogin","TRUE");
 }
 %>  
-<jsp:forward page="home.html"/>
+<jsp:forward page="home.jsp"/>
 
