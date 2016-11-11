@@ -27,6 +27,7 @@
         </header>
         <%
             String topic = request.getParameter("topic");
+            System.out.println(topic);
             if (topic != null) {
                 String url=topic+"/"+topic+".html";
                 RequestDispatcher rd = request.getRequestDispatcher(url);
