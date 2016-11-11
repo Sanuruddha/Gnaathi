@@ -11,11 +11,11 @@
         session.setAttribute("user",obj);
         
 %>
-<jsp:forward page="home.jsp"></jsp:forward>
+<jsp:forward page="userhome.jsp"></jsp:forward>
 <%
 } else {
 session.setAttribute("invalidlogin","TRUE");
 }
 %>  
-<jsp:forward page="index.jsp"/>
+<jsp:forward page="home.html"/>
  
