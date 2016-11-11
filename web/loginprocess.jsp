@@ -1,3 +1,4 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="bean.LoginDao"%>  
 <jsp:useBean id="obj" class="bean.User"/>  
@@ -18,4 +19,4 @@ session.setAttribute("invalidlogin","TRUE");
 }
 %>  
 <jsp:forward page="home.html"/>
- 
+
