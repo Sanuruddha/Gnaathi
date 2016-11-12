@@ -2,7 +2,13 @@
     border-bottom: 1px solid #ccc;
 }
 
-.col-xs-3{
+.col-xs-2{
     height: 100%;
     border-right: 1px solid #ccc;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.list-group{
+    margin-bottom: 0;
 }

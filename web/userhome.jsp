@@ -5,13 +5,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
-        
+        <link rel="stylesheet" href="css/chatbox.css">
         <link rel="stylesheet" href="css/userhome.css">
+        <link href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
         <script  type="text/javascript" src="js/home.js"></script>
         <script  type="text/javascript" src="js/userhome.js"></script>
+        <script  type="text/javascript" src="js/chat.js"></script>
     </head>
-    
+
     <body>
         <div id="loginform-container">
             <form action="loginprocess.jsp" method="post">
@@ -27,7 +30,7 @@
                             <input type="submit" name="submit" value="Login"  style="width: 100px"></td>
                     </tr>
                 </table>
-                
+
             </form>
         </div>
         <header>
@@ -53,23 +56,16 @@
                 <img onclick="" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
                 <img onclick="showChat()" id="chat-button" src="" alt="chatbutton">
             </div>
-            
+
             <div>
                 <div id="right-container">
                     <div id="projector-screen"></div>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                 </div>
+
             </div>
             <div id="chat-box">
-                <div id="chat-title"></div>
-                <div id="chat-body">
-                    <div id="chat-content">
-                        
-                    </div>
-                    <div id="friend-list">
-                        
-                    </div>
-                </div>
+                <%@include file="chatbox.html"%>
             </div>
         </div>
 

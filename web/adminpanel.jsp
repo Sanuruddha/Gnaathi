@@ -39,9 +39,16 @@
             </div>
         </nav>
         <div class="row">
-            <div class="col-xs-3">Rich Media Ad Production</div>
-            <div class="col-xs-9">Web Design & Development</div>
-            
+            <div class="col-xs-2">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">Gallery</a>
+                    <a class="list-group-item list-group-item-action" href="#">Blog</a>
+                    <a class="list-group-item list-group-item-action" href="#">Forum</a>
+                    <a class="list-group-item list-group-item-action" href="#">Chat</a>
+
+                </div>
+            </div>
+            <div class="col-xs-10"></div>            
         </div>
     </body>
 </html>
