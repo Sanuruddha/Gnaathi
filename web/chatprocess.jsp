@@ -5,7 +5,7 @@
         System.out.println(request.getParameter("message"));
     }
     else if(method.equals("GET")){
-        out.println("This is from server");
+        out.println();
     }
 %>
 
