@@ -13,7 +13,7 @@
 #chat-box{
     display: none;
     position: fixed;
-    width:20%;
+    width:300px;
     bottom: 0;
     right:0;   
 }

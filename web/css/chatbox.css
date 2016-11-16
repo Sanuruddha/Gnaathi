@@ -70,6 +70,7 @@
 }
 
 .portlet .portlet-footer {
+    height:100%;
     padding: 10px 15px;
     background: #e0e7e8;
 }

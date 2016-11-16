@@ -25,8 +25,10 @@ public class chat extends HttpServlet {
 
         try (PrintWriter out = response.getWriter()) {
             String mode = request.getParameter("mode");
+            int friendId;
+            friendId = Integer.parseInt(request.getParameter("id"));
             if (mode.equals("0")) {
-                Message msg = new Message(request.getParameter("message"), 2, (int) request.getSession().getAttribute("user_id"));
+                Message msg = new Message(request.getParameter("message"),friendId, (int) request.getSession().getAttribute("user_id"));
                 messages.add(msg);
             } else if (mode.equals("1")) {
                 if(!messages.isEmpty()) {

@@ -4,8 +4,8 @@ function sendMessage() {
     $.post("chat", {message: message,mode:"0"}, function (data) {});
 }
 
-function doSomething() {
-    $.post("chat",{mode:"1"},function (message) {
+function getMessages(id) {
+    $.post("chat",{mode:"1",id:id},function (message) {
         
         if(message.trim()!=="") {
             $("#chat-body").append("<div class='row'><div class='col - lg - 12'><div class='media'>"
@@ -20,6 +20,26 @@ function doSomething() {
     });
 }
 
-setInterval(doSomething, 3000);
+function loadChat(id){
+    getMessages(id);
+    setInterval(getMessages, 3000);
+}
+
+
+
+function showUser(id,name) {
+    $("#main-chatbox").css("display", "none");
+    $("#user-chatbox").css("display", "block");
+    var title = document.getElementById("title");
+    var heading = document.getElementById("heading");
+    title.innerHTML = '';
+    title.innerHTML = name;
+    heading.innerHTML = '';
+    heading.innerHTML = name;
+    loadChat(id);
+}
+
+
+
 
 
