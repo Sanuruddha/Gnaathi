@@ -22,10 +22,7 @@ function getMessages(id) {
 
 function loadChat(id){
     getMessages(id);
-    setInterval(getMessages, 3000);
 }
-
-
 
 function showUser(id,name) {
     $("#main-chatbox").css("display", "none");

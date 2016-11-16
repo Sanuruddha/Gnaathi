@@ -171,3 +171,7 @@
     color: #e74c3c;
 }  
 
+#chat-body a{
+    cursor: pointer;
+}
+

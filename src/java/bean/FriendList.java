@@ -7,25 +7,39 @@ package bean;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 /**
  *
  * @author Lock
  */
 public class FriendList extends HttpServlet {
-
+    Connection con=ConnectionProvider.getCon();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        System.out.print("here");
+            throws ServletException, IOException, SQLException {
+        HttpSession session=request.getSession();
+        int userId=Integer.parseInt(session.getAttribute("user_id").toString());       
+        PreparedStatement ps=con.prepareStatement("SELECT * FROM (SELECT * FROM friend_list WHERE user_id=?) f INNER JOIN user u ON f.friend_id=u.user_id");
+        ps.setInt(1, userId);
+        ResultSet rs=ps.executeQuery();
+        
         try (PrintWriter out = response.getWriter()) {
             JSONObject obj = new JSONObject();
-            obj.put("1", "shihan");
-            obj.put("2", "anuruddha");
+            while(rs.next()){
+                obj.put(Integer.toString(rs.getInt("friend_id")),rs.getString("user_name"));
+            }
             obj.toString();
+            System.out.println(obj);
             out.print(obj);
         }
     }
@@ -42,7 +56,11 @@ public class FriendList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(FriendList.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -56,7 +74,11 @@ public class FriendList extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(FriendList.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

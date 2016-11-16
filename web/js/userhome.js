@@ -2,7 +2,6 @@ function showChat() {
     if ($("#chat-box").css("display") === "none") {
         $("#user-chatbox").css("display", "none");
         $("#chat-box").css("display", "block");
-
         $.post("FriendList", function (data) {
             document.getElementById("chat-body").innerHTML = '';
             for (var key in data) {
