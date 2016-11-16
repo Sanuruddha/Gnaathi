@@ -8,7 +8,7 @@
     boolean status = LoginDao.validate(obj,session);
     if (status) {
         session.setAttribute("session", "TRUE");
-        session.setAttribute("user", obj);
+        out.println(session.getAttribute("user_id"));
         if (session.getAttribute("user_type").equals(0)) {
             RequestDispatcher rs = request.getRequestDispatcher("adminpanel.jsp");
             rs.forward(request, response);

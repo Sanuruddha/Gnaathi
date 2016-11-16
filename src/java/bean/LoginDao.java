@@ -22,6 +22,7 @@ public class LoginDao {
             
             if(status){
                 session.setAttribute("user_type",rs.getInt("user_type"));
+                session.setAttribute("user_id",rs.getInt("user_id"));
             }
         } catch (Exception e) {
         }

@@ -1,11 +1,11 @@
 function sendMessage() {
     var message = $("#message").val();
     alert(message);
-    $.post("chatprocess.jsp", {message: message}, function (data) {});
+    $.post("chat", {message: message,mode:"0"}, function (data) {});
 }
 
 function doSomething() {
-    $.get("chat", function (message) {
+    $.post("chat",{mode:"1"},function (message) {
         
         if(message.trim()!=="") {
             $("#chat-body").append("<div class='row'><div class='col - lg - 12'><div class='media'>"
