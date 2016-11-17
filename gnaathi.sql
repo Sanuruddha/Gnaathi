@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2016 at 07:45 PM
+-- Generation Time: Nov 17, 2016 at 12:10 AM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -119,9 +119,19 @@ CREATE TABLE `donors` (
 --
 
 CREATE TABLE `friend_list` (
+  `id` int(10) NOT NULL,
   `user_id` int(4) NOT NULL,
   `friend_id` int(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `friend_list`
+--
+
+INSERT INTO `friend_list` (`id`, `user_id`, `friend_id`) VALUES
+(0, 2, 3),
+(1, 6, 2),
+(2, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -222,7 +232,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`, `user_type`) VALUES
 (1, 'admin', 'shihananuruddha@gmail.com', '123456', 0),
 (2, 'regular', 'regularuser@gmail.com', '123456', 1),
-(6, 'lokka', 'shihananuruddha2@gmail.com', '123456', 1);
+(6, 'lokka', 'shihananuruddha2@gmail.com', '123456', 1),
+(3, 'shihan', 'shihananuruddha1@gmail.com', '123456', 1);
 
 --
 -- Indexes for dumped tables
@@ -277,7 +288,7 @@ ALTER TABLE `donors`
 -- Indexes for table `friend_list`
 --
 ALTER TABLE `friend_list`
-  ADD PRIMARY KEY (`user_id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `friend_id` (`friend_id`);
 
 --
