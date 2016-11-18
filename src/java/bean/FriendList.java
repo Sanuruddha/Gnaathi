@@ -39,7 +39,6 @@ public class FriendList extends HttpServlet {
                 obj.put(Integer.toString(rs.getInt("friend_id")),rs.getString("user_name"));
             }
             obj.toString();
-            System.out.println(obj);
             out.print(obj);
         }
     }

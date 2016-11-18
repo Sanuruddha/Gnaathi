@@ -3,9 +3,9 @@ function showChat() {
         $("#user-chatbox").css("display", "none");
         $("#chat-box").css("display", "block");
         $.post("FriendList", function (data) {
-            document.getElementById("chat-body").innerHTML = '';
+            document.getElementById("list-body").innerHTML = '';
             for (var key in data) {
-                $("#chat-body").append("<div class='row'>"
+                $("#list-body").append("<div class='row'>"
                         + "<div class='col-lg-12'>"
                         + "<div class='media'>"
                         + "<a class='pull-left' onclick='showUser("+key+",\"" + data[key] + "\")' style='line-height:4;vertical-align:middle;text-align:center;'>"

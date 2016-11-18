@@ -4,7 +4,7 @@
 
 <jsp:setProperty property="*" name="obj"/> 
 
-<%
+<%  
     boolean status = LoginDao.validate(obj,session);
     if (status) {
         session.setAttribute("session", "TRUE");

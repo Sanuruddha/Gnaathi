@@ -25,9 +25,9 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div id="chat" class="panel-collapse collapse in">
+            <div id="friend-chat" class="panel-collapse collapse in">
                 <div>
-                    <div id="chat-body" class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
+                    <div id="list-body" class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
 
 
                     </div>
@@ -38,7 +38,7 @@
                             <input class="form-control" placeholder="Enter name..." id="friend-name">
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-default pull-right" id="chat-send" onclick="searchFriend()">Search</button>
+                            <button type="button" class="btn btn-default pull-right" id="search-button" onclick="searchFriend()">Search</button>
                             <div class="clearfix"></div>
                         </div>
                     </form>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div id="chat" class="panel-collapse collapse in">
+            <div id="user-chat" class="panel-collapse collapse in">
                 <div>
                     <div id="chat-body" class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
                         <div class="row">
@@ -107,7 +107,7 @@
                             <textarea class="form-control" placeholder="Enter message..." id="message"></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-default pull-right" id="chat-send" onclick="sendMessage()">Send</button>
+                            <button type="button" class="btn btn-default pull-right" id="chat-send">Send</button>
                             <div class="clearfix"></div>
                         </div>
                     </form>
