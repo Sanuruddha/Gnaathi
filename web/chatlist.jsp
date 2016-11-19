@@ -19,6 +19,7 @@
                             <li><a href="#"><i class="fa fa-circle text-red"></i> Offline</a>
                             </li>
                         </ul>
+                        
                     </div>
                     <span class="divider"></span>
                     <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i class="fa fa-chevron-down"></i></a>
@@ -69,6 +70,7 @@
                             <li><a href="#"><i class="fa fa-circle text-red"></i> Offline</a>
                             </li>
                         </ul>
+                        <input hidden="true" type="text" id="name_self" value="<%=session.getAttribute("user_name")%>">
                     </div>
                     <span class="divider"></span>
                     <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i class="fa fa-chevron-down"></i></a>
@@ -83,7 +85,7 @@
                                 <p class="text-center text-muted small">January 1, 2014 at 12:23 PM</p>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="display:none">
                             <div class="col-lg-12">
                                 <div class="media">
                                     <a class="pull-left" href="#">

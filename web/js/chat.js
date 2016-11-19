@@ -1,10 +1,12 @@
 function sendMessage(id) {
     var message = $("#message").val();
+    $("#message").val("");
+    var name=$("#name_self").val();
     $("#chat-body").append("<div class='row'><div class='col - lg - 12'><div class='media'>"
                     + "<a class='pull-left' href='#'>"
                     + "<img class='media-object img-circle' src='http://lorempixel.com/30/30/people/7/' alt=''>"
                     + "</a>"
-                    + "<div class='media-body'><h4 class='media-heading'>anonymous"
+                    + "<div class='media-body'><h4 class='media-heading'>"+name
                     + "<span class='small pull-right'>12:39 PM"
                     + "</span>"
                     + "</h4><p>" + message + "</p></div></div></div></div>");

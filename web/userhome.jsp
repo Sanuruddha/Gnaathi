@@ -65,7 +65,7 @@
 
             </div>
             <div id="chat-box">
-                <%@include file="chatlist.html"%>
+                <%@include file="chatlist.jsp"%>
             </div>
         </div>
 
