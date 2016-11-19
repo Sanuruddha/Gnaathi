@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2016 at 12:10 AM
+-- Generation Time: Nov 19, 2016 at 10:18 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -131,7 +131,16 @@ CREATE TABLE `friend_list` (
 INSERT INTO `friend_list` (`id`, `user_id`, `friend_id`) VALUES
 (0, 2, 3),
 (1, 6, 2),
-(2, 3, 2);
+(2, 3, 2),
+(3, 3, 9),
+(4, 3, 10),
+(5, 3, 11),
+(6, 3, 6),
+(7, 10, 3),
+(8, 11, 3),
+(9, 6, 3),
+(10, 10, 6),
+(11, 10, 11);
 
 -- --------------------------------------------------------
 
@@ -233,7 +242,12 @@ INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`, `user_type`) VA
 (1, 'admin', 'shihananuruddha@gmail.com', '123456', 0),
 (2, 'regular', 'regularuser@gmail.com', '123456', 1),
 (6, 'lokka', 'shihananuruddha2@gmail.com', '123456', 1),
-(3, 'shihan', 'shihananuruddha1@gmail.com', '123456', 1);
+(3, 'shihan', 'shihananuruddha1@gmail.com', '123456', 1),
+(7, '', '', '', 1),
+(8, 'shihan1', 'shihan@gmail.com', '123456', 1),
+(9, 'anuruddha', 'anuruddha@gmail.com', '123456', 1),
+(10, 'mithsen', 'mithsen@gmail.com', '123456', 1),
+(11, 'anupama', 'anupama@gmail.com', '123456', 1);
 
 --
 -- Indexes for dumped tables
@@ -332,7 +346,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
