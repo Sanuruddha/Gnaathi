@@ -17,28 +17,34 @@
         <div id="registerform-container">
             <%@include file="registerform.html"%>
         </div>
-        
-        <div id="loginform-container">
-            <form action="loginprocess.jsp" method="post">
-                <table style="margin: auto">
-                    <tr><td>Email:</td>
-                        <td><input type="text" name="email" placeholder="Email"></td>                      
-                    </tr>
-                    <tr><td>Password:</td>
-                        <td><input type="password" name="password" placeholder="Password"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" name="submit" value="Login"  style="width: 100px"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"> 
-                            <a onclick="openNav()">Create account</a>
-                        </td>
-                    </tr>
-                </table>
+        <div id="login-form" class="overlay">
+            <div class = "overlay-content" id="loginform-container">
+                <form action="loginprocess.jsp" method="post">
+                    <table style="margin: auto">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><a id="login-close" href = "javascript:void(0)" class = "closebtn" onclick = "closeLogin()" >&times;</a></td>
+                        </tr>
+                        <tr><td>Email:</td>
+                            <td><input type="text" name="email" placeholder="Email"></td>                      
+                        </tr>
+                        <tr><td>Password:</td>
+                            <td><input type="password" name="password" placeholder="Password"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" name="submit" value="Login"  style="width: 100px"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> 
+                                <a onclick="openNav()">Create account</a>
+                            </td>
+                        </tr>
+                    </table>
 
-            </form>
+                </form>
+            </div>
         </div>
         <header>
             <div id='header'>
