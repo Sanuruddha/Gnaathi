@@ -19,7 +19,7 @@
                             <li><a href="#"><i class="fa fa-circle text-red"></i> Offline</a>
                             </li>
                         </ul>
-                        
+
                     </div>
                     <span class="divider"></span>
                     <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i class="fa fa-chevron-down"></i></a>
@@ -57,11 +57,12 @@
                 <div class="portlet-title">
                     <h4><i class="fa fa-circle text-green"></i><font id="heading"></font></h4>
                 </div>
+                <div class="portlet-widgets" onclick="closeUser()" style="cursor: pointer">&#10006</div>
                 <div class="portlet-widgets">
                     <div class="btn-group">
                         <i class="fa fa-circle text-green"></i> Status
                         <span class="caret"></span>
-                        
+
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#"><i class="fa fa-circle text-green"></i> Online</a>
                             </li>
@@ -75,6 +76,7 @@
                     <span class="divider"></span>
                     <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i class="fa fa-chevron-down"></i></a>
                 </div>
+                    
                 <div class="clearfix"></div>
             </div>
             <div id="user-chat" class="panel-collapse collapse in">
