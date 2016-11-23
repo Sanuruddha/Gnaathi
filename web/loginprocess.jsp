@@ -5,9 +5,9 @@
 <jsp:setProperty property="*" name="obj"/> 
 
 <%  
+//    checks the login validity
     boolean status = LoginDao.validate(obj,session);
-    if (status) {
-        session.setAttribute("session", "TRUE");
+    if (status) {    
         out.println(session.getAttribute("user_id"));
         if (session.getAttribute("user_type").equals(0)) {
             RequestDispatcher rs = request.getRequestDispatcher("adminpanel.jsp");

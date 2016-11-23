@@ -9,7 +9,7 @@ public class LoginDao {
         boolean status = false;
         try {
             Connection con = ConnectionProvider.getCon();
-       
+            
             PreparedStatement ps=con.prepareStatement("SELECT * FROM user WHERE email=? AND password=?");  	
             
             
@@ -24,6 +24,7 @@ public class LoginDao {
                 session.setAttribute("user_type",rs.getInt("user_type"));
                 session.setAttribute("user_id",rs.getInt("user_id"));
                 session.setAttribute("user_name",rs.getString("user_name"));
+                session.setAttribute("session", "TRUE");
             }
         } catch (Exception e) {
         }

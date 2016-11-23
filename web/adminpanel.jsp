@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/adminpanel.css">
         <title>JSP Page</title>
     </head>
@@ -27,11 +28,18 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
+                        <li><a href="#">Front-end View</a></li>
                         <li><a href="#">Page 3</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Login as</a>
+                            <div class="dropdown-content">
+                                <a href="#">Regular</a>
+                                <a href="#">Research personnel</a>
+                                <a href="#">Elderly society</a>
+                            </div>
+                        </li>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Add admin</a></li>
                         <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                     </ul>
@@ -39,16 +47,21 @@
             </div>
         </nav>
         <div class="row">
-            <div class="col-xs-2">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">Gallery</a>
-                    <a class="list-group-item list-group-item-action" href="#">Blog</a>
-                    <a class="list-group-item list-group-item-action" href="#">Forum</a>
-                    <a class="list-group-item list-group-item-action" href="#">Chat</a>
 
+            <div class="col-sm-2">
+
+                <!-- List-Group Panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Job categories</h1>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">Users</a>
+                        <a href="#" class="list-group-item">Articles<span class="badge">New</span></a>
+                        <a href="#" class="list-group-item">Media</a>
+
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-10"></div>            
-        </div>
     </body>
 </html>

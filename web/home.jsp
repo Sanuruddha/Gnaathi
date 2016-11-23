@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -10,10 +9,13 @@
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/registerform.css">
+        <link rel="stylesheet" href="css/error.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script  type="text/javascript" src="js/home.js"></script>
+
     </head>
     <body>
+
         <div id="registerform-container">
             <%@include file="registerform.html"%>
         </div>
@@ -57,6 +59,12 @@
 
             </div>
         </header>
+        <%@include file="error.html"%>
+        <%if (session.getAttribute("invalidlogin")!=null) {
+            if (session.getAttribute("invalidlogin").equals("TRUE")){       
+        %>
+        <script>$(".error").css("display", "block");</script>
+        <%}}%>
         <div id="body">
             <div id="left-container">
                 <div id="tv-screen"></div>

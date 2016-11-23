@@ -1,3 +1,4 @@
-<% session.invalidate();
+<% 
+   session.invalidate();
    response.sendRedirect("home.jsp");
 %>
