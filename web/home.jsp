@@ -40,7 +40,7 @@
                         </tr>
                         <tr>
                             <td colspan="2"> 
-                                <a onclick="openNav()">Create account</a>
+                                <a onclick="openNav()" style="color: #003399">Create account</a>
                             </td>
                         </tr>
                     </table>
