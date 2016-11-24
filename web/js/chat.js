@@ -20,6 +20,7 @@ function sendMessage(id) {
             + "<span class='small pull-right'>12:39 PM"
             + "</span>"
             + "</h4><p>" + message + "</p></div></div></div></div>");
+    
 
     $.ajax({
         url: 'Chat',
