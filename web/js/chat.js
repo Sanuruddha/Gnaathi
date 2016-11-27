@@ -1,6 +1,7 @@
 
 
 function sendMessage(id) {
+    
     var message = $("#message").val();
     $("#message").val("");
     var name = $("#name_self").val();
@@ -10,7 +11,7 @@ function sendMessage(id) {
     chats[id].push(message);
     var json_str = JSON.stringify(chats);
     sessionStorage.chats = json_str;
-
+    
     $("#chat-body").append("<div class='row'><div class='col - lg - 12'><div class='media'>"
             + "<a class='pull-left' href='#'>"
             + "<img class='media-object img-circle' src='http://lorempixel.com/30/30/people/7/' alt=''>"
