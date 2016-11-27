@@ -6,12 +6,32 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Gnaathi</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <style>
+            #main-door:hover{
+                background-color: #ffffff;
+                opacity: 0.2;
+                cursor: pointer;
+            }
+            
+            #main-door:hover a{
+                opacity: 1;
+            }
+            
+            #main-link:hover #main-door{
+                background-color: #ffffff;
+                opacity: 0.2;
+            }
+        </style>
     </head>
-    <body>
-        <a href="home.jsp">Enter Gnaathi</a>
+    <body style="background-image: url(img/house.jpg);background-size: 100% 100vh;">
+        <a id="main-link" href="home.jsp" style="font-size: 20px;"><span style="position: absolute;left:39%;top:37%;">Enter your other home</span>
+        <div id="main-door" style="text-align: center;position: absolute;left:37%;top:45%;height:30%;width: 18%">
+            
+        </div>
+            </a>
     </body>
 </html>
