@@ -22,7 +22,7 @@ function sendMessage(id) {
             + "</h4><p>" + message + "</p></div></div></div></div>");
 
     $.ajax({
-        url: 'chat',
+        url: 'Chat',
         type: 'POST',
         data: {message: message, mode: "0", id: parseInt(id)},
         error: function (jqXHR, textStatus, errorThrown) {
@@ -34,7 +34,7 @@ function sendMessage(id) {
 
 function getMessages(id) {
 
-    $.post("chat", {mode: "1", id: id}, function (message) {
+    $.post("Chat", {mode: "1", id: id}, function (message) {
 
         if (message.trim() !== "") {
 

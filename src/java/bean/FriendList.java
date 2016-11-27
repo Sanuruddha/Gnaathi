@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -29,15 +30,19 @@ public class FriendList extends HttpServlet {
             throws ServletException, IOException, SQLException {
         HttpSession session=request.getSession();
         int userId=Integer.parseInt(session.getAttribute("user_id").toString());       
-        PreparedStatement ps=con.prepareStatement("SELECT * FROM (SELECT * FROM friend_list WHERE user_id=?) f INNER JOIN user u ON f.friend_id=u.user_id");
+        PreparedStatement ps,ps1;
+        ps = con.prepareStatement("SELECT * FROM (SELECT * FROM friend_list WHERE user_id=?) f INNER JOIN user u ON f.friend_id=u.user_id");
         ps.setInt(1, userId);
         ResultSet rs=ps.executeQuery();
         
         try (PrintWriter out = response.getWriter()) {
             JSONObject obj = new JSONObject();
             while(rs.next()){
+                //creating the friend list
                 obj.put(Integer.toString(rs.getInt("friend_id")),rs.getString("user_name"));
-                ps=con.prepareStatement("SELECT * FROM chats WHERE (friend_id=? AND user_id=?) OR (user_id=? AND friend_id=?);");
+                //////////////////////////////////
+                
+                
             }
             obj.toString();
             out.print(obj);

@@ -2,6 +2,8 @@ package bean;
 
 import java.sql.*;
 
+///database connection handler class which returns the connection when called the getCon() method
+
 public class ConnectionProvider {
 
     private static Connection con = null;

@@ -3,6 +3,8 @@ package bean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,11 +19,55 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class chat extends HttpServlet {
-
+public class chats extends HttpServlet {
+    
+    /// data structures to hold chats tempororaly
+    
     static Map<Integer, List<Message>> recievedMessages = new HashMap<>();
     static Map<Integer, List<Message>> sentMessages = new HashMap<>();
 
+    
+    //initializing the static data structures to hold sent and recieved chats//
+    ///////////////////////////////////////////////////////////////////////////
+    static void initialize(int userId) throws SQLException {
+        
+        ////each user has their own array of sent and recieved chats
+        recievedMessages.put(userId, new ArrayList<>());
+        sentMessages.put(userId, new ArrayList<>());
+        
+        Connection con = ConnectionProvider.getCon();
+
+        PreparedStatement ps1, ps2;
+        ResultSet rs1, rs2;
+        
+        //when the user logs in the sent messages are retrieved from database
+        
+        ps1 = con.prepareStatement("SELECT * FROM chat WHERE user_id=?");
+        ps1.setInt(1, userId);
+        
+        rs1 = ps1.executeQuery();
+        while (rs1.next()) {
+            Message m1 = new Message(rs1.getString("message"), rs1.getInt("friend_id"), rs1.getInt("user_id"));
+            sentMessages.get(userId).add(m1);
+        }
+        
+        ////////////////////
+        
+         //when the user logs in the recieved messages are retrieved from database
+         
+        ps2 = con.prepareStatement("SELECT * FROM chat WHERE friend_id=?");
+        ps2.setInt(1, userId);
+        rs2 = ps2.executeQuery();
+        
+        while (rs2.next()) {
+            Message m2 = new Message(rs2.getString("message"), rs2.getInt("friend_id"), rs2.getInt("user_id"));
+            recievedMessages.get(userId).add(m2);
+        }
+        /////////////////
+
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
 
@@ -33,21 +79,15 @@ public class chat extends HttpServlet {
 
                 Message msg = new Message(request.getParameter("message"), friendId, userId);
 
-                if (recievedMessages.containsKey(friendId) == false) {
-                    recievedMessages.put(friendId, new ArrayList<>());
-                }
-
                 recievedMessages.get(friendId).add(msg);
 
             } else if (mode.equals("1")) {
-                if (recievedMessages.containsKey(userId)) {
-                    for (Message m : recievedMessages.remove(userId)) {
-                        out.println(m.getMessage());
-                        if (!ChatModel.add(m)) {
-                            System.out.println("failed");
-                        }
-
+                for (Message m : recievedMessages.remove(userId)) {
+                    out.println(m.getMessage());
+                    if (!ChatModel.add(m)) {
+                        System.out.println("failed");
                     }
+
                 }
 
             }
@@ -69,7 +109,7 @@ public class chat extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(chat.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(chats.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -87,7 +127,7 @@ public class chat extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(chat.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(chats.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
