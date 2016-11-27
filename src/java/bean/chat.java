@@ -18,37 +18,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class chat extends HttpServlet {
+
     Map<Integer, List<Message>> messages = new HashMap<>();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
 
         try (PrintWriter out = response.getWriter()) {
             String mode = request.getParameter("mode");
             int friendId = Integer.parseInt(request.getParameter("id"));
-            int userId=(int) request.getSession().getAttribute("user_id");
+            int userId = (int) request.getSession().getAttribute("user_id");
             if (mode.equals("0")) {
-                
-                Message msg = new Message(request.getParameter("message"), friendId,userId);
-                
-                if(messages.containsKey(friendId)==false){
-                    messages.put(friendId,new ArrayList<>());
-                }
-                
-                messages.get(friendId).add(msg);
-                
 
-            } else if (mode.equals("1")) {            
-                if(messages.containsKey(userId)){                  
-                    for(Message m:messages.remove(userId)){
+                Message msg = new Message(request.getParameter("message"), friendId, userId);
+
+                if (messages.containsKey(friendId) == false) {
+                    messages.put(friendId, new ArrayList<>());
+                }
+
+                messages.get(friendId).add(msg);
+
+            } else if (mode.equals("1")) {
+                if (messages.containsKey(userId)) {
+                    for (Message m : messages.remove(userId)) {
                         out.println(m.getMessage());
-                        ChatModel.add(m);
+                        if (!ChatModel.add(m)) {
+                            System.out.println("failed");
+                        }
+
                     }
                 }
-                else{
-                    System.out.println("No messages");
-                }
-                
-              
+
             }
         }
     }
