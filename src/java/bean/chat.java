@@ -19,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class chat extends HttpServlet {
 
-    Map<Integer, List<Message>> messages = new HashMap<>();
+    static Map<Integer, List<Message>> recievedMessages = new HashMap<>();
+    static Map<Integer, List<Message>> sentMessages = new HashMap<>();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
@@ -32,15 +33,15 @@ public class chat extends HttpServlet {
 
                 Message msg = new Message(request.getParameter("message"), friendId, userId);
 
-                if (messages.containsKey(friendId) == false) {
-                    messages.put(friendId, new ArrayList<>());
+                if (recievedMessages.containsKey(friendId) == false) {
+                    recievedMessages.put(friendId, new ArrayList<>());
                 }
 
-                messages.get(friendId).add(msg);
+                recievedMessages.get(friendId).add(msg);
 
             } else if (mode.equals("1")) {
-                if (messages.containsKey(userId)) {
-                    for (Message m : messages.remove(userId)) {
+                if (recievedMessages.containsKey(userId)) {
+                    for (Message m : recievedMessages.remove(userId)) {
                         out.println(m.getMessage());
                         if (!ChatModel.add(m)) {
                             System.out.println("failed");

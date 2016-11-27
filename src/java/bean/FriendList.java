@@ -37,6 +37,7 @@ public class FriendList extends HttpServlet {
             JSONObject obj = new JSONObject();
             while(rs.next()){
                 obj.put(Integer.toString(rs.getInt("friend_id")),rs.getString("user_name"));
+                ps=con.prepareStatement("SELECT * FROM chats WHERE (friend_id=? AND user_id=?) OR (user_id=? AND friend_id=?);");
             }
             obj.toString();
             out.print(obj);
