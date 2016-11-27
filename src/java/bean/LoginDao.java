@@ -29,9 +29,9 @@ public class LoginDao {
                 session.setAttribute("session", "TRUE");
             }
             
-            //calling initialize function to initialize chats of this user
+            //calling initialize function to initialize Chat of this user
             
-            chats.initialize(rs.getInt("user_id"));
+            Chat.initialize(rs.getInt("user_id"));
         } catch (Exception e) {
         }
         return status;

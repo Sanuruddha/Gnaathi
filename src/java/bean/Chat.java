@@ -19,19 +19,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class chats extends HttpServlet {
+public class Chat extends HttpServlet {
     
-    /// data structures to hold chats tempororaly
+    /// data structures to hold Chat tempororaly
     
     static Map<Integer, List<Message>> recievedMessages = new HashMap<>();
     static Map<Integer, List<Message>> sentMessages = new HashMap<>();
 
     
-    //initializing the static data structures to hold sent and recieved chats//
+    //initializing the static data structures to hold sent and recieved Chat//
     ///////////////////////////////////////////////////////////////////////////
     static void initialize(int userId) throws SQLException {
         
-        ////each user has their own array of sent and recieved chats
+        ////each user has their own array of sent and recieved Chat
         recievedMessages.put(userId, new ArrayList<>());
         sentMessages.put(userId, new ArrayList<>());
         
@@ -109,7 +109,7 @@ public class chats extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(chats.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Chat.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -127,7 +127,7 @@ public class chats extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(chats.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Chat.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

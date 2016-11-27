@@ -2,7 +2,7 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>chat</servlet-name>
-        <servlet-class>bean.chats</servlet-class>
+        <servlet-class>bean.Chat</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>FriendList</servlet-name>
@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>Chat</servlet-name>
-        <servlet-class>bean.chats</servlet-class>
+        <servlet-class>bean.Chat</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>chat</servlet-name>
