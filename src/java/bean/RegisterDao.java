@@ -29,7 +29,7 @@ public class RegisterDao {
             ps.setInt(4,bean.getUserType());
             
             int rows=ps.executeUpdate();
-            
+            con.close();
             if(rows!=0)
                 return true;
         } catch (Exception e) {
