@@ -3,12 +3,15 @@ package bean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,10 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class chat extends HttpServlet {
     Map<Integer, List<Message>> messages = new HashMap<>();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        Connection con = ConnectionProvider.getCon();
-        
+            throws ServletException, IOException, SQLException {
 
         try (PrintWriter out = response.getWriter()) {
             String mode = request.getParameter("mode");
@@ -32,16 +32,16 @@ public class chat extends HttpServlet {
                 
                 if(messages.containsKey(friendId)==false){
                     messages.put(friendId,new ArrayList<>());
-                    messages.get(friendId).add(msg);
                 }
-                else{
-                    messages.get(friendId).add(msg);
-                }
+                
+                messages.get(friendId).add(msg);
+                
 
             } else if (mode.equals("1")) {            
                 if(messages.containsKey(userId)){                  
                     for(Message m:messages.remove(userId)){
                         out.println(m.getMessage());
+                        ChatModel.add(m);
                     }
                 }
                 else{
@@ -65,7 +65,11 @@ public class chat extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(chat.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -79,7 +83,11 @@ public class chat extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(chat.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

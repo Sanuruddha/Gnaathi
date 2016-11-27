@@ -1,4 +1,5 @@
 <% 
+   session.setAttribute("session", "FALSE");
    session.invalidate();
-   response.sendRedirect("home.jsp");
+   
 %>

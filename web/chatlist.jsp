@@ -51,6 +51,7 @@
 
 
 <div id="user-chatbox" style="display:none">
+    <input type="text" hidden="true" id="id">
     <div class="chat-container">
         <div class="portlet portlet-default" style="margin-bottom:2px;">
             <div class="portlet-heading">
@@ -72,6 +73,7 @@
                             </li>
                         </ul>
                         <input hidden="true" type="text" id="name_self" value="<%=session.getAttribute("user_name")%>">
+                        <input hidden="true" type="text" id="id_self" value="<%=session.getAttribute("user_id")%>">
                     </div>
                     <span class="divider"></span>
                     <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i class="fa fa-chevron-down"></i></a>
