@@ -1,18 +1,19 @@
 package bean;
 
-import java.util.Calendar;
-
+import java.sql.Timestamp;
+import java.util.Date;
 
 public class Message {
-    Calendar timestamp;
     int to_id,from_id;
     String message;
+    Timestamp timestamp;
     
     public Message(String message,int to_id,int from_id){
+        Date date=new Date();
+        this.timestamp = new Timestamp(date.getTime());
         this.message=message;
         this.to_id=to_id;
         this.from_id=from_id;
-        timestamp=Calendar.getInstance();
     }
     
     public String getMessage(){
@@ -25,5 +26,9 @@ public class Message {
     
     public int getToId(){
         return to_id;
+    }
+    
+    public Timestamp getTimestamp(){
+        return this.timestamp;
     }
 }

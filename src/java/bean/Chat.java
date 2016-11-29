@@ -79,10 +79,11 @@ public class Chat extends HttpServlet {
 
                 Message msg = new Message(request.getParameter("message"), friendId, userId);
 
+                sentMessages.get(userId).add(msg);
                 recievedMessages.get(friendId).add(msg);
 
             } else if (mode.equals("1")) {
-                for (Message m : recievedMessages.remove(userId)) {
+                for (Message m : recievedMessages.get(userId)) {
                     out.println(m.getMessage());
                     if (!ChatModel.add(m)) {
                         System.out.println("failed");
