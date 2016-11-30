@@ -46,7 +46,9 @@
                                 <a href="#">Elderly society</a>
                             </div>
                         </li>
+                        <% if(session.getAttribute("user_type").equals(10)){%>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Add admin</a></li>
+                        <%}%>
                         <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                     </ul>
                 </div>

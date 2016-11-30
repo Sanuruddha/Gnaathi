@@ -52,10 +52,12 @@
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="img/home/home_0008_Layer-1.png" alt="logo"></a>
                 <img id='picture' src="img/home/home_0007_Layer-3.png" alt="picture">
-                <img id='login' src="img/home/websiteedit_0000_settings.png" alt="login">
+                
                 <img id='clock' src="img/edit/websiteedit_0001_clock.png" alt="clock">
+                <div id="door-container">
+                <img id='login' src="img/home/websiteedit_0000_settings.png" alt="login">
                 <a id='door' href="index.html"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
-
+                </div>
             </div>
         </header>
         <%@include file="error.html"%>

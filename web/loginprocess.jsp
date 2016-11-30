@@ -10,12 +10,13 @@
     if (status) {    
         session.setAttribute("session", "TRUE");
         out.println(session.getAttribute("user_id"));
-        if (session.getAttribute("user_type").equals(0)) {
+        
+        if (session.getAttribute("user_type").equals(0)||session.getAttribute("user_type").equals(10)) {
             response.sendRedirect("adminpanel.jsp");
         } else if (session.getAttribute("user_type").equals(1)) {
             response.sendRedirect("userhome.jsp");
         }
-
+       
     } else {
         session.setAttribute("invalidlogin", "TRUE");
         RequestDispatcher rs = request.getRequestDispatcher("home.jsp");
