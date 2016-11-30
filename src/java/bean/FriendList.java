@@ -40,9 +40,6 @@ public class FriendList extends HttpServlet {
             while(rs.next()){
                 //creating the friend list
                 obj.put(Integer.toString(rs.getInt("friend_id")),rs.getString("user_name"));
-                //////////////////////////////////
-                
-                
             }
             obj.toString();
             out.print(obj);

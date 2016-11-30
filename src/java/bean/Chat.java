@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -75,6 +76,8 @@ public class Chat extends HttpServlet {
             String mode = request.getParameter("mode");
             int friendId = Integer.parseInt(request.getParameter("id"));
             int userId = (int) request.getSession().getAttribute("user_id");
+            
+            
             if (mode.equals("0")) {
 
                 Message msg = new Message(request.getParameter("message"), friendId, userId);
@@ -107,10 +110,34 @@ public class Chat extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Chat.class.getName()).log(Level.SEVERE, null, ex);
+        try (PrintWriter out = response.getWriter()) {
+            int init = Integer.parseInt(request.getParameter("init"));
+            int friendId = Integer.parseInt(request.getParameter("id"));
+            int userId = (int) request.getSession().getAttribute("user_id");
+            if(init==0)
+                initChat(out,userId,friendId);
+        }
+    }
+    
+    public void initChat(PrintWriter out,int userId,int friendId){
+        List<Message> rList=Chat.recievedMessages.remove(userId);
+        List<Message> sList=Chat.sentMessages.remove(userId);
+        List<Message> newList=new ArrayList<>();
+        newList.addAll(sList);
+        newList.addAll(rList);
+        newList.sort((Message o1, Message o2) -> o1.getTimestamp().compareTo(o2.getTimestamp()));
+        for(Message m:newList){
+            out.println("<div class='row'><div class='col - lg - 12'><div class='media'>");
+            out.println("<a class='pull-left' href='#'>");
+            out.println("<img class='media-object img-circle' src='http://lorempixel.com/30/30/people/7/' alt=''>");
+            out.println("</a>");
+            out.println("<div class='media-body'><h4 class='media-heading'>");
+            out.println("<font id='chat-friend'></font>");
+            out.println("<span class='small pull-right'>12:39 PM");
+            out.println("</span>");
+            out.println("</h4><p>");
+            out.println(m.getMessage());
+            out.println("</p></div></div></div></div>");
         }
     }
 
