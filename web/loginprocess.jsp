@@ -8,13 +8,12 @@
 //    checks the login validity
     boolean status = LoginDao.validate(obj,session);
     if (status) {    
+        session.setAttribute("session", "TRUE");
         out.println(session.getAttribute("user_id"));
         if (session.getAttribute("user_type").equals(0)) {
-            RequestDispatcher rs = request.getRequestDispatcher("adminpanel.jsp");
-            rs.forward(request, response);
+            response.sendRedirect("adminpanel.jsp");
         } else if (session.getAttribute("user_type").equals(1)) {
-            RequestDispatcher rs = request.getRequestDispatcher("userhome.jsp");
-            rs.forward(request, response);
+            response.sendRedirect("userhome.jsp");
         }
 
     } else {

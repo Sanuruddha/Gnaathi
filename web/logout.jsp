@@ -1,7 +1,11 @@
 <%@page import="bean.LogoutDao"%>  
 <% 
-    LogoutDao.logout((int)session.getAttribute("user_id"));
-   session.setAttribute("session", "FALSE");
+    
+    if(session.getAttribute("session")!=null){
+        LogoutDao.logout(Integer.parseInt(session.getAttribute("user_id").toString()));
+        session.setAttribute("session", "FALSE");
+    }
    session.invalidate();
+   response.sendRedirect("home.jsp");
    
 %>

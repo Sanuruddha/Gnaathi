@@ -12,15 +12,18 @@ public class LogoutDao {
 
     public static void logout(int userId) {
         Connection con = ConnectionProvider.getCon();
-        List<Message> rList=Chat.recievedMessages.remove(userId);
-        List<Message> sList=Chat.sentMessages.remove(userId);
-        
-        for(Message m:rList){
-            
+        try {
+            List<Message> rList = Chat.recievedMessages.remove(userId);
+            List<Message> sList = Chat.sentMessages.remove(userId);
+            for (Message m : rList) {
+
+            }
+
+            for (Message m : rList) {
+
+            }
+        } catch (Exception e) {
         }
-        
-        for(Message m:rList){
-            
-        }
+
     }
 }

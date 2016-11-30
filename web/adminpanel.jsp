@@ -3,7 +3,12 @@
     Created on : Nov 11, 2016, 10:31:15 PM
     Author     : Lock
 --%>
-
+<%@include  file="checklogin.jsp"%>
+<%    
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    response.setHeader("Expires", "0"); // Proxies.
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

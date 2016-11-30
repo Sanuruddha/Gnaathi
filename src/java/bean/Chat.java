@@ -26,8 +26,6 @@ public class Chat extends HttpServlet {
     
     static Map<Integer, List<Message>> recievedMessages = new HashMap<>();
     static Map<Integer, List<Message>> sentMessages = new HashMap<>();
-
-    
     //initializing the static data structures to hold sent and recieved Chat//
     ///////////////////////////////////////////////////////////////////////////
     static void initialize(int userId) throws SQLException {
@@ -120,8 +118,18 @@ public class Chat extends HttpServlet {
     }
     
     public void initChat(PrintWriter out,int userId,int friendId){
-        List<Message> rList=Chat.recievedMessages.remove(userId);
-        List<Message> sList=Chat.sentMessages.remove(userId);
+        List<Message> rList=Chat.recievedMessages.get(userId);
+        for(Message m:rList){
+            if(m.getFromId()!=friendId)
+                rList.remove(m);
+        }
+            
+        List<Message> sList=Chat.sentMessages.get(userId);
+         for(Message m:sList){
+            if(m.getToId()!=friendId)
+                sList.remove(m);
+        }
+           
         List<Message> newList=new ArrayList<>();
         newList.addAll(sList);
         newList.addAll(rList);

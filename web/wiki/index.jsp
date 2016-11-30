@@ -18,7 +18,7 @@
                 <img id='picture' src="img/edit/websiteedit_0006_picture.png" alt="picture">
                 <img id='login' src="img/edit/websiteedit_0000_settings.png" alt="login">
                 <img id='clock' src="img/edit/websiteedit_0001_clock.png" alt="clock">
-                <a href="../logout.jsp"><div id='door'><img src="img/edit/websiteedit_0007_door.png" alt="door"></div></a>
+                <a href="logout.jsp"><div id='door'><img src="img/edit/websiteedit_0007_door.png" alt="door"></div></a>
                 <div id='logout'><img src="img/edit/websiteedit_0004_----Logout.png" alt="logout"></div>
 
             </div>
