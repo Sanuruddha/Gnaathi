@@ -54,8 +54,7 @@
 
             </div>
             <div class="row">
-                
-                <!--put ur first file here-->
+                <%@include file="blog.jsp"%>
             </div>
         </div>
     </body>
