@@ -41,14 +41,15 @@
                 <div class="col-sm-12">
                     <div id="forum-header"><font id="forum-title">Welcome to Forum !</font></div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-12">
-                    <div id="forum-left">
-                        
-                    </div><div class="devider"></div><!--
-                    --><div id="forum-middle"><div id="article-container">
+                    
+                    --><div id="forum">
+                        <%@include file="forum.jsp" %>
                             
-                        </div></div><div class="devider"></div><!--
-                    --><div id="forum-right"></div>
+                        </div>
+                    
                 </div>
             </div>
         </div>
