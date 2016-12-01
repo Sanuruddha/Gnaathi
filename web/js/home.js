@@ -6,6 +6,10 @@ function loadForum(){
     location.href = "forum/index.jsp#jump-to";
 }
 
+function loadBlog(){
+    location.href="blog/index.jsp#jump-to";
+}
+
 $(document).ready(function(){$( "#login" ).click(function() {
         document.getElementById("login-form").style.width = "100%";       
 });});

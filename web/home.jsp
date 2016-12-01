@@ -76,6 +76,7 @@
             <div id="middle-container">                         
                 <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
                 <img onclick="loadForum()" id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
+                <img onclick="loadBlog()" id="blog-button" src="" alt="blog-button">
                 <img onclick="" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
 
             </div>
