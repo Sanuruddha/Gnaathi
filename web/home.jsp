@@ -52,20 +52,21 @@
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="img/home/home_0008_Layer-1.png" alt="logo"></a>
                 <img id='picture' src="img/home/home_0007_Layer-3.png" alt="picture">
-                
+
                 <img id='clock' src="img/edit/websiteedit_0001_clock.png" alt="clock">
                 <div id="door-container">
-                <img id='login' src="img/home/websiteedit_0000_settings.png" alt="login">
-                <a id='door' href="index.html"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
+                    <img id='login' src="img/home/websiteedit_0000_settings.png" alt="login">
+                    <a id='door' href="index.html"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
                 </div>
             </div>
         </header>
         <%@include file="error.html"%>
-        <%if (session.getAttribute("invalidlogin")!=null) {
-            if (session.getAttribute("invalidlogin").equals("TRUE")){       
+        <%if (session.getAttribute("invalidlogin") != null) {
+                if (session.getAttribute("invalidlogin").equals("TRUE")) {
         %>
         <script>$(".error").css("display", "block");</script>
-        <%}}%>
+        <%}
+            }%>
         <div id="body">
             <div id="left-container">
                 <div id="tv-screen"></div>
@@ -73,12 +74,39 @@
             </div>
 
 
-            <div id="middle-container">                         
-                <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
-                <img onclick="loadForum()" id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
-                <img onclick="loadBlog()" id="blog-button" src="" alt="blog-button">
-                <img onclick="" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
+            <div id="middle-container">  
+                <div id="cloud-container">
+                    <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
+                    <img onclick="loadForum()" id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
+                    <img onclick="loadBlog()" id="blog-button" src="" alt="blog-button">
+                </div>
 
+                <img onclick="" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
+                <script>
+                    if (window.attachEvent) {
+                        window.attachEvent('onresize', function () {
+
+                        });
+                    } else if (window.addEventListener) {
+                        window.addEventListener('resize', function () {
+                            var h = document.getElementById("table").height;
+
+                            var mc = document.getElementById("middle-container").clientHeight;
+                            $("#cloud-container").height(mc - h);
+
+                            var cc = document.getElementById("cloud-container").clientHeight;
+
+                        }, true);
+                    } else {
+                        //The browser does not support Javascript event binding
+                    }
+                    $(document).ready(function () {
+                        var h = document.getElementById("table").height;
+
+                        var mc = document.getElementById("middle-container").clientHeight;
+                        $("#cloud-container").height(mc - h);
+                    });
+                </script>
             </div>
 
             <div>
