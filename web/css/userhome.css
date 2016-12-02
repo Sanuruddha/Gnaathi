@@ -156,7 +156,7 @@ header{
 
 #left-container{
     position: absolute;
-    width:20%;
+    width:25%;
     float:left;
 }
 
@@ -178,8 +178,8 @@ header{
 
 #middle-container{
     position: relative;
-    left:20%;
-    width:60%;
+    left:25%;
+    width:50%;
     height:100%;
 }
 
@@ -190,26 +190,26 @@ header{
 #wiki-button{
     width:20%;
     height:auto;
-    z-index: 2;
+    z-index: 5;
     position: absolute;
     left:60%;
-    bottom:80%;
+    bottom:0;
 }
 
 #wiki-button:hover{
     position: absolute;
     opacity: 0.85;
-    z-index: 2;
+    z-index: 5;
     cursor: pointer;
 }
 #forum-button{
-    bottom:80%;
+    bottom:0;
     width:25%;
     height:auto;
     z-index: 2;
     position: absolute;
     left:25%;
-    
+
 }
 
 #forum-button:hover{
@@ -217,6 +217,14 @@ header{
     opacity:0.85;
     z-index: 2;
 }
+
+#cloud-container{
+    width:100%;
+    z-index: 5;
+    left:0px;
+    position:absolute;
+}
+
 #table{
     position:absolute;
     z-index: 3;
@@ -237,9 +245,9 @@ header{
 
 #right-container{
     position: absolute;
-    left:80%;
+    left:75%;
     top:0;
-    width:20%;
+    width:25%;
     height:auto;
 }
 #right-container img{

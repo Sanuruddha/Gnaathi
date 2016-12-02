@@ -55,12 +55,39 @@
             </div>
 
 
-            <div id="middle-container">                         
-                <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
-                <img onclick="loadForum()" id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
-                <img onclick="" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
-                <img onclick="loadBlog()" id="blog-button" src="" alt="blog-button">
-                <img onclick="showChat()" id="chat-button" src="" alt="chatbutton">
+            <div id="middle-container">  
+                <div id="cloud-container">
+                    <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
+                    <img onclick="loadForum()" id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
+                    <img onclick="loadBlog()" id="blog-button" src="" alt="blog-button">
+                </div>
+
+                <img id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
+                <script>
+                    if (window.attachEvent) {
+                        window.attachEvent('onresize', function () {
+
+                        });
+                    } else if (window.addEventListener) {
+                        window.addEventListener('resize', function () {
+                            var h = document.getElementById("table").height;
+
+                            var mc = document.getElementById("middle-container").clientHeight;
+                            $("#cloud-container").height(mc - h);
+
+                            var cc = document.getElementById("cloud-container").clientHeight;
+
+                        }, true);
+                    } else {
+                        
+                    }
+                    $(document).ready(function () {
+                        var h = document.getElementById("table").height;
+
+                        var mc = document.getElementById("middle-container").clientHeight;
+                        $("#cloud-container").height(mc - h);
+                    });
+                </script>
             </div>
 
             <div>
