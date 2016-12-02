@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/chatbox.css">
         <link rel="stylesheet" href="css/userhome.css">
+        <link rel="stylesheet" href="css/home.css">
         <link href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -59,7 +60,8 @@
                 <div id="cloud-container">
                     <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
                     <img onclick="loadForum()" id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
-                    <img onclick="loadBlog()" id="blog-button" src="" alt="blog-button">
+                    <img onclick="loadBlog()" id="blog-button" src="img/home/websiteedit_0001_blog-cloud.png" alt="blog-button">
+                    
                 </div>
 
                 <img id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
@@ -100,6 +102,29 @@
             <div id="chat-box">
                 <%@include file="chatlist.jsp"%>
             </div>
+            <div id="chatbutton-container">
+                <img onclick="showChat()" id="chat-button" src="" alt="chat-button">
+            </div>
+             <script>
+                    if (window.attachEvent) {
+                        window.attachEvent('onresize', function () {
+
+                        });
+                    } else if (window.addEventListener) {
+                        window.addEventListener('resize', function () {
+                            var h = document.getElementById("table").height;
+                            $("#chatbutton-container").height(h);
+
+                        }, true);
+                    } else {
+                        
+                    }
+                    $(document).ready(function () {
+                        var h = document.getElementById("table").height;
+                            $("#chatbutton-container").height(h);
+                    });
+                </script>
+            
         </div>
 
     </body>

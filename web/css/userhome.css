@@ -1,13 +1,21 @@
 #chat-button{
     position: absolute;
-    z-index: 2;
-    top:20%;
-    right:5%;
+    z-index: 5;
+    top:50%;
+    left:10%;
 }
 #chat-button:hover{
     cursor:pointer;
     
 }
+
+#chatbutton-container{
+    bottom:0;
+    position:absolute;
+    width:25%;
+    left:70%;
+}
+
 #chat-box{
     display: none;
     position: fixed;
