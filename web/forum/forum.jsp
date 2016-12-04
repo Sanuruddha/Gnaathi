@@ -423,7 +423,7 @@
                         <div class="col-lg-8">
                             <div class="pull-left"><a href="#" class="prevnext"><i class="fa fa-angle-left"></i></a></div>
                             <div class="pull-left">
-                                <ul class="paginationforum">
+                    <!--            <ul class="paginationforum">
                                     <li class="hidden-xs"><a href="#">1</a></li>
                                     <li class="hidden-xs"><a href="#">2</a></li>
                                     <li class="hidden-xs"><a href="#">3</a></li>
@@ -438,7 +438,7 @@
                                     <li class="hidden-xs hidden-md"><a href="#">12</a></li>
                                     <li class="hidden-xs hidden-sm hidden-md"><a href="#">13</a></li>
                                     <li><a href="#">1586</a></li>
-                                </ul>
+                                </ul> -->
                             </div>
                             <div class="pull-left"><a href="#" class="prevnext last"><i class="fa fa-angle-right"></i></a></div>
                             <div class="clearfix"></div>                        
@@ -452,7 +452,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-1 col-xs-3 col-sm-2 logo "><a href="#"><img src="Forum%20%20%20Topic_files/logo.jpg" alt=""></a></div>
-                        <div class="col-lg-8 col-xs-9 col-sm-5 ">Copyrights 2014,websitename.com</div>
+                        <div class="col-lg-8 col-xs-9 col-sm-5 ">Copyrights,Gnathi.lk</div>
                         <div class="col-lg-3 col-xs-12 col-sm-5 sociconcent">
                             <ul class="socialicons">
                                 <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
