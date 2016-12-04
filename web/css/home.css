@@ -246,24 +246,53 @@ header{
 }
 
 
-#projector-screen{
-    position: absolute;
-    width:95%;
-    height:40%;
-    right:2%;
-    top:3%;
-}
 
 #right-container{
     position: absolute;
     left:75%;
     top:0;
     width:25%;
-    height:auto;
+    height:75%;
 }
 #right-container img{
     width:100%;
-    top:20px;
-    position: relative;
+    top:3%;
+    position: absolute;
     z-index: -1;
+}
+#projector-screen{
+    position: absolute;
+    width:95%;
+    height:50%;
+    right:2%;
+    top:6%;
+}
+
+#video-gallery{
+    width: 47%;
+    z-index: 6;
+    position: absolute;
+    top:56%;
+    left:51%;
+    height:15%;
+    text-align: center;
+    line-height: 4;
+    color:white;
+    background-image: url(img/video.png);
+    background-size: 100% 100%;
+}
+
+#image-gallery{
+    background-size: 100% 100%;
+    background-image: url(img/image.png);
+    border-right: 1px #6ca7b8 solid;
+    color: white;
+    line-height: 4;
+    text-align: center;
+    left:3%;
+    width: 48%;
+    z-index: 6;
+    position: absolute;
+    top:56%;
+     height:15%
 }
