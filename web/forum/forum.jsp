@@ -338,14 +338,14 @@
                                 <h3>Poll of the Week</h3>
                                 <div class="divline"></div>
                                 <div class="blocktxt">
-                                    <p>Which game you are playing this week?</p>
+                                    <p>Which event do you like for this week?</p>
                                     <form action="#" method="post" class="form">
                                         <table class="poll">
                                             <tbody><tr>
                                                     <td>
                                                         <div class="progress">
                                                             <div class="progress-bar color1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                                                Call of Duty Ghosts
+                                                               watch a movie and discuss 
                                                             </div>
                                                         </div>
                                                     </td>
@@ -358,7 +358,7 @@
                                                     <td>
                                                         <div class="progress">
                                                             <div class="progress-bar color2" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 63%">
-                                                                Titanfall
+                                                                Bana Session
                                                             </div>
                                                         </div>
                                                     </td>
@@ -371,7 +371,7 @@
                                                     <td>
                                                         <div class="progress">
                                                             <div class="progress-bar color3" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-                                                                Battlefield 4
+                                                                meet celebrity
                                                             </div>
                                                         </div>
                                                     </td>
