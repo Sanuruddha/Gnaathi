@@ -17,25 +17,25 @@
         <h1>Hello World!</h1>
       
         <%
-           
+         // out.println(request.getParameter("user"));
             String name1= request.getParameter("user");
-            String name2=request.getParameter("categery");
+            String name2=request.getParameter("category");
             String name3= request.getParameter("content");
-    
+             String name4= request.getParameter("title");
             try{
                 
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con=DriverManager.getConnection("jdbc:mysql://localhost/gnaathi","root","");
                 Statement st=con.createStatement();
                 
-                st.executeUpdate("insert into post1 (user_id,category,content) values('"+name1+"','"+name2+"','"+name3+"')");
+                st.executeUpdate("insert into post1 (user_id,category,content,title) values('"+name1+"','"+name2+"','"+name3+"','"+name4+"')");
                 out.println("post inserted");
             }catch(Exception e){
                 out.println(e);
             }
             finally{
                // out.println("belive your self");
-  
+               
             }
          %>
         <form action="retrive2.jsp">
