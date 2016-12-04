@@ -25,7 +25,7 @@
             try{
                 
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con=DriverManager.getConnection("jdbc:mysql://localhost/kushan","root","");
+                Connection con=DriverManager.getConnection("jdbc:mysql://localhost/gnaathi","root","");
                 Statement st=con.createStatement();
                 
                 st.executeUpdate("insert into post1 (user_id,category,content) values('"+name1+"','"+name2+"','"+name3+"')");

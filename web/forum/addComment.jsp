@@ -24,7 +24,7 @@
             try {
 
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/kushan", "root", "");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/gnaathi", "root", "");
                 Statement st = con.createStatement();
 
                 st.executeUpdate("insert into comment1 (post_id,user_id,content) values('" + name2 + "','" + name1 + "','" + name3 + "')");

@@ -9,7 +9,7 @@
     //  String input1 = request.getParameter("input1");
     String driverName = "com.mysql.jdbc.Driver";
     String connectionUrl = "jdbc:mysql://localhost:3306/";
-    String dbName = "kushan";
+    String dbName = "gnaathi";
     String userId = "root";
     String password = "";
 

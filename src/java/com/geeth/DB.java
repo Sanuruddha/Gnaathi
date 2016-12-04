@@ -19,7 +19,7 @@ import java.sql.DriverManager;
 public class DB {
     
      static Connection con = null;
-    static String url = "jdbc:mysql://localhost:3306/blog?zeroDateTimeBehavior=convertToNull";
+    static String url = "jdbc:mysql://localhost:3306/gnaathi?zeroDateTimeBehavior=convertToNull";
     static String un = "root";
     static String pw = "";
 
