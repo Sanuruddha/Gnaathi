@@ -93,7 +93,7 @@
                         greatGrandParent.parentNode.insertBefore(temp, greatGrandParent.parentNode.children[position + 1]);
                     }
                 };
-                xhttp.open("GET", "forum/retriveComments.jsp?input=" + x + "&input1=content", true);
+                xhttp.open("GET", "retriveComments.jsp?input=" + x + "&input1=content", true);
                 xhttp.send();
             }
         </script>

@@ -112,9 +112,16 @@
             <div>
                 <div id="right-container">
                     <div id="projector-screen">
-                        <img style="z-index: 6;width: 100%;height: 100%;" src="gallery/images/1.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> 
+                        <video id="mainVideo" type="mp4/video" controls="" src="gallery/videos/Life in 4 mins.mp4" style="left:-2%;top:11%;height:100%;width:100%;z-index: 6" autoplay=""></video>
+                         
                     </div>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
+                    <div id="image-gallery">
+                        Images
+                    </div>
+                    <div id="video-gallery">
+                        Videos
+                    </div>
                 </div>
             </div>
         </div>
