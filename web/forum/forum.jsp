@@ -93,7 +93,7 @@
                         greatGrandParent.parentNode.insertBefore(temp, greatGrandParent.parentNode.children[position + 1]);
                     }
                 };
-                xhttp.open("GET", "forum/retriveComments.jsp?input=" + x + "&input1=content", true);
+                xhttp.open("GET", "retriveComments.jsp?input=" + x + "&input1=content", true);
                 xhttp.send();
             }
         </script>
@@ -142,23 +142,23 @@
             <div class="headernav">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="#"><img src="Forum%20%20%20Topic_files/logo.jpg" alt=""></a></div>
+                        <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="#"><img src="Forum%20%20%20New%20topic_files/logo.jpg" alt=""></a></div>
                         <div class="col-lg-3 col-xs-9 col-sm-5 col-md-3 selecttopic">
                             <div class="dropdown">
-                                <a data-toggle="dropdown" href="#">Borderlands 2</a> <b class="caret"></b>
+                           <!--     <a data-toggle="dropdown" href="#">Borderlands 2</a> <b class="caret"></b>
                                 <ul class="dropdown-menu" role="menu">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Borderlands 1</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Borderlands 2</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Borderlands 3</a></li>
 
-                                </ul>
+                                </ul>   -->
                             </div>
                         </div>
                         <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
                             <div class="wrap">
                                 <form action="#" method="post" class="form">
                                     <div class="pull-left txt"><input class="form-control" placeholder="Search Topics" type="text"></div>
-                                    <div class="pull-right"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+                                    <div class="pull-right"><button style="width:30px;height:30px;background-size: 100% 100%;background-image: url('images/search.png')" class="btn btn-default" type="button"></button></div>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
@@ -193,7 +193,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 breadcrumbf">
-                            <a href="#">Borderlands 2</a> <span class="diviver">&gt;</span> <a href="#">General Discussion</a> <span class="diviver">&gt;</span> <a href="#">Topic Details</a>
+                  <!--          <a  href="#">Borderlands 2</a> <span class="diviver">&gt;</span> <a href="#">General Discussion</a> <span class="diviver">&gt;</span> <a href="#">Topic Details  </a> -->
                         </div>
                     </div>
                 </div>
@@ -322,13 +322,13 @@
                                 <div class="divline"></div>
                                 <div class="blocktxt">
                                     <ul class="cats">
-                                        <li><a href="#">Trading for Money <span class="badge pull-right">20</span></a></li>
-                                        <li><a href="#">Vault Keys Giveway <span class="badge pull-right">10</span></a></li>
-                                        <li><a href="#">Misc Guns Locations <span class="badge pull-right">50</span></a></li>
-                                        <li><a href="#">Looking for Players <span class="badge pull-right">36</span></a></li>
-                                        <li><a href="#">Stupid Bugs &amp; Solves <span class="badge pull-right">41</span></a></li>
-                                        <li><a href="#">Video &amp; Audio Drivers <span class="badge pull-right">11</span></a></li>
-                                        <li><a href="#">2K Official Forums <span class="badge pull-right">5</span></a></li>
+                                        <li><a href="#"> Cancers <span class="badge pull-right">20</span></a></li>
+                                        <li><a href="#"> Kidney Deseases <span class="badge pull-right">10</span></a></li>
+                                        <li><a href="#"> Social Deseases <span class="badge pull-right">50</span></a></li>
+                                        <li><a href="#"> General Topics <span class="badge pull-right">36</span></a></li>
+                                        <li><a href="#"> Health Tips<span class="badge pull-right">41</span></a></li>
+                                        <li><a href="#"> Dengu <span class="badge pull-right">11</span></a></li>
+                                        <li><a href="#"> Others <span class="badge pull-right">5</span></a></li>
                                     </ul>
                                 </div>
                             </div>
