@@ -25,8 +25,8 @@
         
         border: 3px solid black;
         margin-top: 80px;
-        margin-right: 300px;
-        margin-left: 390px;
+        margin-right: 250px;
+        margin-left: 350px;
         padding: 30px 30px 50px 30px;
         }
     </style>
@@ -34,14 +34,14 @@
         <h1 style="font-size:45px; color: rgb(0,0,90); "><center>Post Your Article</center></h1>
         <div id="wrapper">
           <div id="c1">
-        <form action="posts" method="post"  >
-                        <label>Title :</label>
-                        <input type="text"  name="title"/>
+        <form action="../posts" method="post"  >
+                        <label style="font-size:20px;" >Title :</label>
+                        <input style="font-size:20px;" type="text"  size="55" name="title"/><br/><br/>
                       
-                        <label for="body">Body:</label>
-                        <textarea name="body" cols=50 rows=10></textarea>
+                        <label style="font-size:20px;" for="body">Body:</label>
+                        <textarea style="font-size:20px;" name="body" cols=55 rows=17></textarea><br/><br/>
                         
-                        <label>Category :</label><select name="category">
+                        <label style="font-size:20px;">Category :</label><select name="category">
                          <%
                          
                             String sql = "SELECT * FROM categories ";
@@ -51,20 +51,20 @@
                             while (rs.next()) {
                                 
                         %>
-                        <option><%=rs.getString("category")%></option>
+                        <option style="font-size:17px;"><%=rs.getString("category")%></option>
                             
                         <%
                             }
                             
-                            %></select>
+                            %></select><br/><br/>
                             
-                         <label>Imeges</label><input type="file" name="file">
+                         <label style="font-size:20px;">Imeges</label><input type="file" name="file">
                             
-                        
+                        <br>
                        <br/>
                        <br/>
                        
-                        <input type="submit" name="submit" value="submit">
+                        <input style="font-size:20px;" type="submit" name="submit" value="submit">
 
 
                     </form>

@@ -21,6 +21,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -38,7 +39,9 @@ public class posts extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        
+        HttpSession session=request.getSession();
+        String user_id=session.getAttribute("user_id").toString();
+        String user_name=session.getAttribute("user_name").toString();
         String title = request.getParameter("title");
         System.out.println(title);
         String body = request.getParameter("body");
@@ -54,15 +57,17 @@ public class posts extends HttpServlet {
         
 
         // Save in the DB
-        String sql = "INSERT INTO posts (title,body,category,posted) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO posts (user_id,user_name,title,body,category,posted) VALUES (?,?,?,?,?,?)";
 
         try {
             Connection con = DB.getCon();
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, title);
-            ps.setString(2, body);
-            ps.setString(3, category);
-            ps.setString(4, x);
+            ps.setString(1, user_id);
+            ps.setString(2, user_name); 
+            ps.setString(3, title);
+            ps.setString(4, body);
+            ps.setString(5, category);
+            ps.setString(6, x);
            
             
             ps.executeUpdate();
@@ -109,7 +114,7 @@ public class posts extends HttpServlet {
             fileOut.close();}
         
         
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("blog/index.jsp#jump-to");
 
     }
 

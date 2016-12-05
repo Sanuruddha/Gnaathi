@@ -56,7 +56,7 @@ public class AddComment extends HttpServlet{
         }
         
         
-        response.sendRedirect("post.jsp?post_id="+f);
+        response.sendRedirect("blog/post.jsp?post_id="+f);
 
     }
     

@@ -21,8 +21,8 @@
         
         border: 3px solid black;
         margin-top: 80px;
-        margin-right: 300px;
-        margin-left: 390px;
+        margin-right: 250px;
+        margin-left: 350px;
         padding: 30px 30px 50px 30px;
         }
     </style>
@@ -30,7 +30,7 @@
         <h1 style="font-size:45px; color: rgb(0,0,90); "><center>Post Your Article</center></h1>
         <div id="wrapper">
           <div id="c1">
-             <form action="editpost?post_id=<%=request.getParameter("post_id")%>" method="post"  >
+             <form action="../editpost?post_id=<%=request.getParameter("post_id")%>" method="post"  >
                       <%
                            // Object post_id=session.getAttribute("post_id");
                             
@@ -49,14 +49,14 @@
                         
                               
                             
-                             <label>Title :</label>
-                        <input type="text"  name="title" value="<%=rs.getString("title")%>"/>
-                      
-                        <label for="body">Body:</label>
-                        <textarea name="body"  cols=50 rows=10 ><%=rs.getString("body")%></textarea>
-                        
-                        <label>Category :</label><select name="category" >
-                         <option selected> <%=rs.getString("category")%></option>
+                             <label style="font-size:20px;">Title :</label>
+                        <input style="font-size:20px;" size="55" type="text"  name="title" value="<%=rs.getString("title")%>"/>
+                      <br/><br/>
+                        <label style="font-size:20px;" for="body">Body:</label>
+                        <textarea style="font-size:20px;" name="body"  cols=55 rows=14 ><%=rs.getString("body")%></textarea>
+                        <br/><br/>
+                        <label style="font-size:20px;">Category :</label><select name="category" >
+                         <option selected style="font-size:17px;"> <%=rs.getString("category")%></option>
                             <%
                          
                             String sql1 = "SELECT * FROM categories ";
@@ -67,7 +67,7 @@
                                 
                         %>
                          
-                        <option><%=rs1.getString("category")%></option>
+                        <option style="font-size:17px;"><%=rs1.getString("category")%></option>
                             
                         <%
                             }
@@ -79,8 +79,8 @@
                         <%
                             }
 
-                        %>
-                <input type="submit" name="submit" value="submit">
+                        %><br/><br/><br/>
+                <input style="font-size:20px;" type="submit" name="submit" value="submit">
 
 
                     </form>

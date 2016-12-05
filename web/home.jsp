@@ -112,14 +112,28 @@
             <div>
                 <div id="right-container">
                     <div id="projector-screen">
-                        <video id="mainVideo" type="mp4/video" controls="" src="gallery/videos/Life in 4 mins.mp4" style="left:-2%;top:11%;height:100%;width:100%;z-index: 6" autoplay=""></video>
-                         
+                        <video id="mainVideo"  src="gallery/videos/Life in 4 mins.mp4" style="left:-2%;top:11%;height:100%;width:100% !important;z-index: 6" autoplay controls>
+                                Your browser does not support the video tag.
+                        </video> 
                     </div>
+                    <script>
+                    document.getElementById('mainVideo').addEventListener('ended',myHandler,false);
+                    function myHandler(e) {
+                        var srcs=['gallery/videos/The power of words.mp4','gallery/videos/Life in 4 mins.mp4'];
+                        var j;
+                        for(var i=0;i<srcs.length;i++){
+                            if(srcs[i]===$('#mainVideo').attr('src'))
+                                j=(i+1)%(srcs.length);
+                        }
+                        $('#mainVideo').attr('src',srcs[j]);
+                        $('#mainVideo').play();
+                    }
+                    </script>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                     <div id="image-gallery">
                         Images
                     </div>
-                    <div id="video-gallery">
+                    <div onclick="loadVideo()" id="video-gallery">
                         Videos
                     </div>
                 </div>

@@ -27,7 +27,7 @@
         
         border: 3px solid black;
         position: absolute;
-        top: 263px;
+        top: 53px;
         left: 27px;
         padding: 30px 30px 50px 30px;
         width :250px ;
@@ -96,8 +96,8 @@
                         
                         
                               
-                            <h2 style="font-size:33px;"><%=rs.getString("title")%></h2>
-                            <p style="font-size:18px;"><%=rs.getString("body")%></p>
+                            <h2 style="font-size:35px;"><%=rs.getString("title")%></h2>
+                            <p style="font-size:20px;"><%=rs.getString("body")%></p>
                             
                            
                         <%
@@ -146,7 +146,7 @@
                       <br>
                       <div id="add-comment">
                           <h2 >Post a new comment</h2>
-                          <form action="AddComment" method="post">
+                          <form action="../AddComment" method="post">
                               <div>
                                   <label>Email Address</label><input ="text" name="email" />
                               </div>
@@ -164,15 +164,18 @@
                               
                               
             <div id="new-post"><center>
+                            <% if(session.getAttribute("user_id")!=null){ %>
                             <h2>If You Want To Add New Post<h2>
                            </artical><a class="c2" href="newpost.jsp" >NEW POST</a><br>
+                           <%}%>
+                           
                            <h3  style="font-size:35px; color: rgb(90,90,90); ">Categories</h3>
-                          <a href="catpost.jsp?category='Ayurwedic'" >Ayurwedic</a><br>
-                          <a href="catpost.jsp?category='Diseses'" >Diseses</a><br>
-                          <a href="catpost.jsp?category='Medicine'" >Medicine</a><br>
-                          <a href="catpost.jsp?category='sports'" >sports</a><br>
-                          <a href="catpost.jsp?category='Healthcare'" >Healthcare</a><br>
-                          <a href="catpost.jsp?category='Culture'" >Culture</a><br>
+                          <a style="font-size:20px;" href="catpost.jsp?category='Ayurwedic'" >Ayurwedic</a><br><br>
+                          <a style="font-size:20px;" href="catpost.jsp?category='Diseses'" >Diseses</a><br><br>
+                          <a style="font-size:20px;" href="catpost.jsp?category='Medicine'" >Medicine</a><br><br>
+                          <a style="font-size:20px;" href="catpost.jsp?category='sports'" >sports</a><br><br>
+                          <a style="font-size:20px;" href="catpost.jsp?category='Healthcare'" >Healthcare</a><br><br>
+                          <a style="font-size:20px;" href="catpost.jsp?category='Culture'" >Culture</a><br><br>
                         </center>            
                         </div>                   
     </body>

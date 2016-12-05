@@ -10,6 +10,10 @@ function loadBlog(){
     location.href="blog/index.jsp#jump-to";
 }
 
+function loadVideo(){
+    location.href="gallery/index.jsp";
+}
+
 $(document).ready(function(){$( "#login" ).click(function() {
         document.getElementById("login-form").style.width = "100%";       
 });});
