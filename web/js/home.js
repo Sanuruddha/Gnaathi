@@ -1,3 +1,7 @@
+function loadImage(){
+    location.href="image_gallery/index.html";
+}
+
 function loadWiki(){
     location.href = "wiki/index.jsp#jump-to";
 }

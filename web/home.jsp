@@ -130,7 +130,7 @@
                     }
                     </script>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
-                    <div id="image-gallery">
+                    <div onclick="loadImage()" id="image-gallery">
                         Images
                     </div>
                     <div onclick="loadVideo()" id="video-gallery">
