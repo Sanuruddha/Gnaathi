@@ -32,8 +32,7 @@
 
 
 
-<video id="mainVideo" type="mp4/video" controls="" src="videos/Life in 4 mins.mp4" height="540px" width="1080px" autoplay=""></video>
-
+    <iframe id="mainVideo" width="560" height="315" src="https://www.youtube.com/embed/Wl2_knlv_xw?autoplay=1" frameborder="0" allowfullscreen></iframe>
 <br><br><br>
 
 <div id="myDiv" onclick="changeVideo(event)">

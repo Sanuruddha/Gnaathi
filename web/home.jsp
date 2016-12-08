@@ -19,14 +19,14 @@
             <%@include file="registerform.html"%>
         </div>
         <%
-            if(request.getParameter("registersuccess")!=null)
-                if(request.getParameter("registersuccess").equals("false")){
+            if (request.getParameter("registersuccess") != null)
+                if (request.getParameter("registersuccess").equals("false")) {
         %>
         <script>
             $("#myNav").width("100%");
         </script>
         <%}%>
-        
+
         <div id="login-form" class="overlay">
             <div class = "overlay-content" id="loginform-container">
                 <form action="loginprocess.jsp" method="post">
@@ -57,8 +57,8 @@
             </div>
         </div>
         <%
-            if(request.getParameter("loginpage")!=null)
-                if(request.getParameter("loginpage").equals("true")){
+            if (request.getParameter("loginpage") != null)
+                if (request.getParameter("loginpage").equals("true")) {
         %>
         <script>
             $("#login-form").width("100%");
@@ -107,19 +107,15 @@
                     } else if (window.addEventListener) {
                         window.addEventListener('resize', function () {
                             var h = document.getElementById("table").height;
-
                             var mc = document.getElementById("middle-container").clientHeight;
                             $("#cloud-container").height(mc - h);
-
                             var cc = document.getElementById("cloud-container").clientHeight;
-
                         }, true);
                     } else {
                         //The browser does not support Javascript event binding
                     }
                     $(document).ready(function () {
                         var h = document.getElementById("table").height;
-
                         var mc = document.getElementById("middle-container").clientHeight;
                         $("#cloud-container").height(mc - h);
                     });
@@ -129,22 +125,52 @@
             <div>
                 <div id="right-container">
                     <div id="projector-screen">
-                        <video id="mainVideo"  src="gallery/videos/Life in 4 mins.mp4" style="left:-2%;top:11%;height:100%;width:100% !important;z-index: 6" autoplay controls>
-                            Your browser does not support the video tag.
-                        </video> 
+                        
                     </div>
+                    <script src="http://www.youtube.com/player_api"></script>
                     <script>
-                        document.getElementById('mainVideo').addEventListener('ended', myHandler, false);
-                        function myHandler(e) {
-                            var srcs = ['gallery/videos/The power of words.mp4', 'gallery/videos/Life in 4 mins.mp4'];
-                            var j;
-                            for (var i = 0; i < srcs.length; i++) {
-                                if (srcs[i] === $('#mainVideo').attr('src'))
-                                    j = (i + 1) % (srcs.length);
+                    ///
+
+
+
+
+// create youtube player
+                    var player;
+                    var srcs = ['https://www.youtube.com/embed/XVY4DeAvnfI?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1',
+                        ,'https://www.youtube.com/embed/ROcBUEVMPLU?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1'];
+                    var j;
+
+                    function onYouTubePlayerAPIReady() {
+                        player = new YT.Player('projector-screen', {
+                            height: '390',
+                            width: '640',
+                            videoId: 'XVY4DeAvnfI',
+                            events: {
+                                'onReady': onPlayerReady,
+                                'onStateChange': onPlayerStateChange
                             }
-                            $('#mainVideo').attr('src', srcs[j]);
-                            $('#mainVideo').play();
+                        });
+                    }
+
+// autoplay video
+                    function onPlayerReady(event) {
+                        event.target.playVideo();
+                    }
+
+                    // when video ends
+                    function onPlayerStateChange(event) {
+                     
+                        if (event.data === 0) {
+                            for (var i = 0; i < srcs.length; i++) {
+                                if (srcs[i] === $('#projector-screen').attr('src')) {
+                                    j = (i + 1) % (srcs.length);
+                                    $('#projector-screen').attr('src', srcs[j]);
+                                    event.target.playVideo();
+                                }
+                            }
                         }
+                    }
+
                     </script>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                     <div id="button-container">
@@ -157,7 +183,7 @@
                             <button type="button" class="btn btn-success">Videos
                                 <img src="img/video.png" alt="video">
                             </button>
-                            
+
                         </div>
                     </div>
                 </div>
