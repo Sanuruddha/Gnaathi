@@ -10,8 +10,8 @@
     
     boolean status = RegisterDao.register(obj2);
     if (status) {
-        out.println("Successfull");
+        response.sendRedirect("home.jsp?loginpage=true");
     } else {
-        out.println("Not Successfull");
+        response.sendRedirect("home.jsp?registersuccess=false");
     }
 %>
