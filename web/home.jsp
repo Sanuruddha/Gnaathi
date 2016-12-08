@@ -18,6 +18,15 @@
         <div id="registerform-container">
             <%@include file="registerform.html"%>
         </div>
+        <%
+            if(request.getParameter("registersuccess")!=null)
+                if(request.getParameter("registersuccess").equals("false")){
+        %>
+        <script>
+            $("#myNav").width("100%");
+        </script>
+        <%}%>
+        
         <div id="login-form" class="overlay">
             <div class = "overlay-content" id="loginform-container">
                 <form action="loginprocess.jsp" method="post">
@@ -47,6 +56,14 @@
                 </form>
             </div>
         </div>
+        <%
+            if(request.getParameter("loginpage")!=null)
+                if(request.getParameter("loginpage").equals("true")){
+        %>
+        <script>
+            $("#login-form").width("100%");
+        </script>
+        <%}%>
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
