@@ -130,28 +130,35 @@
                 <div id="right-container">
                     <div id="projector-screen">
                         <video id="mainVideo"  src="gallery/videos/Life in 4 mins.mp4" style="left:-2%;top:11%;height:100%;width:100% !important;z-index: 6" autoplay controls>
-                                Your browser does not support the video tag.
+                            Your browser does not support the video tag.
                         </video> 
                     </div>
                     <script>
-                    document.getElementById('mainVideo').addEventListener('ended',myHandler,false);
-                    function myHandler(e) {
-                        var srcs=['gallery/videos/The power of words.mp4','gallery/videos/Life in 4 mins.mp4'];
-                        var j;
-                        for(var i=0;i<srcs.length;i++){
-                            if(srcs[i]===$('#mainVideo').attr('src'))
-                                j=(i+1)%(srcs.length);
+                        document.getElementById('mainVideo').addEventListener('ended', myHandler, false);
+                        function myHandler(e) {
+                            var srcs = ['gallery/videos/The power of words.mp4', 'gallery/videos/Life in 4 mins.mp4'];
+                            var j;
+                            for (var i = 0; i < srcs.length; i++) {
+                                if (srcs[i] === $('#mainVideo').attr('src'))
+                                    j = (i + 1) % (srcs.length);
+                            }
+                            $('#mainVideo').attr('src', srcs[j]);
+                            $('#mainVideo').play();
                         }
-                        $('#mainVideo').attr('src',srcs[j]);
-                        $('#mainVideo').play();
-                    }
                     </script>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
-                    <div onclick="loadImage()" id="image-gallery">
-                        Images
-                    </div>
-                    <div onclick="loadVideo()" id="video-gallery">
-                        Videos
+                    <div id="button-container">
+                        <div id="image-gallery">
+                            <button type="button" class="btn btn-success">Images
+                                <img src="img/image.png" alt="image">
+                            </button>
+                        </div>
+                        <div onclick="loadVideo()" id="video-gallery">
+                            <button type="button" class="btn btn-success">Videos
+                                <img src="img/video.png" alt="video">
+                            </button>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
