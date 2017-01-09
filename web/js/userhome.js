@@ -8,20 +8,20 @@ $(document).ready(function () {
 });
 
 
-
+//chat open function
+//this will send a post request to the frienlist servlet where it will initialize the necessory data structures and 
+//send the friend list back
 function showChat() {
-    
+    //this will toggle the show hide for the chat box
     if ($("#chat-box").css("display") === "none") {
         $("#user-chatbox").css("display", "none");
         $("#chat-box").css("display", "block");
+        
+        //post request to the servlet
         $.post("FriendList", function (data) {
             document.getElementById("list-body").innerHTML = '';
 
             for (var key in data) {
-                
-                chats[key]=[];
-                
-
                 $("#list-body").append("<div class='row'>"
                         + "<div class='col-lg-12'>"
                         + "<div class='media'>"
@@ -31,8 +31,7 @@ function showChat() {
                         + data[key]
                         + "</a></div></div></div>");
             }
-            var json_str = JSON.stringify(chats);
-            sessionStorage.setItem("chats", json_str);
+            
 
         }, "json");
 

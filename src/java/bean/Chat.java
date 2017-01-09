@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -21,79 +22,68 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class Chat extends HttpServlet {
-    
+
     /// data structures to hold Chat tempororaly
-    
-    static Map<Integer, List<Message>> recievedMessages = new HashMap<>();
-    static Map<Integer, List<Message>> sentMessages = new HashMap<>();
+    static Map<Integer, Map<Integer, List<Message>>> recievedMessages = new HashMap<>();
+    //static Map<Integer, Map<Integer, List<Message>>> sentMessages = new HashMap<>();
+    static Map<Integer, Map<Integer, List<Message>>> chatThreads = new HashMap<>();
+    static Map<Integer, Map<Integer, Integer>> position = new HashMap<>();
     //initializing the static data structures to hold sent and recieved Chat//
     ///////////////////////////////////////////////////////////////////////////
+    
     static void initialize(int userId) throws SQLException {
-        
+
         ////each user has their own array of sent and recieved Chat
-        recievedMessages.put(userId, new ArrayList<>());
-        sentMessages.put(userId, new ArrayList<>());
-        
+        recievedMessages.put(userId, new HashMap<>());
+        //sentMessages.put(userId, new HashMap<>());
+        chatThreads.put(userId, new HashMap<>());
+        position.put(userId, new HashMap<>());
+
+        PreparedStatement ps;
         Connection con = ConnectionProvider.getCon();
+        //get all the friends of the user
+        ps = con.prepareStatement("SELECT * FROM (SELECT * FROM friend_list WHERE user_id=?) f INNER JOIN user u ON f.friend_id=u.user_id");
+        ps.setInt(1, userId);
+        ResultSet rs = ps.executeQuery();
 
-        PreparedStatement ps1, ps2;
-        ResultSet rs1, rs2;
-        
+        while (rs.next()) {
+            int friendId = rs.getInt("friend_id");
+            if (recievedMessages.get(friendId) != null) {
+                recievedMessages.get(friendId).put(userId, new ArrayList<>());
+                recievedMessages.get(userId).put(friendId, new ArrayList<>());
+            }
+        }
+        //Connection con = ConnectionProvider.getCon();
+        //PreparedStatement ps1, ps2;
+        //ResultSet rs1, rs2;
         //when the user logs in the sent messages are retrieved from database
-        
-        ps1 = con.prepareStatement("SELECT * FROM chat WHERE user_id=?");
-        ps1.setInt(1, userId);
-        
-        rs1 = ps1.executeQuery();
-        while (rs1.next()) {
-            Message m1 = new Message(rs1.getString("message"), rs1.getInt("friend_id"), rs1.getInt("user_id"));
-            sentMessages.get(userId).add(m1);
-        }
-        
+        //ps1 = con.prepareStatement("SELECT * FROM chats WHERE user_id=?");
+        //ps1.setInt(1, userId);
+        //rs1 = ps1.executeQuery();
+        //while (rs1.next()) {
+        // Message m1 = new Message(rs1.getString("message"), rs1.getInt("friend_id"), rs1.getInt("user_id"));
+        // sentMessages.get(userId).get(rs1.getInt("friend_id")).add(m1);
+        // }
         ////////////////////
-        
-         //when the user logs in the recieved messages are retrieved from database
-         
-        ps2 = con.prepareStatement("SELECT * FROM chat WHERE friend_id=?");
-        ps2.setInt(1, userId);
-        rs2 = ps2.executeQuery();
-        
-        while (rs2.next()) {
+        //when the user logs in the recieved messages are retrieved from database
+        //ps2 = con.prepareStatement("SELECT * FROM chats WHERE friend_id=?");
+        //ps2.setInt(1, userId);
+        //rs2 = ps2.executeQuery();
+        /*while (rs2.next()) {
             Message m2 = new Message(rs2.getString("message"), rs2.getInt("friend_id"), rs2.getInt("user_id"));
-            recievedMessages.get(userId).add(m2);
-        }
-        /////////////////
-
+            recievedMessages.get(userId).get(rs1.getInt("friend_id")).add(m2);
+        }*/
     }
-
+    
+    static void terminate(int userId){
+        recievedMessages.remove(userId);
+        chatThreads.remove(userId);
+    }
+    
     ///////////////////////////////////////////////////////////////////////////
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
 
-        try (PrintWriter out = response.getWriter()) {
-            String mode = request.getParameter("mode");
-            int friendId = Integer.parseInt(request.getParameter("id"));
-            int userId = (int) request.getSession().getAttribute("user_id");
-            
-            
-            if (mode.equals("0")) {
-
-                Message msg = new Message(request.getParameter("message"), friendId, userId);
-
-                sentMessages.get(userId).add(msg);
-                recievedMessages.get(friendId).add(msg);
-
-            } else if (mode.equals("1")) {
-                for (Message m : recievedMessages.get(userId)) {
-                    out.println(m.getMessage());
-                    if (!ChatModel.add(m)) {
-                        System.out.println("failed");
-                    }
-
-                }
-
-            }
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -106,46 +96,60 @@ public class Chat extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
+
+    //catch the get request from showUser() function
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             int init = Integer.parseInt(request.getParameter("init"));
             int friendId = Integer.parseInt(request.getParameter("id"));
             int userId = (int) request.getSession().getAttribute("user_id");
-            if(init==0)
-                initChat(out,userId,friendId);
+            //if the chat is not initialized the initChat() will be called
+            if (init == 0) {
+                initChat(out, userId, friendId);
+            } else if (recievedMessages.get(userId).get(friendId) != null) {
+                addToRecieved(out, userId, friendId);
+            } else if (recievedMessages.get(userId).get(friendId) == null) {
+
+            }
         }
     }
-    
-    public void initChat(PrintWriter out,int userId,int friendId){
-        List<Message> rList=Chat.recievedMessages.get(userId);
-        for(Message m:rList){
-            if(m.getFromId()!=friendId)
-                rList.remove(m);
-        }
-            
-        List<Message> sList=Chat.sentMessages.get(userId);
-         for(Message m:sList){
-            if(m.getToId()!=friendId)
-                sList.remove(m);
-        }
-           
-        List<Message> newList=new ArrayList<>();
-        newList.addAll(sList);
-        newList.addAll(rList);
-        newList.sort((Message o1, Message o2) -> o1.getTimestamp().compareTo(o2.getTimestamp()));
-        for(Message m:newList){
-            out.println("<div class='row'><div class='col - lg - 12'><div class='media'>");
-            out.println("<a class='pull-left' href='#'>");
-            out.println("<img class='media-object img-circle' src='http://lorempixel.com/30/30/people/7/' alt=''>");
-            out.println("</a>");
-            out.println("<div class='media-body'><h4 class='media-heading'>");
-            out.println("<font id='chat-friend'></font>");
-            out.println("<span class='small pull-right'>12:39 PM");
-            out.println("</span>");
-            out.println("</h4><p>");
+
+    synchronized private void addToRecieved(PrintWriter out, int userId, int friendId) {
+        List<Message> chatThread = recievedMessages.get(userId).get(friendId);
+        if (chatThread.size() > 0) {
+            Message m = chatThread.get(0);
+            if (Chat.chatThreads.get(userId).get(friendId) != null) {
+                Chat.chatThreads.get(userId).get(friendId).add(m);
+            } else {
+                Chat.chatThreads.get(userId).put(friendId, new ArrayList<>());
+                Chat.chatThreads.get(userId).get(friendId).add(m); 
+            }
+            chatThread.remove(m);
             out.println(m.getMessage());
-            out.println("</p></div></div></div></div>");
+        }
+    }
+
+    synchronized public void initChat(PrintWriter out, int userId, int friendId) {
+
+        List<Message> chatThread;
+        if (Chat.chatThreads.get(userId).get(friendId) != null) {
+            chatThread = Chat.chatThreads.get(userId).get(friendId);
+            //newList.sort((Message o1, Message o2) -> o1.getTimestamp().compareTo(o2.getTimestamp()));
+            for (Message m : chatThread) {
+                out.println("<div class='row'><div class='col - lg - 12'><div class='media'>");
+                out.println("<a class='pull-left' href='#'>");
+                out.println("<img class='media-object img-circle' src='http://lorempixel.com/30/30/people/7/' alt=''>");
+                out.println("</a>");
+                out.println("<div class='media-body'><h4 class='media-heading'>");
+                out.println(LoginDao.onlineUsers.get(m.getFromId()));
+                out.println("<font id='chat-friend'></font>");
+                out.println("<span class='small pull-right'>12:39 PM"); 
+                out.println("</span>");
+                out.println("</h4><p>");
+                out.println(m.getMessage());
+                out.println("</p></div></div></div></div>");
+            }
         }
     }
 
@@ -160,10 +164,26 @@ public class Chat extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Chat.class.getName()).log(Level.SEVERE, null, ex);
+        try (PrintWriter out = response.getWriter()) {
+            String mode = request.getParameter("mode");
+            int friendId = Integer.parseInt(request.getParameter("id"));
+            int userId = (int) request.getSession().getAttribute("user_id");
+
+            if (mode.equals("0")) {
+                if (recievedMessages.get(friendId) != null) {
+                    Message msg = new Message(request.getParameter("message"), friendId, userId);
+                    recievedMessages.get(friendId).get(userId).add(msg);
+                    if(chatThreads.get(userId).get(friendId)!=null)
+                        chatThreads.get(userId).get(friendId).add(msg);
+                    else{
+                        chatThreads.get(userId).put(friendId,new ArrayList<>());
+                        chatThreads.get(userId).get(friendId).add(msg);
+                    }
+                } else {
+                    out.println("User is offline");
+                }
+
+            }
         }
     }
 

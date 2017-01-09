@@ -99,11 +99,12 @@
                 </div>
 
             </div>
-            <div id="chat-box">
-                <%@include file="chatlist.jsp"%>
-            </div>
+            
             <div id="chatbutton-container">
                 <img onclick="showChat()" id="chat-button" src="" alt="chat-button">
+            </div>
+            <div id="chat-box">
+                <%@include file="chatlist.jsp"%>
             </div>
              <script>
                     if (window.attachEvent) {

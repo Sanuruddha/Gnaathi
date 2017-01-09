@@ -29,8 +29,12 @@ public class FriendList extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         HttpSession session=request.getSession();
+        
+        // process the post request from showChat() function
         int userId=Integer.parseInt(session.getAttribute("user_id").toString());       
         PreparedStatement ps,ps1;
+        
+        //get all the friends of the user
         ps = con.prepareStatement("SELECT * FROM (SELECT * FROM friend_list WHERE user_id=?) f INNER JOIN user u ON f.friend_id=u.user_id");
         ps.setInt(1, userId);
         ResultSet rs=ps.executeQuery();
@@ -38,7 +42,7 @@ public class FriendList extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             JSONObject obj = new JSONObject();
             while(rs.next()){
-                //creating the friend list
+                //creating the friend list as a json object by inserting all the friends and their id's
                 obj.put(Integer.toString(rs.getInt("friend_id")),rs.getString("user_name"));
             }
             obj.toString();
