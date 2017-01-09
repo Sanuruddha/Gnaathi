@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Diabetes</title>
-
+<link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/css_after_navigation.css">
 
 	<style type="text/css">

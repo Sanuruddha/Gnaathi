@@ -3,14 +3,14 @@
 <head>
 
 	<title>Video Gallery Home</title>
-
+<link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
    <link rel="stylesheet" href="css/css_vidgal_home.css">
 
 </head>
 
 <body>
 
- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
+    <span style="color: #636568;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

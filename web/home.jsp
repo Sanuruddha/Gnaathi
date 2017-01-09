@@ -175,12 +175,12 @@
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                     <div id="button-container">
                         <div id="image-gallery">
-                            <button type="button" class="btn btn-success">Images
+                            <button type="button" class="btn">Images
                                 <img src="img/image.png" alt="image">
                             </button>
                         </div>
                         <div onclick="loadVideo()" id="video-gallery">
-                            <button type="button" class="btn btn-success">Videos
+                            <button type="button" class="btn">Videos
                                 <img src="img/video.png" alt="video">
                             </button>
 
