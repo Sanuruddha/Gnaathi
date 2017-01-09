@@ -1,6 +1,5 @@
 <%@include  file="checklogin.jsp"%>
-<%    
-    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+<%    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
     response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
     response.setHeader("Expires", "0"); // Proxies.
 %>
@@ -61,7 +60,7 @@
                     <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
                     <img onclick="loadForum()" id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
                     <img onclick="loadBlog()" id="blog-button" src="img/home/websiteedit_0001_blog-cloud.png" alt="blog-button">
-                    
+
                 </div>
 
                 <img id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
@@ -81,7 +80,7 @@
 
                         }, true);
                     } else {
-                        
+
                     }
                     $(document).ready(function () {
                         var h = document.getElementById("table").height;
@@ -94,39 +93,102 @@
 
             <div>
                 <div id="right-container">
-                    <div id="projector-screen"></div>
+                    <div id="projector-screen">
+
+                    </div>
+                    <script src="http://www.youtube.com/player_api"></script>
+                    <script>
+
+                    // create youtube player
+                    var player;
+                    var srcs = ['https://www.youtube.com/embed/XVY4DeAvnfI?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1',
+                        , 'https://www.youtube.com/embed/ROcBUEVMPLU?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1'];
+                    var j;
+
+                    function onYouTubePlayerAPIReady() {
+                        player = new YT.Player('projector-screen', {
+                            height: '390',
+                            width: '640',
+                            videoId: 'XVY4DeAvnfI',
+                            events: {
+                                'onReady': onPlayerReady,
+                                'onStateChange': onPlayerStateChange
+                            }
+                        });
+                    }
+
+// autoplay video
+                    function onPlayerReady(event) {
+                        event.targetplayVideo();
+                    }
+
+                    // when video ends
+                    function onPlayerStateChange(event) {
+
+                        if (event.data === 0) {
+                            for (var i = 0; i < srcs.length; i++) {
+                                if (srcs[i] === $('#projector-screen').attr('src')) {
+                                    j = (i + 1) % (srcs.length);
+                                    $('#projector-screen').attr('src', srcs[j]);
+                                    event.target.playVideo();
+                                }
+                            }
+                        }
+                    }
+
+                    </script>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
+                    <div id="button-container">
+                        <div id="image-gallery">
+                            <button type="button" class="btn gal-btn">Images
+                                <img src="img/image.png" alt="image">
+                            </button>
+                        </div>
+                        <div onclick="loadVideo()" id="video-gallery">
+                            <button type="button" class="btn gal-btn">Videos
+                                <img src="img/video.png" alt="video">
+                            </button>
+
+                        </div>
+                    </div>
                 </div>
 
             </div>
-            
+
             <div id="chatbutton-container">
                 <img onclick="showChat()" id="chat-button" src="" alt="chat-button">
             </div>
             <div id="chat-box">
                 <%@include file="chatlist.jsp"%>
             </div>
-             <script>
-                    if (window.attachEvent) {
-                        window.attachEvent('onresize', function () {
+            <script>
+                if (window.attachEvent) {
+                    window.attachEvent('onresize', function () {
 
-                        });
-                    } else if (window.addEventListener) {
-                        window.addEventListener('resize', function () {
-                            var h = document.getElementById("table").height;
-                            $("#chatbutton-container").height(h);
-
-                        }, true);
-                    } else {
-                        
-                    }
-                    $(document).ready(function () {
-                        var h = document.getElementById("table").height;
-                            $("#chatbutton-container").height(h);
                     });
-                </script>
+                } else if (window.addEventListener) {
+                    window.addEventListener('resize', function () {
+                        var h = document.getElementById("table").height;
+                        $("#chatbutton-container").height(h);
+
+                    }, true);
+                } else {
+
+                }
+                $(document).ready(function () {
+                    var h = document.getElementById("table").height;
+                    $("#chatbutton-container").height(h);
+                });
+            </script>
+
+        </div>
+        <div id="donation-button" onclick="openDonationForm()">
+            &nbsp;&nbsp;&nbsp;&nbsp;Donate <br>
+            <img src="icons/donate.png" alt="donate">
             
         </div>
-
+            <div id="donationform-container">
+                <%@include file="donationform.html"%>
+            </div>
     </body>
 </html>

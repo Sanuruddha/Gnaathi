@@ -129,12 +129,8 @@
                     </div>
                     <script src="http://www.youtube.com/player_api"></script>
                     <script>
-                    ///
-
-
-
-
-// create youtube player
+                    
+            // create youtube player
                     var player;
                     var srcs = ['https://www.youtube.com/embed/XVY4DeAvnfI?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1',
                         ,'https://www.youtube.com/embed/ROcBUEVMPLU?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1'];
@@ -175,12 +171,12 @@
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                     <div id="button-container">
                         <div id="image-gallery">
-                            <button type="button" class="btn">Images
+                            <button type="button" class="btn gal-btn">Images
                                 <img src="img/image.png" alt="image">
                             </button>
                         </div>
                         <div onclick="loadVideo()" id="video-gallery">
-                            <button type="button" class="btn">Videos
+                            <button type="button" class="btn gal-btn">Videos
                                 <img src="img/video.png" alt="video">
                             </button>
 

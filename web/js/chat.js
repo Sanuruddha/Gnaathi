@@ -125,3 +125,6 @@ function closeUser() {
 
 }
 
+function closeChat(){
+    $("#chat-box").css("display","none");
+}

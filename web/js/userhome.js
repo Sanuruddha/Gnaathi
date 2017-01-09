@@ -42,6 +42,12 @@ function showChat() {
     }
 }
 
+function openDonationForm(){
+    document.getElementById("donNav").style.width = "100%";
+    return false;
+}
 
-
-
+function closeForm(){
+    document.getElementById("donNav").style.width = "0%";
+    return false;
+}

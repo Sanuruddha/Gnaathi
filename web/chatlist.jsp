@@ -5,8 +5,9 @@
                 <div class="portlet-title">
                     <h4><i class="fa fa-circle text-green"></i>Friend list</h4>
                 </div>
+                <div class="portlet-widgets" onclick="closeChat()" style="cursor: pointer">&#10006</div>
                 <div class="portlet-widgets">
-                    <div class="btn-group">
+                    <!--<div class="btn-group">
                         <button type="button" class="btn btn-white dropdown-toggle btn-xs" data-toggle="dropdown">
                             <i class="fa fa-circle text-green"></i> Status
                             <span class="caret"></span>
@@ -20,7 +21,7 @@
                             </li>
                         </ul>
 
-                    </div>
+                    </div>-->
                     <span class="divider"></span>
                     <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i class="fa fa-chevron-down"></i></a>
                 </div>
@@ -60,7 +61,9 @@
                 </div>
                 <div class="portlet-widgets" onclick="closeUser()" style="cursor: pointer">&#10006</div>
                 <div class="portlet-widgets">
+                    
                     <div class="btn-group">
+                        <!--
                         <i class="fa fa-circle text-green"></i> Status
                         <span class="caret"></span>
 
@@ -72,6 +75,7 @@
                             <li><a href="#"><i class="fa fa-circle text-red"></i> Offline</a>
                             </li>
                         </ul>
+                        -->
                         <input hidden="true" type="text" id="name_self" value="<%=session.getAttribute("user_name")%>">
                         <input hidden="true" type="text" id="id_self" value="<%=session.getAttribute("user_id")%>">
                     </div>

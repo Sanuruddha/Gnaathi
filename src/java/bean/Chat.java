@@ -133,7 +133,9 @@ public class Chat extends HttpServlet {
     synchronized public void initChat(PrintWriter out, int userId, int friendId) {
 
         List<Message> chatThread;
-        if (Chat.chatThreads.get(userId).get(friendId) != null) {
+        if(Chat.recievedMessages.get(friendId)==null)
+            out.println("<font style='color:grey;'>user offline..</font>");
+        else if (Chat.chatThreads.get(userId).get(friendId) != null) {
             chatThread = Chat.chatThreads.get(userId).get(friendId);
             //newList.sort((Message o1, Message o2) -> o1.getTimestamp().compareTo(o2.getTimestamp()));
             for (Message m : chatThread) {
@@ -150,6 +152,10 @@ public class Chat extends HttpServlet {
                 out.println(m.getMessage());
                 out.println("</p></div></div></div></div>");
             }
+        }
+        else{
+         
+            
         }
     }
 
