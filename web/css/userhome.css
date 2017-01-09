@@ -1,21 +1,28 @@
 
 
 #donation-button{
-    width:13%;
+    width:4%;
     left:10px;
     position: fixed;
     bottom:0;
 }
 
-#donation-button:hover{
+#acquire-button{
+    width:4%;
+    left:7%;
+    position: fixed;
+    bottom:0;
+}
+
+#donation-button:hover,#acquire-button:hover{
     opacity: 0.8;
     cursor: pointer;
 }
 
-#donation-button img{
+#donation-button img,#acquire-button img{
     
-    width: 35%;
-    height:35%;
+    width: 100%;
+    height:25%;
 }
 
 

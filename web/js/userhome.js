@@ -51,3 +51,16 @@ function closeForm(){
     document.getElementById("donNav").style.width = "0%";
     return false;
 }
+
+function openAcquisitionForm(){
+    document.getElementById("acqNav").style.width = "100%";
+    return false;
+}
+
+function closeAcqForm(){
+    document.getElementById("acqNav").style.width = "0%";
+    return false;
+}
+
+
+

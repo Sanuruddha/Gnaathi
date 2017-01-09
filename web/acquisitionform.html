@@ -95,17 +95,17 @@
         </style>
     </head>
     <body>
-        <div id = "donNav" class = "overlay"><!-- Button to close the overlay navigation -->
+        <div id = "acqNav" class = "overlay"><!-- Button to close the overlay navigation -->
             <!-- Overlay content -->
             <div id = "don-form" class = "overlay-content" >
-                <form id="donation-form" action="Donation" method="post" onsubmit="return validateMyForm();">
+                <form id="donation-form" action="Acquisition" method="post" onsubmit="return validateMyForm();">
 
-                    <a id="close-button" href = "javascript:void(0)" class = "closebtn" onclick = "closeForm()" >&times;</a>
+                    <a id="close-button" href = "javascript:void(0)" class = "closebtn" onclick = "closeAcqForm()" >&times;</a>
 
                     <div id="middle-section">
-                        <div id="form-conatiner"><form action="donationProcess" id="donation-form">
+                        <div id="form-conatiner"><form action="acquisitionProcess" id="donation-form">
                                 <input type="hidden" name="pageName" value="donation">
-                                <div>Select what want to donate:</div>
+                                <div>Select what want to acquire:</div>
                                 <select name="item"><option>Blood</option>
                                     <option value="0">Wheelchair</option>
                                     <option value="1">Crutches</option>

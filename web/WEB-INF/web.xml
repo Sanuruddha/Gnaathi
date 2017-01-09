@@ -20,6 +20,14 @@
         <servlet-name>Chat</servlet-name>
         <servlet-class>bean.Chat</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Donation</servlet-name>
+        <servlet-class>bean.Donation</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Acquisition</servlet-name>
+        <servlet-class>bean.Acquisition</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>chat</servlet-name>
         <url-pattern>/chat</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>Chat</servlet-name>
         <url-pattern>/Chat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Donation</servlet-name>
+        <url-pattern>/Donation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Acquisition</servlet-name>
+        <url-pattern>/Acquisition</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

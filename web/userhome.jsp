@@ -185,10 +185,18 @@
         <div id="donation-button" onclick="openDonationForm()">
             &nbsp;&nbsp;&nbsp;&nbsp;Donate <br>
             <img src="icons/donate.png" alt="donate">
-            
+
         </div>
-            <div id="donationform-container">
-                <%@include file="donationform.html"%>
-            </div>
+            <div id="acquire-button" onclick="openAcquisitionForm()">
+            &nbsp;&nbsp;&nbsp;&nbsp;Acquire <br>
+            <img src="icons/acquire.png" alt="donate">
+
+        </div>
+            <div id="acquisitionform-container">
+            <%@include file="acquisitionform.html"%>
+        </div>
+        <div id="donationform-container">
+            <%@include file="donationform.html"%>
+        </div>
     </body>
 </html>
