@@ -139,7 +139,7 @@
                     </script>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                     <div id="button-container">
-                        <div id="image-gallery">
+                        <div onclick="loadImage()" id="image-gallery">
                             <button type="button" class="btn gal-btn">Images
                                 <img src="img/image.png" alt="image">
                             </button>

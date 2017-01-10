@@ -18,6 +18,10 @@ function loadVideo(){
     location.href="gallery/index.jsp";
 }
 
+function loadVideo(){
+    location.href="image_gallery/index.jsp";
+}
+
 $(document).ready(function(){$( "#login" ).click(function() {
         document.getElementById("login-form").style.width = "100%";       
 });});

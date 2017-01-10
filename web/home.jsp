@@ -85,9 +85,16 @@
         <%}
             }%>
         <div id="body">
-            <div id="left-container">
-                <div id="tv-screen"></div>
-                <img src="img/home/home_0004_Layer-7.png" alt="tv">
+            <div style="" id="left-container">
+                <img style="height:55vh;" src="img/home/home_0004_Layer-7.png" alt="tv">
+                <a id="adlink" href="http://www.sgu-edu.com/intl-in-sl-fb/">
+                    <div id="tv-screen">
+                        <img  style="width:92%;" id="adimg" src="ads/images/ad1.png">
+                        
+                    </div>
+                    <div style="height:9vh;background-color: #e6edf8;position: absolute;top:31vh;width: 82%;left:8%;"><p id="adcontent"><a>sgu-edu.com </a>Click here to secure your place</p></div>
+                </a>
+                
             </div>
 
 
@@ -125,15 +132,15 @@
             <div>
                 <div id="right-container">
                     <div id="projector-screen">
-                        
+
                     </div>
                     <script src="http://www.youtube.com/player_api"></script>
                     <script>
-                    
-            // create youtube player
+
+                    // create youtube player
                     var player;
                     var srcs = ['https://www.youtube.com/embed/XVY4DeAvnfI?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1',
-                        ,'https://www.youtube.com/embed/ROcBUEVMPLU?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1'];
+                        , 'https://www.youtube.com/embed/ROcBUEVMPLU?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1'];
                     var j;
 
                     function onYouTubePlayerAPIReady() {
@@ -150,12 +157,12 @@
 
 // autoplay video
                     function onPlayerReady(event) {
-                        event.target.playVideo();
+                        event.target.pplayVideo();
                     }
 
                     // when video ends
                     function onPlayerStateChange(event) {
-                     
+
                         if (event.data === 0) {
                             for (var i = 0; i < srcs.length; i++) {
                                 if (srcs[i] === $('#projector-screen').attr('src')) {
@@ -170,7 +177,7 @@
                     </script>
                     <img src="img/home/home_0005_Layer-6.png" alt="screen">
                     <div id="button-container">
-                        <div id="image-gallery">
+                        <div onclick="loadImage()" id="image-gallery">
                             <button type="button" class="btn gal-btn">Images
                                 <img src="img/image.png" alt="image">
                             </button>

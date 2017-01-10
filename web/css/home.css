@@ -166,9 +166,9 @@ header{
 #tv-screen{
     position: absolute;
     width:90%;
-    height:56%;
-    left:13px;
-    top:30px;
+    height:40%;
+    left:12px;
+    top:25px;
 }
 
 #middle-container{
