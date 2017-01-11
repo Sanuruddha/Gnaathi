@@ -68,8 +68,8 @@
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="img/home/home_0008_Layer-1.png" alt="logo"></a>
-                
-                
+
+
                 <div id="door-container">
                     <img id='login' src="img/home/websiteedit_0000_settings.png" alt="login">
                     <a id='door' href="index.html"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
@@ -80,12 +80,22 @@
         <%if (session.getAttribute("invalidlogin") != null) {
                 if (session.getAttribute("invalidlogin").equals("TRUE")) {
         %>
-        <script>$(".error").css("display", "block");</script>
+        <script>$("#login-error").css("display", "block");</script>
         <%}
             }%>
             
-            <%@include file="success.html"%>
-            <%if (request.getParameter("registersuccess")!=null) {
+        <%@include file="emailerror.html"%>
+        <%if (request.getParameter("duplicateemail") != null) {
+                if (request.getParameter("duplicateemail").equals("true")) {
+        %>
+        <script>$("#email-error").css("display", "block");</script>
+        <%}
+            }%>    
+            
+            
+
+        <%@include file="success.html"%>
+        <%if (request.getParameter("registersuccess") != null) {
                 if (request.getParameter("registersuccess").equals("true")) {
         %>
         <script>$(".success").css("display", "block");</script>
@@ -97,11 +107,11 @@
                 <a id="alink" href="http://www.sgu-edu.com/intl-in-sl-fb/">
                     <div id="tv-screen">
                         <img  style="width:92%;" id="aimg" src="as/images/a1.png">
-                        
+
                     </div>
                     <div style="height:9vh;background-color: #e6edf8;position: absolute;top:31vh;width: 82%;left:8%;"><p id="acontent"><a>sgu-edu.com </a>Click here to secure your place</p></div>
                 </a>
-                
+
             </div>
 
 

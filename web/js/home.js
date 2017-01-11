@@ -1,6 +1,4 @@
-function loadImage() {
-    location.href = "image_gallery/index.html";
-}
+
 
 function processSelect(val) {
 
@@ -95,6 +93,10 @@ function loadBlog() {
 
 function loadVideo() {
     location.href = "gallery/index.jsp";
+}
+
+function loadImage() {
+    location.href = "image_gallery/index.html";
 }
 
 $(document).ready(function () {
