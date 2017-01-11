@@ -1,107 +1,65 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@include  file="checklogin.jsp"%>
+<%    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    response.setHeader("Expires", "0"); // Proxies.
+%>
 <html>
     <head>
         <title>Gnaathi</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/chatbox.css">
+        <link rel="stylesheet" href="css/userhome.css">
         <link rel="stylesheet" href="css/home.css">
-        <link rel="stylesheet" href="css/registerform.css">
-        <link rel="stylesheet" href="css/error.css">
+        <link href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
         <script  type="text/javascript" src="js/home.js"></script>
-
+        <script  type="text/javascript" src="js/userhome.js"></script>
+        <script  type="text/javascript" src="js/chat.js"></script>
     </head>
+
     <body>
+        <div id="loginform-container">
+            <form action="loginprocess.jsp" method="post">
+                <table style="margin: auto">
+                    <tr><td>Email:</td>
+                        <td><input type="text" name="email" placeholder="Email"></td>                      
+                    </tr>
+                    <tr><td>Password:</td>
+                        <td><input type="password" name="password" placeholder="Password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" name="submit" value="Login"  style="width: 100px"></td>
+                    </tr>
+                </table>
 
-        <div id="registerform-container">
-            <%@include file="registerform.html"%>
+            </form>
         </div>
-        <%
-            if (request.getParameter("registersuccess") != null)
-                if (request.getParameter("registersuccess").equals("false")) {
-        %>
-        <script>
-            $("#myNav").width("100%");
-        </script>
-        <%}%>
-
-        <div id="login-form" class="overlay">
-            <div class = "overlay-content" id="loginform-container">
-                <form action="loginprocess.jsp" method="post">
-                    <table style="margin: auto">
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td><a id="login-close" href = "javascript:void(0)" class = "closebtn" onclick = "closeLogin()" >&times;</a></td>
-                        </tr>
-                        <tr><td>Email:</td>
-                            <td><input type="text" name="email" placeholder="Email"></td>                      
-                        </tr>
-                        <tr><td>Password:</td>
-                            <td><input type="password" name="password" placeholder="Password"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <input type="submit" name="submit" value="Login"  style="width: 100px"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"> 
-                                <a onclick="openNav()" style="color: #003399">Create account</a>
-                            </td>
-                        </tr>
-                    </table>
-
-                </form>
-            </div>
-        </div>
-        <%
-            if (request.getParameter("loginpage") != null)
-                if (request.getParameter("loginpage").equals("true")) {
-        %>
-        <script>
-            $("#login-form").width("100%");
-        </script>
-        <%}%>
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="img/home/home_0008_Layer-1.png" alt="logo"></a>
-                
-                
-                <div id="door-container">
-                    <img id='login' src="img/home/websiteedit_0000_settings.png" alt="login">
-                    <a id='door' href="index.html"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
+                <div id="prof-icon"><img id='picture' src="img/home/home_0007_Layer-3.png" alt="picture">
+                <img onclick="loadProfile()" id="avatar" style="z-index: 6;height:auto;width:4%;position: absolute;top:17%;right:16.5%;" src="icons/glasses.svg" alt="avatar">
                 </div>
+                <img onclick="showNotifications()" id='clock' src="img/edit/home_0000_calender.png" alt="clock">
+                <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
+
             </div>
         </header>
-        <%@include file="error.html"%>
-        <%if (session.getAttribute("invalidlogin") != null) {
-                if (session.getAttribute("invalidlogin").equals("TRUE")) {
-        %>
-        <script>$(".error").css("display", "block");</script>
-        <%}
-            }%>
-            
-            <%@include file="success.html"%>
-            <%if (request.getParameter("registersuccess")!=null) {
-                if (request.getParameter("registersuccess").equals("true")) {
-        %>
-        <script>$(".success").css("display", "block");</script>
-        <%}
-            }%>
         <div id="body">
             <div style="" id="left-container">
                 <img style="height:55vh;" src="img/home/home_0004_Layer-7.png" alt="tv">
                 <a id="alink" href="http://www.sgu-edu.com/intl-in-sl-fb/">
                     <div id="tv-screen">
                         <img  style="width:92%;" id="aimg" src="as/images/a1.png">
-                        
+
                     </div>
-                    <div style="height:9vh;background-color: #e6edf8;position: absolute;top:31vh;width: 82%;left:8%;"><p id="acontent"><a>sgu-edu.com </a>Click here to secure your place</p></div>
-                </a>
-                
+                    <div style="height:9vh;background-color: #e6edf8;position: absolute;top:31vh;width: 82%;left:8%;"><p id="acontent"><font style="text-decoration: underline">sgu-edu.com </font>Click here to secure your place</p></div>
+                </a> 
             </div>
 
 
@@ -110,9 +68,10 @@
                     <img onclick="loadWiki()" id="wiki-button" src="img/home/websiteedit_0002_wiki-cloud.png" alt="wiki-button">
                     <img onclick="loadForum()" id="forum-button" src="img/home/websiteedit_0000_forum-cloud.png" alt="forum-button">
                     <img onclick="loadBlog()" id="blog-button" src="img/home/websiteedit_0001_blog-cloud.png" alt="blog-button">
+
                 </div>
 
-                <img onclick="" id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
+                <img id='table' src="img/home/websiteedit_0003_Layer-13.png" alt="table">
                 <script>
                     if (window.attachEvent) {
                         window.attachEvent('onresize', function () {
@@ -121,15 +80,19 @@
                     } else if (window.addEventListener) {
                         window.addEventListener('resize', function () {
                             var h = document.getElementById("table").height;
+
                             var mc = document.getElementById("middle-container").clientHeight;
                             $("#cloud-container").height(mc - h);
+
                             var cc = document.getElementById("cloud-container").clientHeight;
+
                         }, true);
                     } else {
-                        //The browser does not support Javascript event binding
+
                     }
                     $(document).ready(function () {
                         var h = document.getElementById("table").height;
+
                         var mc = document.getElementById("middle-container").clientHeight;
                         $("#cloud-container").height(mc - h);
                     });
@@ -164,7 +127,7 @@
 
 // autoplay video
                     function onPlayerReady(event) {
-                        event.target.pplayVideo();
+                        event.targetplayVideo();
                     }
 
                     // when video ends
@@ -197,9 +160,72 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
+            </div>
+
+            <div id="chatbutton-container">
+                <img onclick="showChat()" id="chat-button" src="" alt="chat-button">
+            </div>
+            <div id="chat-box">
+                <%@include file="chatlist.jsp"%>
+            </div>
+            <script>
+                if (window.attachEvent) {
+                    window.attachEvent('onresize', function () {
+
+                    });
+                } else if (window.addEventListener) {
+                    window.addEventListener('resize', function () {
+                        var h = document.getElementById("table").height;
+                        $("#chatbutton-container").height(h);
+
+                    }, true);
+                } else {
+
+                }
+                $(document).ready(function () {
+                    var h = document.getElementById("table").height;
+                    $("#chatbutton-container").height(h);
+                });
+            </script>
+
+        </div>
+        <div id="donation-button" onclick="openDonationForm()">
+            &nbsp;&nbsp;&nbsp;&nbsp;Donate <br>
+            <img src="icons/donate.png" alt="donate">
+
+        </div>
+        <div id="acquire-button" onclick="openAcquisitionForm()">
+            &nbsp;&nbsp;&nbsp;&nbsp;Acquire <br>
+            <img src="icons/acquire.png" alt="donate">
+
+        </div>
+        <div id="events-button" onclick="openEventManager()">
+            &nbsp;&nbsp;&nbsp;&nbsp;Events <br>
+            <img src="icons/event.png" alt="donate">
+
+        </div>
+        <div id="eventform-container">
+            <%@include file="eventform.html"%>
+        </div>
+        <script>
+            function openEventManager() {
+                document.getElementById("eventNav").style.width = "100%";
+                return false;
+
+            }
+            function closeEventForm() {
+                document.getElementById("eventNav").style.width = "0%";
+                return false;
+            }
+        </script>
+
+        <div id="acquisitionform-container">
+            <%@include file="acquisitionform.html"%>
+        </div>
+        <div id="donationform-container">
+            <%@include file="donationform.html"%>
+        </div>
     </body>
 </html>
 

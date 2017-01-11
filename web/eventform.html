@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <style>
+            #eve-form{
+                top:10%;
+                border-radius: 10px;
+                margin:auto;
+                width:400px;
+                height:450px;
+                background-color: #6ca7b8;
+            }
+
+            #event-form  a:hover{
+                cursor: pointer;   
+            }
+
+
+            #login-close{
+                top: 0;
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                color: white;
+                display: block;
+                transition: 0.3s;    
+            }
+
+
+            #event-form {
+                text-align: center;
+                margin-top: 30px;
+                width: 100%;
+                height: 60%; 
+            }
+
+            #event-form *{
+                padding: 2px;
+                margin: 4px;
+            }
+            .overlay {
+                /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+                height: 100%;
+                width: 0;
+                position: fixed; /* Stay in place */
+                z-index: 10; /* Sit on top */
+                left: 0;
+                top: 0;
+                background-color: transparent;/* Black w/opacity */
+
+                overflow-x: hidden; /* Disable horizontal scroll */
+                transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+            }
+
+            /* Position the content inside the overlay */
+            .overlay-content {
+                position: relative;
+                top: 20%; /* 25% from the top */
+                width: 100%; /* 100% width */
+
+                margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+            }
+
+            /* The navigation links inside the overlay */
+            #close-button {
+                margin-left:80%;
+                top:0;
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                color: white;
+                display: block; /* Display block instead of inline */
+                transition: 0.3s; /* Transition effects on hover (color) */
+            }
+
+            /* When you mouse over the navigation links, change their color */
+            #close-button:hover, #close-button:focus {
+                color: #e3e3e3;
+            }
+
+            /* Position the close button (top right corner) */
+            .overlay .closebtn {
+                z-index: 5;
+                position: absolute;
+                font-size: 60px;
+            }
+
+            /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+            @media screen and (max-height: 450px) {
+                .overlay a {font-size: 20px}
+                .overlay .closebtn {
+                    font-size: 40px;
+                    top: 15px;
+                    right: 35px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "eventNav" class = "overlay"><!-- Button to close the overlay navigation -->
+            <!-- Overlay content -->
+            <div id = "eve-form" class = "overlay-content" >
+                <form id="event-form" action="Acquisition" method="post" onsubmit="return validateMyForm();">
+
+                    <a id="close-button" href = "javascript:void(0)" class = "closebtn" onclick = "closeEventForm()" >&times;</a>
+
+                    <div id="middle-section">
+                        <div id="form-conatiner"><form action="acquisitionProcess" id="donation-form">
+                                <input type="hidden" name="pageName" value="donation">
+                                <div>Fill in details to start an event:</div>
+                                <select name="item"><option>Type</option>
+                                    <option value="0">Relegious activity</option>
+                                    <option value="1">Blood donation</option>
+                                    <option value="2">Pilgrimage</option>
+                                    <option value="3">Get together</option>
+                                </select>
+                                <div>Elderly society registration number:</div>
+                                <input name="contact-number" type="text"/>
+                                <div>Elderly society name:</div>
+                                <input name="name" type="text"/>
+                                <div>Contact number:</div>
+                                <input name="area" type="text"/>
+                                <div>Select Area:</div>
+                                <select>
+                                    <option>Colombo</option>
+                                    <option>Gampaha</option>
+                                    <option>Galle</option>
+                                    <option>Matara</option>
+                                    <option>Kurunegala</option>
+                                </select><br>
+                                <div>Date and time:</div>
+                                <input style="width:100px;" type="date"/>
+                                <input style="width:50px;" type="time"/>
+                                <select><option value="am">am</option>
+                                    <option value="pm">pm</option></select>
+                                <br>
+                                <input type="submit" value="Create event">
+                            </form> 
+                        </div>
+                    </div>
+                    </table>
+
+                </form>
+            </div>
+
+        </div>
+
+    </body>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+                        $(function () {
+                            // Find any date inputs and override their functionality
+                            $('input[type="date"]').datepicker();
+                        });
+
+
+
+
+
+    </script>
+
+
+
+
+</html>
+

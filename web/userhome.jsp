@@ -21,7 +21,7 @@
     </head>
 
     <body>
-        <div id="loginform-container">
+        <!--<div id="loginform-container">
             <form action="loginprocess.jsp" method="post">
                 <table style="margin: auto">
                     <tr><td>Email:</td>
@@ -37,21 +37,29 @@
                 </table>
 
             </form>
-        </div>
+        </div>-->
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="img/home/home_0008_Layer-1.png" alt="logo"></a>
-                <img id='picture' src="img/home/home_0007_Layer-3.png" alt="picture">
-                <img id='clock' src="img/edit/websiteedit_0001_clock.png" alt="clock">
+                <div id="prof-icon"><img id='picture' src="img/home/home_0007_Layer-3.png" alt="picture">
+                <img onclick="loadProfile()" id="avatar" style="z-index: 6;height:auto;width:4%;position: absolute;top:17%;right:16.5%;" src="icons/glasses.svg" alt="avatar">
+                </div>
+                <img onclick="showNotifications()" id='clock' src="img/edit/home_0000_calender.png" alt="clock">
                 <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
 
             </div>
         </header>
         <div id="body">
-            <div id="left-container">
-                <div id="tv-screen"></div>
-                <img src="img/home/home_0004_Layer-7.png" alt="tv">
+            <div style="" id="left-container">
+                <img style="height:55vh;" src="img/home/home_0004_Layer-7.png" alt="tv">
+                <a id="alink" href="http://www.sgu-edu.com/intl-in-sl-fb/">
+                    <div id="tv-screen">
+                        <img  style="width:92%;" id="aimg" src="as/images/a1.png">
+                       
+                    </div>
+                    <div style="height:9vh;background-color: #e6edf8;position: absolute;top:31vh;width: 82%;left:8%;"><p id="acontent"><font style="text-decoration: underline">sgu-edu.com </font>Click here to secure your place</p></div>
+                </a> 
             </div>
 
 
@@ -156,7 +164,7 @@
             </div>
 
             <div id="chatbutton-container">
-                <img onclick="showChat()" id="chat-button" src="" alt="chat-button">
+                <img onclick="showChat()" id="chat-button" src="img/home/websiteedit_0000_chat-cloud.png" alt="chat-button">
             </div>
             <div id="chat-box">
                 <%@include file="chatlist.jsp"%>

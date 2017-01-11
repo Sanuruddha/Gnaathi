@@ -16,6 +16,12 @@
         } else if (session.getAttribute("user_type").equals(1)) {
             response.sendRedirect("userhome.jsp");
         }
+        else if(session.getAttribute("user_type").equals(2)){
+            response.sendRedirect("researcherhome.jsp");
+        }
+        else if(session.getAttribute("user_type").equals(3)){
+            response.sendRedirect("elderlyhome.jsp");
+        }
        
     } else {
         session.setAttribute("invalidlogin", "TRUE");

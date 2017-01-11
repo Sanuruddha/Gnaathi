@@ -10,7 +10,7 @@
     
     boolean status = RegisterDao.register(obj2);
     if (status) {
-        response.sendRedirect("home.jsp?loginpage=true");
+        response.sendRedirect("home.jsp?loginpage=true&registersuccess=true");
     } else {
         response.sendRedirect("home.jsp?registersuccess=false");
     }

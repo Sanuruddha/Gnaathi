@@ -35,12 +35,17 @@
     height: 40px;
 }
 
-#register-label1,#register-label2,#register-label3,#register-label4,#register-label5,#additional-label div{
+#register-label1,#register-label2,#register-label3,#register-label4,#register-label5{
     margin:3px;
     color:#f2f2f2;
     width:120px;
 }
 
+#register-label6{
+    margin:3px;
+    color:#f2f2f2;
+    width:120px;
+}
 
 #email-field,#name-field,#password-field,#repassword-field,#additional-input input{
     margin:3px;

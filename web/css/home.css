@@ -80,33 +80,40 @@ header{
 
 #clock{
     height:auto;
-    width:4%;
+    width:6%;
     right:24%;
     top:7%;
     position: absolute;
     z-index: 1;
 }
 
+#clock:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
 
 #picture{
     position: absolute;
     height:auto;
-    width:6%;
+    width:7%;
     right:15%;
     top:9%;
+    z-index: 5;
 }
 
-#picture:hover{
+
+#avatar:hover{
     cursor: pointer;
     opacity: 0.85;
 }
 
 #login{
     position: absolute;
-    right:7%;
+    right:8%;
     bottom:10%;
     height:auto;
-    width: 2.5%;
+    width: 3.5%;
 }
 
 #login:hover{
@@ -126,7 +133,7 @@ header{
 
 #door img{
     height:auto;
-    width:4%;
+    width:4.75%;
     position: absolute;
     right:2%;
     bottom:0;

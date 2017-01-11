@@ -19,29 +19,22 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Donation extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             Connection con=ConnectionProvider.getCon();
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Donation</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Donation at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String item,area,contact,id,btype;
+            boolean blood=false;
+            item=request.getParameter("item");
+            if(item.equals("4")){
+                btype=request.getParameter("btype");
+                blood=true;
+            }
+            contact=request.getParameter("contact-number");
+            area=request.getParameter("area");
+            //String query="insert into "
+            //PreparedStatement ps=con.prepareStatement(id);
         }
     }
 

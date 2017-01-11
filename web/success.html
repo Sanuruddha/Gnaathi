@@ -1,0 +1,37 @@
+<style>
+    .success {
+        color: #1da31d;
+        background-color: #99e299;
+    background-image: url('../icons/buggalo-error.png');
+    background-size: 35px 35px;
+}
+.info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.closebtn:hover {
+    color: green;
+}
+
+    
+</style>
+
+<div class="success" style="display:none"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;
+    </span>Successfully registered!
+</div>
