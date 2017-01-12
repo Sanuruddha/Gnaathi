@@ -37,11 +37,11 @@
     position: absolute;
     z-index: 5;
     top:50%;
-    left:10%;
+    left:100%;
     width:60%;
     
    
-    
+   
 }
 #chat-button:hover{
     cursor:pointer;
@@ -52,7 +52,7 @@
     bottom:0;
     position:absolute;
     width:20%;
-    left:68%;
+    left:50%;
 }
 
 #chat-box{
