@@ -38,10 +38,7 @@
     z-index: 5;
     top:50%;
     left:100%;
-    width:60%;
-    
-   
-   
+    width:60%;   
 }
 #chat-button:hover{
     cursor:pointer;
