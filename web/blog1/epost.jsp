@@ -53,20 +53,7 @@
                         <input style="font-size:20px;" size="55" type="text"  name="title" value="<%=rs.getString("title")%>"/>
                       <br/><br/>
                         <label style="font-size:20px;" for="body">Body:</label>
-                        <br />
-
-                        
-                        <script src="nicEdit.js" type="text/javascript"></script>
-                        <script type="text/javascript"> 
-                            bkLib.onDomLoaded(function() {
-	
-                                new nicEditor({fullPanel : true}).panelInstance('area2');
-	
-                                                          });
-                        </script>
-
-                            <textarea name="body" cols=85 rows=20 id="area2"><%=rs.getString("body")%></textarea>
-                        
+                        <textarea style="font-size:20px;" name="body"  cols=55 rows=14 ><%=rs.getString("body")%></textarea>
                         <br/><br/>
                         <label style="font-size:20px;">Category :</label><select name="category" >
                          <option selected style="font-size:17px;"> <%=rs.getString("category")%></option>

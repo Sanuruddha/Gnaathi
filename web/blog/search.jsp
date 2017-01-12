@@ -1,56 +1,18 @@
 <%-- 
-    Document   : catpost
-    Created on : Nov 26, 2016, 8:49:05 AM
+    Document   : search
+    Created on : Jan 11, 2017, 6:40:46 AM
     Author     : Geeth
 --%>
 
-<%@page import="java.sql.ResultSet"%>
 <%@page import="com.geeth.DB"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<%
- //get record of database
-String record_count="SELECT * FROM posts";
-//amount displayed
-int per_page= 2;
-//number of pages
-int count = 0;
-//get number of rows
-Connection cont = DB.getCon();
-Statement stm = cont.createStatement();
-ResultSet s = stm.executeQuery(record_count);
-while (s.next()) {
-    ++count;
-    // Get data from the current row and use it
-}
-//get  number of pages
-int pages=count/per_page;
-int pagen;
-int start=0;
-
-if( request.getParameter("p")!=null){
-     pagen=Integer.parseInt(request.getParameter("p"));
-}
-else{
-    pagen=1;
-}
-if(pagen<=0){
- start=0;}
-else{
-    start=pagen*per_page-per_page;
-    
-}
-int next=pagen+1;
-int prev =pagen-1;
-
-
-
-%>
 <!DOCTYPE html>
-<html>
-    <head>
+
+   <head>
+        <head>
        <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,10 +34,45 @@ int prev =pagen-1;
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     </head>
- 
-    <body>               
-                           
-    <!-- Page Content -->
+    </head>
+    <style>
+        #post{
+        
+        border: 3px solid black;
+        margin-top: 50px;
+        margin-right: 200px;
+        margin-left: 380px;
+        padding: 30px 30px 50px 30px;
+        }
+        #new-post{
+        
+        border: 3px solid black;
+        position: absolute;
+        top: 50px;
+        left: 27px;
+        padding: 30px 30px 50px 30px;
+        width :230px ;
+        height:600px;
+        }
+         a.c1:link, a.c1:visited {
+        background-color:rgb(255, 95, 0);
+        color: white;
+        padding: 14px 25px;
+        text-align: center; 
+        text-decoration: none;
+        display: inline-block;
+        }
+
+        a.c1:hover, a.c1:active {
+        background-color: rgb(255, 190, 0);
+        }
+    
+    </style>
+    <body>
+   
+
+
+ <!-- Page Content -->
     <div class="container">
 
         <div class="row">
@@ -85,15 +82,18 @@ int prev =pagen-1;
 
                     <br/></br>
                 <p><%//out.println(pages);%></p>
-                        <%
-                            String v =request.getParameter("category");
-                            String sql = "SELECT post_id,user_id,user_name,title,LEFT(body,300) AS body ,category,posted FROM posts where category= "+v;
+                         <%
+                           
+                            String word = request.getParameter("search");
+                            
+                            String sql = "SELECT post_id,user_id,user_name,title,LEFT(body,300) AS body ,category,posted FROM posts WHERE title like  '%"+word+"%' ";
                             Connection con = DB.getCon();
                             Statement stmt = con.createStatement();
                             ResultSet rs = stmt.executeQuery(sql);
                             while (rs.next()) {
                                 int id=rs.getInt("post_id");
                                 
+
                         %>
                         
                         
@@ -105,12 +105,12 @@ int prev =pagen-1;
                              </p>
                             <p style="font-size:20px;"><span class="glyphicon glyphicon-time"></span> Posted on <%=rs.getString("posted")%></p>
                             <p style="font-size:20px;">Category : <%=rs.getString("category")%></p> 
-                            <!--
+                           
                             <hr>
                             <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                              <hr>
                             
-                            <p style="font-size:20px;">//rs.getString("body")%></p>-->
+                            <p style="font-size:20px;"><%=rs.getString("body")%></p>
                             
                           <th style="width: 90%"><a class="btn btn-primary" href="post.jsp?post_id=<%=id%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a></th>
                           
@@ -234,8 +234,5 @@ int prev =pagen-1;
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-                           
-                           
-                           
     </body>
-</html>
+</html>                 

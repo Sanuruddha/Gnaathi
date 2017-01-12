@@ -8,10 +8,16 @@ package bean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -20,21 +26,45 @@ import javax.servlet.http.HttpServletResponse;
 public class Donation extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             Connection con=ConnectionProvider.getCon();
-            String item,area,contact,id,btype;
+            String item,contact,id,btype;
+            int quantity,area,itemId;
+            
+            quantity=0;
             boolean blood=false;
-            item=request.getParameter("item");
-            if(item.equals("4")){
+            itemId=Integer.parseInt(request.getParameter("item"));
+            if(itemId!=4){
+                quantity=Integer.parseInt(request.getParameter("quantity"));
+            }
+            btype="";
+            if(itemId==4){
                 btype=request.getParameter("btype");
                 blood=true;
             }
-            contact=request.getParameter("contact-number");
-            area=request.getParameter("area");
-            //String query="insert into "
-            //PreparedStatement ps=con.prepareStatement(id);
+            area=Integer.parseInt(request.getParameter("area"));
+            id=request.getParameter("nic");
+            contact=request.getParameter("contact");
+            String query="insert into donors values (?,?,?,?)";
+            PreparedStatement ps=con.prepareStatement(query);
+            HttpSession session=request.getSession();
+            ps.setInt(1,(int)session.getAttribute("user_id"));
+            ps.setString(2,id);
+            ps.setInt(3,area);
+            ps.setString(4,contact);
+            ResultSet rs=ps.executeQuery();
+            if(!rs.next()){
+                System.out.println("insertion unsuccessful");
+            }
+            
+            query="insert into donation values (?,?,?,?)";
+            PreparedStatement ps1=con.prepareStatement(query);
+            ps.setInt(1,(int)session.getAttribute("user_id"));
+            ps.setInt(2,itemId);
+            ps.setInt(3,quantity);
+            ps.setString(4,btype);
         }
     }
 
@@ -50,7 +80,11 @@ public class Donation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Donation.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -64,7 +98,11 @@ public class Donation extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Donation.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

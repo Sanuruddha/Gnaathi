@@ -1,12 +1,3 @@
-var friends = [];
-var self = {};
-var chats={};
-
-$(document).ready(function () {
-    self['1'] = document.getElementById("name_self").value;
-    self['id'] = document.getElementById("id_self").value;
-});
-
 
 //chat open function
 //this will send a post request to the frienlist servlet where it will initialize the necessory data structures and 
