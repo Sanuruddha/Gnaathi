@@ -19,8 +19,8 @@
         <style type="text/css">
 
             body{
-                padding: 10;
-                margin: 10;
+                padding: 0;
+                margin: 0;
             }
             .menu{
                 display: inline-block;
@@ -86,7 +86,7 @@
     <body>
 
         <div>
-            
+
             <div class="menu">
                 <ul>
                     <li><a href="#">Cancer</a></li>

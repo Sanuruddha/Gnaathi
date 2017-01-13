@@ -5,26 +5,10 @@
 	<title>Video Gallery Home</title>
 <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
    <link rel="stylesheet" href="css/css_vidgal_home.css">
-    <link rel="stylesheet" href="css/gallery_header.css">
 
 </head>
 
 <body>
-    
-    
-    <header>
-            <div id='header'>
-                <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
-                <a href="../home.jsp"><img id='logo' src="img/edit/websiteedit_0008_logo.png" alt="logo"></a>
-                <img id='picture' src="img/edit/websiteedit_0006_picture.png" alt="picture">
-                <img id='login' src="img/edit/websiteedit_0000_settings_1.png" alt="login">
-                
-                <a href="../logout.jsp"><div id='door'><img src="img/edit/home_0006_Layer-4_1.png" alt="door"></div></a>
-                
-
-            </div>
-        </header>
-        
 
     <span style="color: #636568;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
 

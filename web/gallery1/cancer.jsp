@@ -2,23 +2,21 @@
 <html>
     <head>
         <title>Cancer</title>
-        
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/css_after_navigation.css">
         <link rel="stylesheet" href="css/css_vidgal_home.css">
-        
         <style type="text/css">
 
             body{
                 font-family: "Lato", sans-serif;
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-color: lightsteelblue;
+                background-image: url(https://health.desiforce.com/wp-content/uploads/sites/7/2016/02/Breast-Cancer-shutterstock_153061814.jpg);
             }
 
 
             .video {
-                background: thistle;
+                background: lightpink;
                 padding-bottom: 10px;
                 box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
                 width: 18%; /* Thumbnails 5 across */
@@ -27,7 +25,6 @@
                 float: left;
                 border-color: black;
                 border-width: 5px;
-                border-radius: 15px;
             }
 
         </style>
@@ -35,11 +32,10 @@
     </head>
     <body>
 
-        <span style="color: #636568; font-size:30px; cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
+        <span style="color: #636568;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="index.jsp">Video Gallery Home</a>
             <a href="cancer.jsp">Cancer</a>
             <a href="diabetes.jsp">Diabetes</a>
             <a href="std.jsp">STDs</a>
@@ -50,8 +46,6 @@
             <a href="religious.jsp">Religious</a>
             <a href="entertainment.jsp">Entertainment</a>
         </div>
-        
-        <br><br>
 
 
         <div class="head">

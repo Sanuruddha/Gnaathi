@@ -2,10 +2,8 @@
 <html>
 <head>
 	<title>Dengue</title>
-        
-        <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
 	<link rel="stylesheet" href="css/css_after_navigation.css">
-        <link rel="stylesheet" href="css/css_vidgal_home.css">
 
   <style type="text/css">
 
@@ -13,7 +11,7 @@
     font-family: "Lato", sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: lightsteelblue;
+    background-image: url(https://www.freevector.com/uploads/vector/preview/8844/FreeVector-Peaceful-Blue-Light.jpg);
   }
 
 
@@ -27,7 +25,6 @@
     float: left;
     border-color: black;
     border-width: 5px;
-    border-radius: 15px;
     }
 
   </style>
@@ -35,23 +32,7 @@
 </head>
 <body>
 
- <span style="color: #636568;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
 
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="index.jsp">Video Gallery Home</a>
-            <a href="cancer.jsp">Cancer</a>
-            <a href="diabetes.jsp">Diabetes</a>
-            <a href="std.jsp">STDs</a>
-            <a href="kidney_dis.jsp">Kidney Diseases</a>
-            <a href="dengue.jsp">Dengue</a>
-            <a href="how_to.jsp">How to</a>
-            <a href="firstaid.jsp">Tips and First Aid</a>
-            <a href="religious.jsp">Religious</a>
-            <a href="entertainment.jsp">Entertainment</a>
-        </div>
-        
-        <br><br>
 
 
 <div class="head">
@@ -106,18 +87,6 @@ try sleeping with a mosquito.</h1>
   </script>
 
  </footer>
-        
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
-            }
-        </script>
 
 
 
