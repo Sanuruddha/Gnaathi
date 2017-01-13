@@ -11,7 +11,11 @@ public class Validator {
     
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX
             = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-
+    public static final Pattern VALID_NIC_REGEX
+            = Pattern.compile("^([0-9]{9})(X|V)$", Pattern.CASE_INSENSITIVE);
+    public static final Pattern VALID_MOBILE_REGEX
+            = Pattern.compile("^(07)([0-9]{8})$", Pattern.CASE_INSENSITIVE);
+    
     public static boolean validateEmail(String emailStr) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
         return matcher.find();
@@ -44,5 +48,14 @@ public class Validator {
        ps.setString(1,email);
        ResultSet rs=ps.executeQuery();
        return rs.next();
+    }
+    
+    public static boolean validateNIC(String nic){
+        Matcher matcher = VALID_NIC_REGEX.matcher(nic);
+        return matcher.find();
+    }
+    public static boolean validateMobile(String num){
+        Matcher matcher = VALID_MOBILE_REGEX.matcher(num);
+        return matcher.find();
     }
 }

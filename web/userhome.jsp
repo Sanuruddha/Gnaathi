@@ -18,45 +18,58 @@
         <script  type="text/javascript" src="js/home.js"></script>
         <script  type="text/javascript" src="js/userhome.js"></script>
         <script  type="text/javascript" src="js/chat.js"></script>
+        <style>
+
+        </style>
     </head>
 
     <body>
-        <!--<div id="loginform-container">
-            <form action="loginprocess.jsp" method="post">
-                <table style="margin: auto">
-                    <tr><td>Email:</td>
-                        <td><input type="text" name="email" placeholder="Email"></td>                      
-                    </tr>
-                    <tr><td>Password:</td>
-                        <td><input type="password" name="password" placeholder="Password"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" name="submit" value="Login"  style="width: 100px"></td>
-                    </tr>
-                </table>
 
-            </form>
-        </div>-->
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="img/home/home_0008_Layer-1.png" alt="logo"></a>
                 <div id="prof-icon"><img id='picture' src="img/home/home_0007_Layer-3.png" alt="picture">
-                <img onclick="loadProfile()" id="avatar" style="z-index: 6;height:auto;width:4%;position: absolute;top:17%;right:16.5%;" src="icons/glasses.svg" alt="avatar">
+                    <img onclick="loadProfile()" id="avatar" style="z-index: 6;height:auto;width:4%;position: absolute;top:17%;right:16.5%;" src="icons/glasses.svg" alt="avatar">
                 </div>
-                <img onclick="showNotifications()" id='clock' src="img/edit/home_0000_calender.png" alt="clock">
+                <div onclick="showNotifications()" id="notfication-container">
+                    <img id='clock' src="img/edit/home_0000_calender.png" alt="clock">
+                    <!---------->
+                    <div id="noti_Counter"></div>   <!--SHOW NOTIFICATIONS COUNT.-->
+
+                    <!--A CIRCLE LIKE BUTTON TO DISPLAY NOTIFICATION DROPDOWN.-->
+                    <div id="noti_Button"></div>    
+
+                    <!--THE NOTIFICAIONS DROPDOWN BOX.-->
+                    <div id="notifications">
+                        <h3>Notifications</h3>
+                        <div id='notification-body' style="height:300px;"></div>
+                        <div class="seeAll"><a href="#">See All</a></div>
+                    </div>
+                </div>
+                <!-------->
+
                 <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
 
             </div>
         </header>
+        
+        <%@include file="error.html"%>
+        <%if (request.getParameter("donationunsuccess") != null) {
+                if (request.getParameter("donationunsuccess").equals("true")) {
+        %>
+        <script>$("#login-error").css("display", "block");
+        $("#msg").html("Not successful!! Invalid details");</script>
+        <%}
+            }%>
+            
         <div id="body">
             <div style="" id="left-container">
                 <img style="height:55vh;" src="img/home/home_0004_Layer-7.png" alt="tv">
                 <a id="alink" href="http://www.sgu-edu.com/intl-in-sl-fb/">
                     <div id="tv-screen">
                         <img  style="width:92%;" id="aimg" src="as/images/a1.png">
-                       
+
                     </div>
                     <div style="height:9vh;background-color: #e6edf8;position: absolute;top:31vh;width: 82%;left:8%;"><p id="acontent"><font style="text-decoration: underline">sgu-edu.com </font>Click here to secure your place</p></div>
                 </a> 
@@ -195,16 +208,20 @@
             <img src="icons/donate.png" alt="donate">
 
         </div>
-            <div id="acquire-button" onclick="openAcquisitionForm()">
+        <div id="acquire-button" onclick="openAcquisitionForm()">
             &nbsp;&nbsp;&nbsp;&nbsp;Acquire <br>
             <img src="icons/acquire.png" alt="donate">
 
         </div>
-            <div id="acquisitionform-container">
+        <div id="acquisitionform-container">
             <%@include file="acquisitionform.html"%>
         </div>
         <div id="donationform-container">
             <%@include file="donationform.html"%>
         </div>
+        <script src="js/notification.js" >
+
+        </script>
     </body>
+
 </html>
