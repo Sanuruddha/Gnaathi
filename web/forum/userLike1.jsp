@@ -18,19 +18,20 @@
       
         <%
          // out.println(request.getParameter("user"));
-             String name0=session.getAttribute("user_name").toString();
+            // String name0=session.getAttribute("user_name").toString();
             String name1=session.getAttribute("user_id").toString();
+            String name2="2";
           //  String name1= request.getParameter("user");
-            String name2=request.getParameter("category");
-            String name3= request.getParameter("content");
-             String name4= request.getParameter("title");
+           // String name2=request.getParameter("category");
+           // String name3= request.getParameter("content");
+           //  String name4= request.getParameter("title");
             try{
                 
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con=DriverManager.getConnection("jdbc:mysql://localhost/gnaathi","root","");
                 Statement st=con.createStatement();
                 
-                st.executeUpdate("insert into post1 (user_name,user_id,category,content,title) values('"+name0+"','"+name1+"','"+name2+"','"+name3+"','"+name4+"')");
+                st.executeUpdate("insert into user_like_event (user_id,event_id) values('"+name1+"','"+name2+"')");
                 out.println("post inserted");
             }catch(Exception e){
                 out.println(e);
@@ -38,15 +39,10 @@
             finally{
                 RequestDispatcher rd=request.getRequestDispatcher("forum.jsp");
                 rd.forward(request, response);
-                out.println("belive your self");
+               
                 
             }
          %>
-        <form action="retrive2.jsp">
-            <input type="submit" value="Home page"/>
-        </form>
-        <form action="postPage.html">
-            <input type="submit" value="add another post"/>
-        </form>
+       
     
 </html>

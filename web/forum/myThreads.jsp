@@ -120,8 +120,8 @@
         </script>
     </head>
     <%
-        // String id = request.getParameter("userId");
-        // String myt=session.getAttribute("user_id").toString();
+       // String id = request.getParameter("userId");
+       // String myt=session.getAttribute("user_id").toString();
         String driverName = "com.mysql.jdbc.Driver";
         String connectionUrl = "jdbc:mysql://localhost:3306/";
         String dbName = "gnaathi";
@@ -165,7 +165,7 @@
             <div class="headernav">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="#"><img src="Forum%20%20%20New%20topic_files/logo.jpg" alt=""></a></div>
+                        <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="forum.jsp"><img src="Forum%20%20%20New%20topic_files/logo.jpg" alt=""></a></div>
                         <div class="col-lg-3 col-xs-9 col-sm-5 col-md-3 selecttopic">
                             <div class="dropdown">
                                 <!--     <a data-toggle="dropdown" href="#">Borderlands 2</a> <b class="caret"></b>
@@ -230,11 +230,14 @@
 
 
 
-                            <%    try {
+                            <%    
+                                String myT1=session.getAttribute("user_id").toString();
+                                
+                                try {
                                     connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                                     statement = connection.createStatement();
 
-                                    String sql = "SELECT * FROM post1 ORDER BY `post_id` DESC";
+                                    String sql = "SELECT * FROM post1  where user_id="+myT1;
 
                                     resultSet = statement.executeQuery(sql);
                                     int countCancer = 10;
@@ -255,7 +258,7 @@
                                             </div> --> <!-- that flags -->
                                     </div>
                                     <div class="posttext pull-left">
-                                        <p><%=resultSet.getString("title")%></p>
+                                         <p><%=resultSet.getString("title")%></p>
                                         <p><%=resultSet.getString("content")%></p>
                                     </div>
                                     <div class="clearfix"></div>
@@ -360,7 +363,7 @@
                             </div>
 
                             <!-- -->
-                            <div class="sidebarblock">
+                     <div class="sidebarblock">
                                 <h3>Poll of the Week</h3>
                                 <div class="divline"></div>
                                 <div class="blocktxt">
@@ -436,6 +439,7 @@
                                 </div>
                             </div>
 
+
                             <!-- -->
                             <div class="sidebarblock">
                                 <h3>My Active Threads</h3>
@@ -444,15 +448,15 @@
 
 
 
-                                    <%
-                                        String myT = session.getAttribute("user_id").toString();
-
-                                        //  String w="12";
+                                    <%    
+                                       String myT=session.getAttribute("user_id").toString();
+                                     
+                                    //  String w="12";
                                         try {
                                             connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                                             statement = connection.createStatement();
 
-                                            String sql = "SELECT title FROM post1   where user_id=" + myT;
+                                            String sql = "SELECT title FROM post1   where user_id=" + myT  ;
 
                                             resultSet = statement.executeQuery(sql);
                                             // int countCancer = 10;
@@ -474,58 +478,58 @@
                                     %>
 
                                 </div>
-                                <!--     <div class="divline"></div>
-                                     <div class="blocktxt">
-                                         <a href="#">Who Wins in the Battle for Power on the Internet?</a>
-                                     </div>
-                                     <div class="divline"></div>
-                                     <div class="blocktxt">
-                                         <a href="#">Sony QX10: A Funky, Overpriced Lens Camera for Your Smartphone</a>
-                                     </div>
-                                     <div class="divline"></div>
-                                     <div class="blocktxt">
-                                         <a href="#">FedEx Simplifies Shipping for Small Businesses</a>
-                                     </div>
-                                     <div class="divline"></div>
-                                     <div class="blocktxt">
-                                         <a href="#">Loud and Brave: Saudi Women Set to Protest Driving Ban</a>
-                                     </div>
-                                 </div> -->
-
-
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <!--   <div class="pull-left"><a href="#" class="prevnext"><i class="fa fa-angle-left"></i></a></div>  -->
-                                <div class="pull-left">
-                                    <!--            <ul class="paginationforum">
-                                                    <li class="hidden-xs"><a href="#">1</a></li>
-                                                    <li class="hidden-xs"><a href="#">2</a></li>
-                                                    <li class="hidden-xs"><a href="#">3</a></li>
-                                                    <li class="hidden-xs"><a href="#">4</a></li>
-                                                    <li><a href="#">5</a></li>
-                                                    <li><a href="#">6</a></li>
-                                                    <li><a href="#" class="active">7</a></li>
-                                                    <li><a href="#">8</a></li>
-                                                    <li class="hidden-xs"><a href="#">9</a></li>
-                                                    <li class="hidden-xs"><a href="#">10</a></li>
-                                                    <li class="hidden-xs hidden-md"><a href="#">11</a></li>
-                                                    <li class="hidden-xs hidden-md"><a href="#">12</a></li>
-                                                    <li class="hidden-xs hidden-sm hidden-md"><a href="#">13</a></li>
-                                                    <li><a href="#">1586</a></li>
-                                                </ul> -->
+                           <!--     <div class="divline"></div>
+                                <div class="blocktxt">
+                                    <a href="#">Who Wins in the Battle for Power on the Internet?</a>
                                 </div>
-                                <!--            <div class="pull-left"><a href="#" class="prevnext last"><i class="fa fa-angle-right"></i></a></div> -->
-                                <div class="clearfix"></div>                        
-                            </div>
+                                <div class="divline"></div>
+                                <div class="blocktxt">
+                                    <a href="#">Sony QX10: A Funky, Overpriced Lens Camera for Your Smartphone</a>
+                                </div>
+                                <div class="divline"></div>
+                                <div class="blocktxt">
+                                    <a href="#">FedEx Simplifies Shipping for Small Businesses</a>
+                                </div>
+                                <div class="divline"></div>
+                                <div class="blocktxt">
+                                    <a href="#">Loud and Brave: Saudi Women Set to Protest Driving Ban</a>
+                                </div>
+                            </div> -->
+
+
                         </div>
                     </div>
+                </div>
+
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <!--   <div class="pull-left"><a href="#" class="prevnext"><i class="fa fa-angle-left"></i></a></div>  -->
+                            <div class="pull-left">
+                                <!--            <ul class="paginationforum">
+                                                <li class="hidden-xs"><a href="#">1</a></li>
+                                                <li class="hidden-xs"><a href="#">2</a></li>
+                                                <li class="hidden-xs"><a href="#">3</a></li>
+                                                <li class="hidden-xs"><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#">6</a></li>
+                                                <li><a href="#" class="active">7</a></li>
+                                                <li><a href="#">8</a></li>
+                                                <li class="hidden-xs"><a href="#">9</a></li>
+                                                <li class="hidden-xs"><a href="#">10</a></li>
+                                                <li class="hidden-xs hidden-md"><a href="#">11</a></li>
+                                                <li class="hidden-xs hidden-md"><a href="#">12</a></li>
+                                                <li class="hidden-xs hidden-sm hidden-md"><a href="#">13</a></li>
+                                                <li><a href="#">1586</a></li>
+                                            </ul> -->
+                            </div>
+                            <!--            <div class="pull-left"><a href="#" class="prevnext last"><i class="fa fa-angle-right"></i></a></div> -->
+                            <div class="clearfix"></div>                        
+                        </div>
+                    </div>
+                </div>
 
             </section>
 

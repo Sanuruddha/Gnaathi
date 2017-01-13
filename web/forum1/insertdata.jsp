@@ -18,9 +18,7 @@
       
         <%
          // out.println(request.getParameter("user"));
-             String name0=session.getAttribute("user_name").toString();
-            String name1=session.getAttribute("user_id").toString();
-          //  String name1= request.getParameter("user");
+            String name1= request.getParameter("user");
             String name2=request.getParameter("category");
             String name3= request.getParameter("content");
              String name4= request.getParameter("title");
@@ -30,16 +28,14 @@
                 Connection con=DriverManager.getConnection("jdbc:mysql://localhost/gnaathi","root","");
                 Statement st=con.createStatement();
                 
-                st.executeUpdate("insert into post1 (user_name,user_id,category,content,title) values('"+name0+"','"+name1+"','"+name2+"','"+name3+"','"+name4+"')");
+                st.executeUpdate("insert into post1 (user_id,category,content,title) values('"+name1+"','"+name2+"','"+name3+"','"+name4+"')");
                 out.println("post inserted");
             }catch(Exception e){
                 out.println(e);
             }
             finally{
-                RequestDispatcher rd=request.getRequestDispatcher("forum.jsp");
-                rd.forward(request, response);
-                out.println("belive your self");
-                
+               // out.println("belive your self");
+               
             }
          %>
         <form action="retrive2.jsp">

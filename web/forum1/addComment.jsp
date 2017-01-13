@@ -16,39 +16,30 @@
 
 
         <%
-            //  out.println(8000000);
-            //String name1 = request.getParameter("user");
-            String name0 = session.getAttribute("user_name").toString();
-            String name1 = session.getAttribute("user_id").toString();
+              //  out.println(8000000);
+            String name1 = request.getParameter("user");
             String name2 = request.getParameter("post_id");
             String name3 = request.getParameter("content");
-
-          //  String name0 = request.getParameter("trick");
 
             try {
 
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/gnaathi", "root", "");
                 Statement st = con.createStatement();
-                
-                    st.executeUpdate("insert into comment1 (user_name,post_id,user_id,content) values('" + name0 + "','" + name2 + "','" + name1 + "','" + name3 + "')");
-                    out.println("comment inserted");
-                
+
+                st.executeUpdate("insert into comment1 (post_id,user_id,content) values('" + name2 + "','" + name1 + "','" + name3 + "')");
+                out.println("comment inserted");
             } catch (Exception e) {
                 out.println(e);
             } finally {
-
-                // out.println(name0);
-                RequestDispatcher rd1 = request.getRequestDispatcher("forum.jsp");
-                rd1.forward(request, response);
                 out.println("belive your self");
+                //   out.println(name1);
 
             }
         %>
-        
         <form action="retrive2.jsp">
 
-
+            
             <input type="submit" value="Home page"/>
         </form>
         <form action="retriveComments.jsp">

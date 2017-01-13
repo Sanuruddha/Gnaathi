@@ -33,102 +33,79 @@
         <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
         <link rel="stylesheet" type="text/css" href="Forum%20%20%20Topic_files/settings.css" media="screen">
         <script>
-            var arrayElement = 0;
-            //  var oneTime = 0;
-
-
-            var array = new Array();
             function myCreateFunction(element, x) {
-                //     ++oneTime;
-                // alert('jbj');
-                var exit = 0;
-                for (var j = 0; j < 100; j++) {
-                    if (array[j] === x) {
-                        ++exit;
-                        // alert('aa');
+                var position;
+                var greatGrandParent = element.parentNode.parentNode.parentNode;
+                for (var i = 0; i < greatGrandParent.parentNode.children.length; i++) {
+                    var elm = greatGrandParent.parentNode.children[i];
+                    if (elm.isSameNode(greatGrandParent) === true) {
+                        position = i;
+                        break;
                     }
                 }
-                // alert(x);
-                if (exit === 0) {
-
-                    array[arrayElement] = x;
-                    ++arrayElement;
-                    // if (oneTime == 1) {
-                    var position;
-                    var greatGrandParent = element.parentNode.parentNode.parentNode;
-                    for (var i = 0; i < greatGrandParent.parentNode.children.length; i++) {
-                        var elm = greatGrandParent.parentNode.children[i];
-                        if (elm.isSameNode(greatGrandParent) === true) {
-                            position = i;
-                            break;
-                        }
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        /* var str = "<div class='post'><form action='#' class='form' method='post'>"
+                         + "<div class='topwrap'>"
+                         + "<div class='userinfo pull-left'>"
+                         + "<div class='avatar'>"
+                         + "<img src='Forum%20%20%20Topic_files/avatar4.jpg' alt=''>"
+                         + "<div class='status red'>&nbsp;</div>"
+                         + " </div>"
+                         
+                         + "<div class='icons'>"
+                         + "<img src='Forum%20%20%20Topic_files/icon3.jpg' alt=''><img src='Forum%20%20%20Topic_files/icon4.jpg' alt=''><img src='Forum%20%20%20Topic_files/icon5.jpg' alt=''><img src='Forum%20%20%20Topic_files/icon6.jpg' alt=''>"
+                         + "</div>"
+                         + "</div>"
+                         + "<div class='posttext pull-left'>"
+                         + "<div class='textwraper'>"
+                         + "<div class='postreply'>Post a Reply</div>"
+                         + "<textarea name='reply' id='reply' placeholder='Type your message here'></textarea>"
+                         + "</div>"
+                         + "</div>"
+                         + "<div class='clearfix'></div>"
+                         + "</div>"
+                         + "<div class='postinfobot'>"
+                         
+                         + "<div class='notechbox pull-left'>"
+                         + "<input name='note' id='note' class='form-control' type='checkbox'>"
+                         + "</div>"
+                         
+                         + "<div class='pull-left'>"
+                         + "<label for='note'> Email me when some one post a reply</label>"
+                         + "</div>"
+                         
+                         + "<div class='pull-right postreply'>"
+                         + "<div class='pull-left smile'<a href='#'><i class='fa fa-smile-o'></i></a></div>"
+                         + "<div class='pull-left'><button type='submit' class='btn btn-primary'>Post Reply</button></div>"
+                         + "<div class='clearfix'></div>"
+                         + "</div>"
+                         
+                         
+                         + " <div class='clearfix'></div>"
+                         + "</div>"
+                         + "</form>"
+                         + "</div>";*/
+                        var temp = document.createElement('div');
+                        temp.innerHTML = this.responseText;
+                        var newNode = temp.firstChild;
+                        greatGrandParent.parentNode.insertBefore(temp, greatGrandParent.parentNode.children[position + 1]);
                     }
-                    var xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState === 4 && this.status === 200) {
-                            /* var str = "<div class='post'><form action='#' class='form' method='post'>"
-                             + "<div class='topwrap'>"
-                             + "<div class='userinfo pull-left'>"
-                             + "<div class='avatar'>"
-                             + "<img src='Forum%20%20%20Topic_files/avatar4.jpg' alt=''>"
-                             + "<div class='status red'>&nbsp;</div>"
-                             + " </div>"
-                             
-                             + "<div class='icons'>"
-                             + "<img src='Forum%20%20%20Topic_files/icon3.jpg' alt=''><img src='Forum%20%20%20Topic_files/icon4.jpg' alt=''><img src='Forum%20%20%20Topic_files/icon5.jpg' alt=''><img src='Forum%20%20%20Topic_files/icon6.jpg' alt=''>"
-                             + "</div>"
-                             + "</div>"
-                             + "<div class='posttext pull-left'>"
-                             + "<div class='textwraper'>"
-                             + "<div class='postreply'>Post a Reply</div>"
-                             + "<textarea name='reply' id='reply' placeholder='Type your message here'></textarea>"
-                             + "</div>"
-                             + "</div>"
-                             + "<div class='clearfix'></div>"
-                             + "</div>"
-                             + "<div class='postinfobot'>"
-                             
-                             + "<div class='notechbox pull-left'>"
-                             + "<input name='note' id='note' class='form-control' type='checkbox'>"
-                             + "</div>"
-                             
-                             + "<div class='pull-left'>"
-                             + "<label for='note'> Email me when some one post a reply</label>"
-                             + "</div>"
-                             
-                             + "<div class='pull-right postreply'>"
-                             + "<div class='pull-left smile'<a href='#'><i class='fa fa-smile-o'></i></a></div>"
-                             + "<div class='pull-left'><button type='submit' class='btn btn-primary'>Post Reply</button></div>"
-                             + "<div class='clearfix'></div>"
-                             + "</div>"
-                             
-                             
-                             + " <div class='clearfix'></div>"
-                             + "</div>"
-                             + "</form>"
-                             + "</div>";*/
-                            var temp = document.createElement('div');
-                            temp.innerHTML = this.responseText;
-                            var newNode = temp.firstChild;
-                            greatGrandParent.parentNode.insertBefore(temp, greatGrandParent.parentNode.children[position + 1]);
-                        }
-                    };
-                    xhttp.open("GET", "retriveComments.jsp?input=" + x + "&input1=content", true);
-                    xhttp.send();
-                }
+                };
+                xhttp.open("GET", "retriveComments.jsp?input=" + x + "&input1=content", true);
+                xhttp.send();
             }
         </script>
     </head>
     <%
-        // String id = request.getParameter("userId");
-        // String myt=session.getAttribute("user_id").toString();
+        String id = request.getParameter("userId");
         String driverName = "com.mysql.jdbc.Driver";
         String connectionUrl = "jdbc:mysql://localhost:3306/";
         String dbName = "gnaathi";
         String userId = "root";
         String password = "";
 
-        //  String userName=session.getAttribute("user_id").toString();;
         try {
             Class.forName(driverName);
         } catch (ClassNotFoundException e) {
@@ -165,7 +142,7 @@
             <div class="headernav">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="#"><img src="Forum%20%20%20New%20topic_files/logo.jpg" alt=""></a></div>
+                        <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="forum.jsp"><img src="Forum%20%20%20New%20topic_files/logo.jpg" alt=""></a></div>
                         <div class="col-lg-3 col-xs-9 col-sm-5 col-md-3 selecttopic">
                             <div class="dropdown">
                                 <!--     <a data-toggle="dropdown" href="#">Borderlands 2</a> <b class="caret"></b>
@@ -181,8 +158,8 @@
                             <div class="wrap">
 
                                 <form action="searchTopic.jsp" method="post" class="form">
-                                    <div class="pull-left txt"><input class="form-control" name="search" placeholder="Search Topics" type="text"></div>
-                                    <div class="pull-right"><button type="submit" style="width:30px;height:30px;background-size: 100% 100%;background-image: url('images/search.png')" class="btn btn-default" type="button"></button></div>
+                                    <div class="pull-left txt"><input class="form-control" placeholder="Search Topics" type="text"></div>
+                                    <div class="pull-right"><button style="width:30px;height:30px;background-size: 100% 100%;background-image: url('images/search.png')" class="btn btn-default" type="button"></button></div>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
@@ -193,19 +170,19 @@
                                     <button class="btn btn-primary">Start New Topic</button>
                                 </form>
                             </div>
-                            <!--     <div class="env pull-left"><i class="fa fa-envelope"></i></div>
-    
-                               <div class="avatar pull-left dropdown">
-                                    <a data-toggle="dropdown" href="#"><img src="Forum%20%20%20Topic_files/avatar.jpg" alt=""></a> <b class="caret"></b>
-                                    <div class="status green">&nbsp;</div>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Profile</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Inbox</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Log Out</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-4" href="http://forum.azyrusthemes.com/04_new_account.html">Create account</a></li>
-                                    </ul>
-                                </div> 
-                                <div class="clearfix"></div> -->
+                       <!--     <div class="env pull-left"><i class="fa fa-envelope"></i></div> -->
+
+                       <!--     <div class="avatar pull-left dropdown"> -->
+                            <!--    <a data-toggle="dropdown" href="#"><img src="Forum%20%20%20Topic_files/avatar.jpg" alt=""></a> <b class="caret"></b> -->
+                            <!--    <div class="status green">&nbsp;</div> -->
+                         <!--       <ul class="dropdown-menu" role="menu">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Profile</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Inbox</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Log Out</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-4" href="http://forum.azyrusthemes.com/04_new_account.html">Create account</a></li>
+                                </ul> -->
+                            </div>
+                         <!--   <div class="clearfix"></div> -->
                         </div>
                     </div>
                 </div>
@@ -234,10 +211,10 @@
                                     connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                                     statement = connection.createStatement();
 
-                                    String sql = "SELECT * FROM post1 ORDER BY `post_id` DESC";
+                                    String sql = "SELECT * FROM post1 where category='op3'";
 
                                     resultSet = statement.executeQuery(sql);
-                                    int countCancer = 10;
+
                                     while (resultSet.next()) {
                             %>
                             <!-- POST -->
@@ -247,7 +224,6 @@
                                         <div class="avatar">
                                             <img src="Forum%20%20%20Topic_files/avatar2.jpg" alt="">
                                             <div class="status red">&nbsp;</div>
-                                            <p> <%=resultSet.getString("user_name")%> </p>
                                         </div> 
 
                                         <!--    <div class="icons">
@@ -255,7 +231,6 @@
                                             </div> --> <!-- that flags -->
                                     </div>
                                     <div class="posttext pull-left">
-                                        <p><%=resultSet.getString("title")%></p>
                                         <p><%=resultSet.getString("content")%></p>
                                     </div>
                                     <div class="clearfix"></div>
@@ -263,27 +238,27 @@
                                 <div class="postinfobot">
 
                                     <div class="likeblock pull-left">
-                                        <!--   <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>10</a>
-                                           <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>1</a> -->
+                                  <!--      <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>10</a>
+                                        <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>1</a> -->
 
-                                        <a  onclick="myCreateFunction(this,<%=Integer.parseInt(resultSet.getString("post_id"))%>)">Replies</a>
+                                        <a onclick="myCreateFunction(this,<%=Integer.parseInt(resultSet.getString("post_id"))%>)">Replies</a>
 
                                     </div>
 
-                                    <!--      <div class="prev pull-left">                                        
-                                              <a href="#"><i class="fa fa-reply"></i></a>
-                                          </div>
-      
-                                          <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am</div> -->
+                              <!--     <div class="prev pull-left">                                        
+                                        <a href="#"><i class="fa fa-reply"></i></a>
+                                    </div> -->
 
-                                    <!--       <div class="next pull-right">                                        
-                                               <a href="#"><i class="fa fa-share"></i></a>
-       
-                                               <a href="#"><i class="fa fa-flag"></i></a>
-                                           </div> -->
+                        <!--            <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am</div> -->
+
+                                    <div class="next pull-right">                                        
+                                 <!--       <a href="#"><i class="fa fa-share"></i></a>
+
+                                        <a href="#"><i class="fa fa-flag"></i></a> -->
+                                    </div> 
 
                                     <div class="clearfix"></div> 
-                                </div>
+                                </div> 
                             </div><!-- POST -->
 
 
@@ -379,9 +354,9 @@
                                                     <td class="chbox">
                                                         <div class="pull-right">
                                                             <form action="userLike.jsp" >
-
+                                                                
                                                                 <div class="pull-right"><button type="submit" style="width:30px;height:30px;background-size: 100% 100%;background-image: url('images/hari.png')" class="btn btn-default" type="button"></button></div>
-
+                                                               
                                                             </form>
 
 
@@ -403,11 +378,11 @@
                                                         </div>
                                                     </td>
                                                     <td class="chbox">
-                                                        <form action="userLike1.jsp" >
-
-                                                            <div class="pull-right"><button type="submit" style="width:30px;height:30px;background-size: 100% 100%;background-image: url('images/hari.png')" class="btn btn-default" type="button"></button></div>
-
-                                                        </form>
+                                                          <form action="userLike1.jsp" >
+                                                                
+                                                                <div class="pull-right"><button type="submit" style="width:30px;height:30px;background-size: 100% 100%;background-image: url('images/hari.png')" class="btn btn-default" type="button"></button></div>
+                                                               
+                                                            </form>
                                                         <input id="opt2" name="opt" value="2" type="radio">  
                                                         <label for="opt2"></label>  
                                                     </td>
@@ -421,18 +396,18 @@
                                                         </div>
                                                     </td>
                                                     <td class="chbox">
-                                                        <form action="userLike2.jsp" >
-
-                                                            <div class="pull-right"><button type="submit" style="width:30px;height:30px;background-size: 100% 100%;background-image: url('images/hari.png')" class="btn btn-default" type="button"></button></div>
-
-                                                        </form>
+                                                          <form action="userLike2.jsp" >
+                                                                
+                                                                <div class="pull-right"><button type="submit" style="width:30px;height:30px;background-size: 100% 100%;background-image: url('images/hari.png')" class="btn btn-default" type="button"></button></div>
+                                                               
+                                                            </form>
                                                         <input id="opt3" name="opt" value="3" checked="checked" type="radio">  
                                                         <label for="opt3"></label>  
                                                     </td>
                                                 </tr>
                                             </tbody></table>
                                     </form>
-                                    <!--       <p class="smal">Voting ends on 19th of October</p> -->
+                                 <!--   <p class="smal">Voting ends on 19th of October</p> -->
                                 </div>
                             </div>
 
@@ -441,10 +416,7 @@
                                 <h3>My Active Threads</h3>
                                 <div class="divline"></div>
                                 <div class="blocktxt">
-
-
-
-                                    <%
+                                     <%
                                         String myT = session.getAttribute("user_id").toString();
 
                                         //  String w="12";
@@ -472,76 +444,76 @@
                                             e.printStackTrace();
                                         }
                                     %>
-
+                                    
                                 </div>
-                                <!--     <div class="divline"></div>
-                                     <div class="blocktxt">
-                                         <a href="#">Who Wins in the Battle for Power on the Internet?</a>
-                                     </div>
-                                     <div class="divline"></div>
-                                     <div class="blocktxt">
-                                         <a href="#">Sony QX10: A Funky, Overpriced Lens Camera for Your Smartphone</a>
-                                     </div>
-                                     <div class="divline"></div>
-                                     <div class="blocktxt">
-                                         <a href="#">FedEx Simplifies Shipping for Small Businesses</a>
-                                     </div>
-                                     <div class="divline"></div>
-                                     <div class="blocktxt">
-                                         <a href="#">Loud and Brave: Saudi Women Set to Protest Driving Ban</a>
-                                     </div>
-                                 </div> -->
+                          <!--      <div class="divline"></div>
+                                <div class="blocktxt">
+                                    <a href="#">Who Wins in the Battle for Power on the Internet?</a>
+                                </div>
+                                <div class="divline"></div>
+                                <div class="blocktxt">
+                                    <a href="#">Sony QX10: A Funky, Overpriced Lens Camera for Your Smartphone</a>
+                                </div>
+                                <div class="divline"></div>
+                                <div class="blocktxt">
+                                    <a href="#">FedEx Simplifies Shipping for Small Businesses</a>
+                                </div>
+                                <div class="divline"></div>
+                                <div class="blocktxt">
+                                    <a href="#">Loud and Brave: Saudi Women Set to Protest Driving Ban</a>
+                                </div>
+                            </div> -->
 
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
 
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <!--   <div class="pull-left"><a href="#" class="prevnext"><i class="fa fa-angle-left"></i></a></div>  -->
-                                <div class="pull-left">
-                                    <!--            <ul class="paginationforum">
-                                                    <li class="hidden-xs"><a href="#">1</a></li>
-                                                    <li class="hidden-xs"><a href="#">2</a></li>
-                                                    <li class="hidden-xs"><a href="#">3</a></li>
-                                                    <li class="hidden-xs"><a href="#">4</a></li>
-                                                    <li><a href="#">5</a></li>
-                                                    <li><a href="#">6</a></li>
-                                                    <li><a href="#" class="active">7</a></li>
-                                                    <li><a href="#">8</a></li>
-                                                    <li class="hidden-xs"><a href="#">9</a></li>
-                                                    <li class="hidden-xs"><a href="#">10</a></li>
-                                                    <li class="hidden-xs hidden-md"><a href="#">11</a></li>
-                                                    <li class="hidden-xs hidden-md"><a href="#">12</a></li>
-                                                    <li class="hidden-xs hidden-sm hidden-md"><a href="#">13</a></li>
-                                                    <li><a href="#">1586</a></li>
-                                                </ul> -->
-                                </div>
-                                <!--            <div class="pull-left"><a href="#" class="prevnext last"><i class="fa fa-angle-right"></i></a></div> -->
-                                <div class="clearfix"></div>                        
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                          <!--  <div class="pull-left"><a href="#" class="prevnext"><i class="fa fa-angle-left"></i></a></div> -->
+                            <div class="pull-left">
+                                <!--            <ul class="paginationforum">
+                                                <li class="hidden-xs"><a href="#">1</a></li>
+                                                <li class="hidden-xs"><a href="#">2</a></li>
+                                                <li class="hidden-xs"><a href="#">3</a></li>
+                                                <li class="hidden-xs"><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#">6</a></li>
+                                                <li><a href="#" class="active">7</a></li>
+                                                <li><a href="#">8</a></li>
+                                                <li class="hidden-xs"><a href="#">9</a></li>
+                                                <li class="hidden-xs"><a href="#">10</a></li>
+                                                <li class="hidden-xs hidden-md"><a href="#">11</a></li>
+                                                <li class="hidden-xs hidden-md"><a href="#">12</a></li>
+                                                <li class="hidden-xs hidden-sm hidden-md"><a href="#">13</a></li>
+                                                <li><a href="#">1586</a></li>
+                                            </ul> -->
                             </div>
-                        </div>
+                    <!--        <div class="pull-left"><a href="#" class="prevnext last"><i class="fa fa-angle-right"></i></a></div>
+                            <div class="clearfix"></div>      -->                   
+                        </div> 
                     </div>
+                </div>
 
             </section>
 
             <footer>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-1 col-xs-3 col-sm-2 logo "><a href="#"><img src="Forum%20%20%20Topic_files/logo.jpg" alt=""></a></div> 
+                        <div class="col-lg-1 col-xs-3 col-sm-2 logo "><a href="#"><img src="Forum%20%20%20Topic_files/logo.jpg" alt=""></a></div>
                         <div class="col-lg-8 col-xs-9 col-sm-5 ">Copyrights,Gnathi.lk</div>
-                        <div class="col-lg-3 col-xs-12 col-sm-5 sociconcent">
+                    <!--    <div class="col-lg-3 col-xs-12 col-sm-5 sociconcent"> -->
                             <ul class="socialicons">
-                                <!--        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-cloud"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
+                         <!--       <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-cloud"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>  -->
                             </ul>
                         </div>
                     </div>
