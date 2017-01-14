@@ -7,7 +7,7 @@
  //get record of database
 String record_count="SELECT * FROM posts";
 //amount displayed
-int per_page= 5;
+int per_page= 3;
 //number of pages
 int count = 0;
 //get number of rows
@@ -85,6 +85,7 @@ int prev =pagen-1;
             <div class="col-md-8">
 
                     <br/></br>
+                    
                 <p><%//out.println(pages);%></p>
                         <%
                             String sql = "SELECT post_id,user_id,user_name,title,LEFT(body,400) AS body ,category,posted FROM posts  order by post_id desc limit "+start+","+per_page+"";
@@ -98,10 +99,12 @@ int prev =pagen-1;
                                 
                         %>
                         
-                        
+                            <div class="panel panel-default">
+                            <div class="panel-body">
                            <table>   
                             <h2><%=rs.getString("title")%></h2>
                             </h2>
+                            
                             <p style="font-size:20px;" class="lead">
                              by <%=rs.getString("user_name")%>
                              </p>
@@ -114,7 +117,7 @@ int prev =pagen-1;
                             
                             <p style="font-size:20px;">////rs.getString("body")%></p>-->
                             
-                          <th style="width: 90%"><a class="btn btn-primary" href="post.jsp?post_id=<%=id%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a></th>
+                          <th style="width: 90%"><a class="btn btn-primary" href="post.jsp?post_id=<%=id%>">Read Full Post <span class="glyphicon glyphicon-chevron-right"></span></a></th>
                           
         
                         <% if(session.getAttribute("user_id")!=null){
@@ -134,8 +137,9 @@ int prev =pagen-1;
                            <%}}%> 
                           
                            </table>
-                            <hr>
-                            <br/><br/><br/><br/>
+                         
+                            </div></div>
+                            <br/><br/>
                             
                         <%
                             }

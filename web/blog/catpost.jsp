@@ -96,7 +96,8 @@ int prev =pagen-1;
                                 
                         %>
                         
-                        
+                            <div class="panel panel-default">
+                            <div class="panel-body">
                            <table>   
                             <h2><%=rs.getString("title")%></h2>
                             </h2>
@@ -132,8 +133,8 @@ int prev =pagen-1;
                            <%}}%> 
                           
                            </table>
-                            <hr>
-                            <br/><br/><br/><br/>
+                            </div></div>
+                            <br/><br/>
                             
                         <%
                             }

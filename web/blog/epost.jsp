@@ -7,29 +7,38 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-       <style>
-        #wrapper{
-            margin:auto;
-            width:800;
-        }
-        label{display:block}
-          #c1{
-        
-        border: 3px solid black;
-        margin-top: 80px;
-        margin-right: 250px;
-        margin-left: 350px;
-        padding: 30px 30px 50px 30px;
-        }
-    </style>
+        <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Home - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/blog-home.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+     
     <body>
-        <h1 style="font-size:45px; color: rgb(0,0,90); "><center>Post Your Article</center></h1>
-        <div id="wrapper">
-          <div id="c1">
+        <div class="col-md-8">
+             <div class="well" >
+        <div class="panel panel-info">
+        <div class="panel-heading"><h2 style="font-size:45px;  "><center>Write Your Article</center></h2>
+        </div>
+        <div class="panel-body">
              <form action="../editpost?post_id=<%=request.getParameter("post_id")%>" method="post"  >
                       <%
                            // Object post_id=session.getAttribute("post_id");
@@ -50,8 +59,8 @@
                               
                             
                              <label style="font-size:20px;">Title :</label>
-                        <input style="font-size:20px;" size="55" type="text"  name="title" value="<%=rs.getString("title")%>"/>
-                      <br/><br/>
+                              <input class="form-control input-lg" style="font-size:20px;" type="text"  size="40" name="title" value="<%=rs.getString("title")%>"  required/><br/>
+                     
                         <label style="font-size:20px;" for="body">Body:</label>
                         <br />
 
@@ -64,8 +73,8 @@
 	
                                                           });
                         </script>
-
-                            <textarea name="body" cols=85 rows=20 id="area2"><%=rs.getString("body")%></textarea>
+                            <textarea class="form-control"  name="body" cols=85 rows=20 id="area2" ><%=rs.getString("body")%></textarea>
+                           
                         
                         <br/><br/>
                         <label style="font-size:20px;">Category :</label><select name="category" >
@@ -92,10 +101,61 @@
                         <%
                             }
 
-                        %><br/><br/><br/>
-                <input style="font-size:20px;" type="submit" name="submit" value="submit">
-
-
+                        %><br/><br/>
+                  
+                       <button  type="submit" class="btn btn-primary btn-lg btn-block">SUBMIT</button>
+                       
                     </form>
+                        </div></div></div></div>
+                        
+                               <div class="col-md-4">
+                    <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                         <form action="search.jsp" method="post"  >
+                        <table>
+                        <th><input type="text" name="search" class="form-control"><span class="input-group-btn"></th>
+                            <th><button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                                </th></table></form>
+                        
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div  style="font-size:17px;" class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="catpost.jsp?category='Ayurwedic'">Ayurwedic</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='Diseses'">Diseses</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='Medicine'">Medicine</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='sports'" >Sports</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='Healthcare'">Healthcare</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='Culture'">Culture</a>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Side Widget Well</h4>
+                    <p style="font-size:17px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                </div>
+                </div>
     </body>
 </html>

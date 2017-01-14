@@ -96,7 +96,8 @@
 
                         %>
                         
-                        
+                            <div class="panel panel-default">
+                            <div class="panel-body">
                            <table>   
                             <h2><%=rs.getString("title")%></h2>
                             </h2>
@@ -105,12 +106,12 @@
                              </p>
                             <p style="font-size:20px;"><span class="glyphicon glyphicon-time"></span> Posted on <%=rs.getString("posted")%></p>
                             <p style="font-size:20px;">Category : <%=rs.getString("category")%></p> 
-                           
+                           <!--
                             <hr>
                             <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                              <hr>
                             
-                            <p style="font-size:20px;"><%=rs.getString("body")%></p>
+                            <p style="font-size:20px;">//rs.getString("body")%></p>-->
                             
                           <th style="width: 90%"><a class="btn btn-primary" href="post.jsp?post_id=<%=id%>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a></th>
                           
@@ -132,8 +133,8 @@
                            <%}}%> 
                           
                            </table>
-                            <hr>
-                            <br/><br/><br/><br/>
+                            </div></div>
+                            <br/><br/>
                             
                         <%
                             }

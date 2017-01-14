@@ -8,10 +8,17 @@ package bean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -29,19 +36,56 @@ public class Acquisition extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            Connection con=ConnectionProvider.getCon();
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Acquisition</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Acquisition at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            Connection con = ConnectionProvider.getCon();
+            
+            String item, contact, id, btype;
+            int area, itemId;
+            boolean blood = false;
+            itemId = Integer.parseInt(request.getParameter("item"));
+            btype = "";
+            if (itemId == 4) {
+                btype = request.getParameter("btype");
+                blood = true;
+            }
+            area = Integer.parseInt(request.getParameter("area"));
+            id = request.getParameter("nic");
+            contact = request.getParameter("contact");
+            
+            HttpSession session = request.getSession();
+            if (Validator.validateNIC(id) && Validator.validateMobile(contact)) {
+               System.out.println("here");
+                String query = "insert into acquisitor values (?,?,?,?)";
+                String query1 = "select * from acquisitor where user_id=?";
+                PreparedStatement ps2 = con.prepareStatement(query1);
+                PreparedStatement ps = con.prepareStatement(query);
+                ps2.setInt(1, (int) session.getAttribute("user_id"));
+                ResultSet rs2 = ps2.executeQuery();
+                boolean status = rs2.next();
+                if (!status) {
+
+                    ps.setInt(1, (int) session.getAttribute("user_id"));
+                    ps.setString(2, id);
+                    ps.setInt(3, area);
+                    ps.setString(4, contact);
+                    if (!ps.execute()) {
+                        System.out.println("insertion into donors unsuccessful");
+                    }
+                }
+                query = "insert into donation (user_id,item_id,blood_type) values (?,?,?,?)";
+                ps = con.prepareStatement(query);
+                ps.setInt(1, (int) session.getAttribute("user_id"));
+                ps.setInt(2, itemId);
+                ps.setString(4, btype);
+                if (ps.executeUpdate() == 0) {
+                    System.out.println("insertion into donation unsuccessful");
+                }
+            } else {
+                RequestDispatcher rd=request.getRequestDispatcher("userhome.jsp?donationunsuccess=true");
+                rd.forward(request, response);
+            }
         }
     }
 
@@ -57,7 +101,11 @@ public class Acquisition extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Acquisition.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -71,7 +119,11 @@ public class Acquisition extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Acquisition.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

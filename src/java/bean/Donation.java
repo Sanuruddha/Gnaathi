@@ -29,6 +29,8 @@ import javax.servlet.http.HttpSession;
 public class Donation extends HttpServlet {
 
     static Map<Integer, String> cities = new HashMap<>();
+    static Map<Integer, Map<Integer,Integer>> donations=new HashMap<>();
+    
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
@@ -77,7 +79,7 @@ public class Donation extends HttpServlet {
                 }
 
                 
-                query = "insert into donation (user_id,item_id,count,btype) values (?,?,?,?)";
+                query = "insert into donation (user_id,item_id,count,blood_type) values (?,?,?,?)";
                 ps = con.prepareStatement(query);
                 ps.setInt(1, (int) session.getAttribute("user_id"));
                 ps.setInt(2, itemId);

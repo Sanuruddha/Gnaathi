@@ -10,17 +10,35 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+     <head>
+       <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Home - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/blog-home.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     </head>
     <style>
         #c1{
         
         border: 3px solid black;
         margin-top: 50px;
-        margin-right: 220px;
-        margin-left: 390px;
+        margin-right: 420px;
+        margin-left: 90px;
         padding: 30px 30px 50px 30px;
         }
         #new-post{
@@ -36,15 +54,15 @@
         #add-comment{
         
         border: 3px solid black;
-        margin-right: 220px;
-        margin-left: 390px;
+        margin-right: 420px;
+        margin-left: 90px;
         padding: 0px 30px 50px 30px;
         }
         #comment{
         
         border: 3px solid black;
-        margin-right: 220px;
-        margin-left: 390px;
+        margin-right: 420px;
+        margin-left: 90px;
         padding: 0px 30px 50px 30px;
         }
          a.c2:link, a.c2:visited {
@@ -76,8 +94,12 @@
     </style>
    
     <body>
-         
-              <div id="c1">
+        <div class="container">
+             <div class="row">
+         <div class="col-md-8">
+             <br><br>
+              <div class="panel panel-default">
+                   <div class="panel-body">
           <artical>
                         <%
                            // Object post_id=session.getAttribute("post_id");
@@ -106,13 +128,13 @@
                         %>
                         
                        
-
+</div>
 
                     </artical>
                     </div>
                         
                       <br>
-                            <div id="comment">
+                            <div class="well">
                                 <h2 >Comments</h2>
                                 
                                   <%
@@ -142,9 +164,9 @@
                                   
                               </div>
                       
-                      
                       <br>
-                      <div id="add-comment">
+                       <% if(session.getAttribute("user_id")!=null){ %>
+                      <div class="well">
                           <h2 >Post a new comment</h2>
                           <form action="../AddComment" method="post">
                               <div>
@@ -161,22 +183,79 @@
                               <input type="hidden" name="var" value="<% out.print(var);%>" /> 
                               <input type="submit" name="submit" value="Submit" /> 
                               </form></div>
+                              <%}%>
+                              
+                       </div>  
+                              
+                               <div class="col-md-4">
+                <br><br>
+                <!-- new post -->
+                 <div class="well">
+                <% if(session.getAttribute("user_id")!=null){ %>
+                <center>
+                            <h2>If You Want To Add New Post</h2>
+                           </artical>
+                           <a  href="newpost.jsp" ><button type="button" class="btn btn-warning btn-lg">NEW POST</button></a><br>
+                          </center>
+                           <br>
+                               <%}%>
+                               </div>
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                         <form action="search.jsp" method="post"  >
+                        <table>
+                        <th><input type="text" name="search" class="form-control"><span class="input-group-btn"></th>
+                            <th><button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                                </th></table></form>
+                        
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div  style="font-size:17px;" class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="catpost.jsp?category='Ayurwedic'">Ayurwedic</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='Diseses'">Diseses</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='Medicine'">Medicine</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='sports'" >Sports</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='Healthcare'">Healthcare</a>
+                                </li>
+                                <li><a href="catpost.jsp?category='Culture'">Culture</a>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Side Widget Well</h4>
+                    <p style="font-size:17px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                </div>
+
+            </div>
+
+        </div>
                               
                               
-            <div id="new-post"><center>
-                            <% if(session.getAttribute("user_id")!=null){ %>
-                            <h2>If You Want To Add New Post<h2>
-                           </artical><a class="c2" href="newpost.jsp" >NEW POST</a><br>
-                           <%}%>
-                           
-                           <h3  style="font-size:35px; color: rgb(90,90,90); ">Categories</h3>
-                          <a style="font-size:20px;" href="catpost.jsp?category='Ayurwedic'" >Ayurwedic</a><br><br>
-                          <a style="font-size:20px;" href="catpost.jsp?category='Diseses'" >Diseses</a><br><br>
-                          <a style="font-size:20px;" href="catpost.jsp?category='Medicine'" >Medicine</a><br><br>
-                          <a style="font-size:20px;" href="catpost.jsp?category='sports'" >sports</a><br><br>
-                          <a style="font-size:20px;" href="catpost.jsp?category='Healthcare'" >Healthcare</a><br><br>
-                          <a style="font-size:20px;" href="catpost.jsp?category='Culture'" >Culture</a><br><br>
-                        </center>            
-                        </div>                   
+                              </div>
+                              </div>
+                        
     </body>
 </html>
