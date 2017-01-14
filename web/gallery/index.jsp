@@ -13,11 +13,17 @@
     <body>
 
 
-        <header>
-            <div id='header'>
+        <header style="height:25vh">
+            <div style="height:100%" id='header'>
                 <img id='header-background' src="../img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="../img/home/home_0008_Layer-1.png" alt="logo"></a>
-
+                <div style="height:100%" id="door-container">
+                    <% if(session.getAttribute("session")==null){%>
+                    <a style="height:100%;width:100%;" id='door' href="../home.jsp"><img style="top:-16%;" id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
+                    <%}else{%>
+                    <a style="height:100%;width:100%;" id='door' href="../userhome.jsp"><img style="top:-16%;" id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
+                    <%}%>
+                </div>
 
                 
         </header>

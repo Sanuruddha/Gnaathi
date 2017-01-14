@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -38,54 +40,129 @@ public class Acquisition extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+
         try (PrintWriter out = response.getWriter()) {
             Connection con = ConnectionProvider.getCon();
-            
-            String item, contact, id, btype;
+
+            String contact, id;
             int area, itemId;
-            boolean blood = false;
+
             itemId = Integer.parseInt(request.getParameter("item"));
-            btype = "";
-            if (itemId == 4) {
-                btype = request.getParameter("btype");
-                blood = true;
-            }
+
             area = Integer.parseInt(request.getParameter("area"));
-            id = request.getParameter("nic");
+            id = request.getParameter("id");
             contact = request.getParameter("contact");
-            
+
             HttpSession session = request.getSession();
             if (Validator.validateNIC(id) && Validator.validateMobile(contact)) {
-               System.out.println("here");
-                String query = "insert into acquisitor values (?,?,?,?)";
-                String query1 = "select * from acquisitor where user_id=?";
-                PreparedStatement ps2 = con.prepareStatement(query1);
-                PreparedStatement ps = con.prepareStatement(query);
-                ps2.setInt(1, (int) session.getAttribute("user_id"));
-                ResultSet rs2 = ps2.executeQuery();
-                boolean status = rs2.next();
-                if (!status) {
+                //////////////////////////////////////////////////
+                if (itemId == 11) {
+                    out.println("This area of system is still under construction");
+                } else {
+                    PreparedStatement ps5;
+                    ResultSet rs5;
 
-                    ps.setInt(1, (int) session.getAttribute("user_id"));
-                    ps.setString(2, id);
-                    ps.setInt(3, area);
-                    ps.setString(4, contact);
-                    if (!ps.execute()) {
-                        System.out.println("insertion into donors unsuccessful");
+                    String query5 = "select * from donation where item_id=?";
+                    ps5 = con.prepareStatement(query5);
+                    ps5.setInt(1, itemId);
+                    rs5 = ps5.executeQuery();
+                    boolean found = false;
+                    while (rs5.next()) {
+                        if (rs5.getInt("area") == area) {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (found) {
+
+                        String donor;
+                        String donorNo = rs5.getString("contact_no");
+
+                        PreparedStatement ps2 = con.prepareStatement("select user_name from user where user_id=?");
+                        ps2.setInt(1, rs5.getInt("user_id"));
+                        ResultSet rs = ps2.executeQuery();
+
+                        rs.next();
+                        donor = rs.getString("user_name");
+
+                        String messageToDonor = session.getAttribute("user_name") + " needs what you are willing to donate. "
+                                + "He/she will contact you and this is his/her contact number "
+                                + contact + ". if the donation did not take place please be kind enough to"
+                                + "register in our system again as we delete the details after notifying the users";
+
+                        int donorId = rs5.getInt("user_id");
+                        query5 = "insert into notification (user_id,notification) values (?,?) ";
+                        ps5 = con.prepareStatement(query5);
+                        ps5.setInt(1, donorId);
+                        ps5.setString(2, messageToDonor);
+                        ps5.execute();
+
+                        String messageToAcquisitor = donor + " is willing to donate what you need. "
+                                + "You can contact him/her with the contact number "
+                                + donorNo + ". if the donation did not take place please be kind enough to"
+                                + "register in our system again as we delete the details after notifying the users";
+
+                        ps5 = con.prepareStatement(query5);
+                        ps5.setInt(1, (int) session.getAttribute("user_id"));
+                        ps5.setString(2, messageToAcquisitor);
+                        ps5.execute();
+                        
+                        if (rs5.getInt("count") > 1) {
+                            
+                            String query3 = "update donation set count=count-1 where donation_id=?";
+
+                            ps5 = con.prepareStatement(query3);
+                            ps5.setInt(1,rs5.getInt("donation_id"));
+                            ps5.execute();
+                        }
+                        else{
+                            String query3 = "delete from donation where donation_id=?";
+
+                            ps5 = con.prepareStatement(query3);
+                            ps5.setInt(1,rs5.getInt("donation_id"));
+                            ps5.execute();
+                        }
+                        RequestDispatcher rd = request.getRequestDispatcher("userhome.jsp?donationunsuccess=false");
+                        rd.forward(request, response);
+                    } else {
+                        /////////////////////////////////////////////////
+                        String query = "insert into acquisitor values (?,?,?,?)";
+                        String query1 = "select * from acquisitor where user_id=?";
+                        PreparedStatement ps2 = con.prepareStatement(query1);
+                        PreparedStatement ps = con.prepareStatement(query);
+                        ps2.setInt(1, (int) session.getAttribute("user_id"));
+                        ResultSet rs2 = ps2.executeQuery();
+                        boolean status = rs2.next();
+                        if (!status) {
+
+                            ps.setInt(1, (int) session.getAttribute("user_id"));
+                            ps.setString(2, id);
+                            ps.setInt(3, area);
+                            ps.setString(4, contact);
+                            ps.execute();
+                        }
+
+                        query = "insert into acquisition (user_id,item_id,area,contact_no) values (?,?,?,?)";
+                        ps = con.prepareStatement(query);
+                        ps.setInt(1, (int) session.getAttribute("user_id"));
+                        ps.setInt(2, itemId);
+                        ps.setInt(3, area);
+                        ps.setInt(4, Integer.parseInt(contact));
+                        if (ps.executeUpdate() == 0) {
+                            RequestDispatcher rd = request.getRequestDispatcher("userhome.jsp?donationunsuccess=true");
+                            rd.forward(request, response);
+                        } else {
+                            RequestDispatcher rd = request.getRequestDispatcher("userhome.jsp?donationunsuccess=false");
+                            rd.forward(request, response);
+                        }
                     }
                 }
-                query = "insert into donation (user_id,item_id,blood_type) values (?,?,?,?)";
-                ps = con.prepareStatement(query);
-                ps.setInt(1, (int) session.getAttribute("user_id"));
-                ps.setInt(2, itemId);
-                ps.setString(4, btype);
-                if (ps.executeUpdate() == 0) {
-                    System.out.println("insertion into donation unsuccessful");
-                }
             } else {
-                RequestDispatcher rd=request.getRequestDispatcher("userhome.jsp?donationunsuccess=true");
+                RequestDispatcher rd = request.getRequestDispatcher("userhome.jsp?donationunsuccess=true");
                 rd.forward(request, response);
             }
+
         }
     }
 

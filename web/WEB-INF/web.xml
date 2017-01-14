@@ -28,6 +28,10 @@
         <servlet-name>Acquisition</servlet-name>
         <servlet-class>bean.Acquisition</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Notifications</servlet-name>
+        <servlet-class>bean.Notifications</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>chat</servlet-name>
         <url-pattern>/chat</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>Acquisition</servlet-name>
         <url-pattern>/Acquisition</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Notifications</servlet-name>
+        <url-pattern>/Notifications</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

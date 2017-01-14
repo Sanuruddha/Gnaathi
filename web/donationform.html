@@ -107,15 +107,21 @@
                     <div id="form-conatiner">
                         <div>Select what want to donate:</div>
 
-                        <select id="item" name="item">
+                        <select style="width:150px;" id="item" name="item">
                             <option value="0">Wheelchair</option>
                             <option value="1">Crutches</option>
-                            <option value="2">Medicine</option>
-                            <option value="3">Blood</option>
-                            <option value="4">Other</option>
-
+                            <option value="2">Shower Chair</option>
+                            <option value="3">Inflatable Bed</option>
+                            <option value="4">Blankets</option>
+                            <option value="5">Books(To Read)</option>
+                            <option value="6">Diabetic meter</option>
+                            <option value="7">Walkers</option>
+                            <option value="8">Rollators</option>
+                            <option value="9">Blood pressure monitors</option>
+                            <option value="10">Blood</option>
+                            <option value="11">Other</option>
                         </select>
-                        <input style="width:50px" type="number" name="quantity" min="1" max="20">
+                        <input id="count" style="width:50px" type="number" name="quantity" min="1" max="20">
                         <select style="margin:auto;display:none" id="btype" name="btype">
                             <option value="0">A+</option>
                             <option value="1">B+</option>
@@ -132,18 +138,19 @@
                         <script>
                             $("#item").change(function () {
                                 var val = $("#item").val();
-                                if (val === '3') {
+                                if (val === '10') {
                                     $("#btype").css("display", "block");
                                     $("#other").css("display", "none");
+                                    $("#count").css("display", "none");
 
-                                } else if (val === '4') {
+                                } else if (val === '11') {
                                     $("#btype").css("display", "none");
                                     $("#other").css("display", "block");
-
+                                    $("#count").css("display", "inline");
                                 } else {
-
                                     $("#btype").css("display", "none");
                                     $("#other").css("display", "none");
+                                    $("#count").css("display", "inline");
                                 }
                             });
                         </script>

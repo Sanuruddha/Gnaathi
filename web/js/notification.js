@@ -1,12 +1,6 @@
 $(document).ready(function () {
 
     // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
-    $('#noti_Counter')
-            .css({opacity: 0})
-            .text('+')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
-            .css({top: '-10px'})
-            .animate({top: '37.5%', opacity: 1}, 500);
-
     $('#notfication-container').click(function () {
 
         // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
@@ -18,6 +12,20 @@ $(document).ready(function () {
         });
 
         $('#noti_Counter').fadeOut('slow');                 // HIDE THE COUNTER.
+
+
+        /// insert the new notifications
+        $.get("Notifications", {type: 1}, function (data) {
+            for (var key in data) {
+                var element = $("#notification-body");
+                element.append("<div class='panel panel-default'><div class='panel-body'>" + data[key] + "</div></div>");
+                $('#notification-body').animate({
+                    scrollTop: $('#notification-body')[0].scrollHeight}, 0);
+            }
+
+
+        }, "json");
+
 
         return false;
     });
@@ -38,3 +46,32 @@ $(document).ready(function () {
     });
 });
 
+function addNewNotiIcon() {
+    if ($('#noti_Counter').css('display') !== 'block') {
+        $('#noti_Counter')
+                .css({display: 'block'})
+                .css({opacity: 0})
+                .text('+')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+                .css({top: '-10px'})
+                .animate({top: '37.5%', opacity: 1}, 500);
+    }
+}
+
+function checkNotifications() {
+    $.ajax({
+        url: 'Notifications',
+        type: 'POST',
+        data: {type: 0},
+        success: function (data) {
+            data = data.trim();
+            if (data === "true") {
+                addNewNotiIcon();
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert(jqXHR.responseText);
+        }
+    });
+}
+
+setInterval(checkNotifications, 5000);

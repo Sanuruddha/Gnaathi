@@ -43,10 +43,13 @@
                     <!--THE NOTIFICAIONS DROPDOWN BOX.-->
                     <div id="notifications">
                         <h3>Notifications</h3>
-                        <div id='notification-body' style="height:300px;"></div>
+                        <div id='notification-body' style="height:300px;">
+                            
+                        </div>
                         <div class="seeAll"><a href="#">See All</a></div>
                     </div>
                 </div>
+                <script src="js/notification.js" ></script>
                 <!-------->
 
                 <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
@@ -61,11 +64,11 @@
         <script>$("#login-error").css("display", "block");
             $("#msg").html("Not successful!! Invalid details");</script>
             <%} else {%>
-        <%@include file="success.html"%>
+            <%@include file="success.html"%>
         <script>$(".success").css("display", "block");
             $("#smsg").html("Successful");</script>
             <%}
-    }%>
+                }%>
 
         <div id="body">
             <div style="" id="left-container">
@@ -92,8 +95,18 @@
                 <script>
                     if (window.attachEvent) {
                         window.attachEvent('onresize', function () {
+                            var h = document.getElementById("table").height;
+
+                            var mc = document.getElementById("middle-container").clientHeight;
+                            $("#cloud-container").height(mc - h);
 
                         });
+                        window.attachEvent("onload", function () {
+                            var h = document.getElementById("table").height;
+
+                            var mc = document.getElementById("middle-container").clientHeight;
+                            $("#cloud-container").height(mc - h);
+                        }, false);
                     } else if (window.addEventListener) {
                         window.addEventListener('resize', function () {
                             var h = document.getElementById("table").height;
@@ -101,9 +114,13 @@
                             var mc = document.getElementById("middle-container").clientHeight;
                             $("#cloud-container").height(mc - h);
 
-                            var cc = document.getElementById("cloud-container").clientHeight;
-
                         }, true);
+                        window.addEventListener("load", function () {
+                            var h = document.getElementById("table").height;
+
+                            var mc = document.getElementById("middle-container").clientHeight;
+                            $("#cloud-container").height(mc - h);
+                        }, false);
                     } else {
 
                     }
@@ -223,9 +240,7 @@
         <div id="donationform-container">
             <%@include file="donationform.html"%>
         </div>
-        <script src="js/notification.js" >
 
-        </script>
     </body>
 
 </html>

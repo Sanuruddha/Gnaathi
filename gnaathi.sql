@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2016 at 06:50 PM
+-- Generation Time: Jan 14, 2017 at 11:51 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -23,27 +23,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `acquisitor`
+-- Table structure for table `acquisition`
 --
 
-CREATE TABLE `acquisitor` (
+CREATE TABLE `acquisition` (
+  `acquisition_id` int(25) NOT NULL,
   `user_id` int(4) NOT NULL,
-  `address` varchar(200) NOT NULL,
-  `contact_no` char(10) NOT NULL,
-  `blood_group` varchar(10) NOT NULL,
-  `looking_for` varchar(50) NOT NULL
+  `item_id` int(5) NOT NULL,
+  `area` int(10) NOT NULL,
+  `contact_no` int(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aquisition`
+-- Table structure for table `acquisitor`
 --
 
-CREATE TABLE `aquisition` (
+CREATE TABLE `acquisitor` (
   `user_id` int(4) NOT NULL,
-  `item_id` int(5) NOT NULL
+  `nic_no` varchar(10) NOT NULL,
+  `area` varchar(200) NOT NULL,
+  `contact_no` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `acquisitor`
+--
+
+INSERT INTO `acquisitor` (`user_id`, `nic_no`, `area`, `contact_no`) VALUES
+(2, '111111111v', '1', '0727701701'),
+(3, '123456789v', '1', '0712345678');
 
 -- --------------------------------------------------------
 
@@ -88,13 +98,92 @@ CREATE TABLE `chats` (
 --
 
 INSERT INTO `chats` (`id`, `time`, `user_id`, `message`, `friend_id`) VALUES
-(1, '2016-11-27 16:38:47', 3, 'hey', 2),
-(2, '2016-11-27 16:38:51', 2, 'hu', 3),
-(3, '2016-11-27 16:39:39', 2, 'hry', 3),
-(4, '2016-11-27 16:39:47', 3, 'hiii', 2),
-(5, '2016-11-27 16:40:54', 3, 'hi', 2),
-(6, '2016-11-27 16:45:10', 2, 'hi', 3),
-(7, '2016-11-27 16:45:34', 2, 'hiiii', 3);
+(1, '2016-11-27 16:38:47', 3, 'hey regular im shihan', 2),
+(2, '2016-11-27 16:38:51', 2, 'hey shihan im regular', 3),
+(3, '2016-11-27 16:39:39', 2, 'what is up regular', 3),
+(4, '2016-11-27 16:39:47', 3, 'nothing much shihan what about u', 2),
+(5, '2016-11-27 16:40:54', 3, 'i was busy regular', 2),
+(6, '2016-11-27 16:45:10', 2, 'shihan are u coming today? ', 3),
+(7, '2016-11-27 16:45:34', 2, 'shihan let me know', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cities`
+--
+
+CREATE TABLE `cities` (
+  `city_id` int(11) NOT NULL,
+  `city_name` varchar(25) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cities`
+--
+
+INSERT INTO `cities` (`city_id`, `city_name`) VALUES
+(1, 'Ambalangoda'),
+(2, 'Ampara'),
+(3, 'Anuradhapura'),
+(4, 'Avissawella'),
+(5, 'Badulla'),
+(6, 'Balangoda'),
+(7, 'Bandarawela'),
+(8, 'Batticaloa'),
+(9, 'Beruwala'),
+(10, 'Chavakacheri'),
+(11, 'Chilaw'),
+(12, 'Colombo'),
+(13, 'Dambulla'),
+(14, 'Dehiwala-MountLavinia'),
+(15, 'Embilipitiya'),
+(16, 'Eravur'),
+(17, 'Galle'),
+(18, 'Gampaha'),
+(19, 'Gampola'),
+(20, 'Hambantota'),
+(21, 'Haputale'),
+(22, 'Harispattuwa'),
+(23, 'Hatton'),
+(24, 'Horana'),
+(25, 'Ja-Ela'),
+(26, 'Jaffna'),
+(27, 'Kadugannawa'),
+(28, 'Kalmunai'),
+(29, 'Kalmunai'),
+(30, 'Sainthamarathu'),
+(31, 'Kalutara'),
+(32, 'Kandy'),
+(33, 'Kattankudy'),
+(34, 'Katunayake'),
+(35, 'Kegalle'),
+(36, 'Kelaniya'),
+(37, 'Kolonnawa'),
+(38, 'Kuliyapitiya'),
+(39, 'Kurunegala'),
+(40, 'Mannar'),
+(41, 'Matale'),
+(42, 'Matara'),
+(43, 'Minuwangoda'),
+(44, 'Monaragala'),
+(45, 'Moratuwa'),
+(46, 'Nawalapitiya'),
+(47, 'Negombo'),
+(48, 'Nuwara'),
+(49, 'Panadura'),
+(50, 'Peliyagoda'),
+(51, 'Point'),
+(52, 'Puttalam'),
+(53, 'Ratnapura'),
+(54, 'Sigiriya'),
+(55, 'SriJayawardanapura'),
+(56, 'Talawakele'),
+(57, 'Tangalle'),
+(58, 'Trincomalee'),
+(59, 'Valvettithurai'),
+(60, 'Vavuniya'),
+(61, 'Wattala'),
+(62, 'Wattegama');
 
 -- --------------------------------------------------------
 
@@ -264,8 +353,12 @@ CREATE TABLE `doctors` (
 --
 
 CREATE TABLE `donation` (
+  `donation_id` int(25) NOT NULL,
   `user_id` int(4) NOT NULL,
-  `item_id` int(5) NOT NULL
+  `item_id` int(5) NOT NULL,
+  `count` int(10) NOT NULL,
+  `area` int(10) NOT NULL,
+  `contact_no` int(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -279,6 +372,22 @@ CREATE TABLE `donation_item` (
   `item_name` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `donation_item`
+--
+
+INSERT INTO `donation_item` (`item_id`, `item_name`) VALUES
+(0, 'Wheelchair'),
+(1, 'Crutches'),
+(2, 'Shower Chair'),
+(3, 'Inflatable Bed'),
+(4, 'Blankets'),
+(5, 'Books(To Read)'),
+(6, 'Diabetic meter'),
+(7, 'Walkers'),
+(8, 'Rollators'),
+(9, 'Blood pressure monitors');
+
 -- --------------------------------------------------------
 
 --
@@ -288,11 +397,17 @@ CREATE TABLE `donation_item` (
 CREATE TABLE `donors` (
   `user_id` int(4) NOT NULL,
   `nic_no` varchar(10) NOT NULL,
-  `address` varchar(200) NOT NULL,
-  `contact_no` varchar(10) NOT NULL,
-  `blood_group` varchar(10) NOT NULL,
-  `donation_type` varchar(50) NOT NULL
+  `area` varchar(200) NOT NULL,
+  `contact_no` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `donors`
+--
+
+INSERT INTO `donors` (`user_id`, `nic_no`, `area`, `contact_no`) VALUES
+(2, '11111', '1', '1111'),
+(3, '123456789v', '1', '0712345678');
 
 -- --------------------------------------------------------
 
@@ -334,6 +449,38 @@ CREATE TABLE `medical_center` (
   `contact_no` char(10) NOT NULL,
   `advertisement` varbinary(1000) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE `notification` (
+  `notification_id` int(10) NOT NULL,
+  `user_id` int(5) NOT NULL,
+  `notification` varchar(511) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `old_notifications`
+--
+
+CREATE TABLE `old_notifications` (
+  `notification_id` int(10) NOT NULL,
+  `user_id` int(5) NOT NULL,
+  `notification` varchar(511) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `old_notifications`
+--
+
+INSERT INTO `old_notifications` (`notification_id`, `user_id`, `notification`) VALUES
+(54, 2, 'regular needs what you are willing to donate. He/she will contact you and this is his/her contact number 0712345678. if the donation did not take the place please be kind enough toregister in our system again as we delete the details after notifying the users'),
+(53, 2, 'regular is willing to donate what you need. You can contact him/her with the contact number 712345678. if the donation did not take the place please be kind enough toregister in our system again as we delete the details after notifying the users');
 
 -- --------------------------------------------------------
 
@@ -484,26 +631,34 @@ INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`, `user_type`) VA
 (2, 'regular', 'regularuser@gmail.com', '123456', 1),
 (6, 'lokka', 'shihananuruddha2@gmail.com', '123456', 1),
 (3, 'shihan', 'shihananuruddha1@gmail.com', '123456', 1),
+(12, 'eld', 'elderly@gmail.com', '123456', 3),
 (8, 'shihan1', 'shihan@gmail.com', '123456', 1),
 (9, 'anuruddha', 'anuruddha@gmail.com', '123456', 1),
-(10, 'mithsen', 'mithsen@gmail.com', '123456', 1);
+(10, 'mithsen', 'mithsen@gmail.com', '123456', 1),
+(13, 'x', 'something@gmail.com', '123456', 3),
+(14, 'res', 'researcher@gmail.com', '123456', 2),
+(15, '', 'dfgdfg', '', 1),
+(16, 'sasdasda', 'sdfsdsfsdsdas@gmail.com', '1234567', 1),
+(17, 'qwertyy', 'shihananuruddha44@gmail.com', '1234567', 1),
+(18, '234234', 'wsssdfsd@sddfsf.com', '1234511', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `acquisition`
+--
+ALTER TABLE `acquisition`
+  ADD PRIMARY KEY (`acquisition_id`),
+  ADD KEY `user_id` (`user_id`,`item_id`),
+  ADD KEY `item_id` (`item_id`);
+
+--
 -- Indexes for table `acquisitor`
 --
 ALTER TABLE `acquisitor`
   ADD PRIMARY KEY (`user_id`);
-
---
--- Indexes for table `aquisition`
---
-ALTER TABLE `aquisition`
-  ADD KEY `user_id` (`user_id`,`item_id`),
-  ADD KEY `item_id` (`item_id`);
 
 --
 -- Indexes for table `categories`
@@ -546,6 +701,7 @@ ALTER TABLE `doctors`
 -- Indexes for table `donation`
 --
 ALTER TABLE `donation`
+  ADD PRIMARY KEY (`donation_id`),
   ADD KEY `user_id` (`user_id`,`item_id`),
   ADD KEY `item_id` (`item_id`);
 
@@ -573,6 +729,18 @@ ALTER TABLE `friend_list`
 --
 ALTER TABLE `medical_center`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `notification`
+--
+ALTER TABLE `notification`
+  ADD PRIMARY KEY (`notification_id`);
+
+--
+-- Indexes for table `old_notifications`
+--
+ALTER TABLE `old_notifications`
+  ADD PRIMARY KEY (`notification_id`);
 
 --
 -- Indexes for table `post1`
@@ -618,6 +786,11 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `acquisition`
+--
+ALTER TABLE `acquisition`
+  MODIFY `acquisition_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -638,6 +811,21 @@ ALTER TABLE `comment1`
 ALTER TABLE `comments`
   MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 --
+-- AUTO_INCREMENT for table `donation`
+--
+ALTER TABLE `donation`
+  MODIFY `donation_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT for table `notification`
+--
+ALTER TABLE `notification`
+  MODIFY `notification_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+--
+-- AUTO_INCREMENT for table `old_notifications`
+--
+ALTER TABLE `old_notifications`
+  MODIFY `notification_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+--
 -- AUTO_INCREMENT for table `post1`
 --
 ALTER TABLE `post1`
@@ -651,7 +839,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
