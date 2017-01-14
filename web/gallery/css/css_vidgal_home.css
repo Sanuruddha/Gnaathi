@@ -7,8 +7,12 @@
 }
 
 #mainVideo{
-    width:60%;
-    height:70vh;
+    position: absolute;
+    top:-20px;
+    right:25%;
+    top:28%;
+    width:50%;
+    height:60vh;
 }
 
 body{
@@ -23,6 +27,29 @@ body{
 
 #myDiv video:hover{
     background-color: #4286f4;
+}
+
+#myDiv{
+    position: absolute;
+    top:-20px;
+    right:2%;
+    top:28%;
+    height:70%;
+    overflow: scroll;
+}
+
+#myDiv img{
+    height:120px;
+    width: 150px;
+}
+
+#myDiv img{
+    margin-bottom: 10px;
+    float:top;
+}
+
+#myDiv div:hover{
+    cursor: pointer;
 }
 
 .sidenav {

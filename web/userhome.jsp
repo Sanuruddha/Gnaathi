@@ -53,16 +53,20 @@
 
             </div>
         </header>
-        
+
         <%@include file="error.html"%>
         <%if (request.getParameter("donationunsuccess") != null) {
                 if (request.getParameter("donationunsuccess").equals("true")) {
         %>
         <script>$("#login-error").css("display", "block");
-        $("#msg").html("Not successful!! Invalid details");</script>
-        <%}
-            }%>
-            
+            $("#msg").html("Not successful!! Invalid details");</script>
+            <%} else {%>
+        <%@include file="success.html"%>
+        <script>$(".success").css("display", "block");
+            $("#smsg").html("Successful");</script>
+            <%}
+    }%>
+
         <div id="body">
             <div style="" id="left-container">
                 <img style="height:55vh;" src="img/home/home_0004_Layer-7.png" alt="tv">

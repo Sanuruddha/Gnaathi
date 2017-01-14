@@ -13,7 +13,7 @@
         <script  type="text/javascript" src="js/home.js"></script>
 
     </head>
-    <body>
+    <body style="position: relative;height: 100vh;">
 
         <div id="registerform-container">
             <%@include file="registerform.html"%>

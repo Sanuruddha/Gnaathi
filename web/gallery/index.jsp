@@ -1,105 +1,104 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <title>Gnaathi Videos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/css_vidgal_home.css">
+        <link rel="stylesheet" href="css/gallery_header.css">
+        <link rel="stylesheet" href="../css/home.css">
+    </head>
 
-	<title>Video Gallery Home</title>
-<link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
-   <link rel="stylesheet" href="css/css_vidgal_home.css">
-    <link rel="stylesheet" href="css/gallery_header.css">
+    <body>
 
-</head>
 
-<body>
-    
-    
-    <header>
+        <header>
             <div id='header'>
-                <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
-                <a href="../home.jsp"><img id='logo' src="img/edit/websiteedit_0008_logo.png" alt="logo"></a>
-                <img id='picture' src="img/edit/websiteedit_0006_picture.png" alt="picture">
-                <img id='login' src="img/edit/websiteedit_0000_settings_1.png" alt="login">
+                <img id='header-background' src="../img/edit/websiteedit_0010_headerback.png" alt="header back">
+                <a href="home.html"><img id='logo' src="../img/home/home_0008_Layer-1.png" alt="logo"></a>
+
+
                 
-                <a href="../logout.jsp"><div id='door'><img src="img/edit/home_0006_Layer-4_1.png" alt="door"></div></a>
+        </header>
+
+
+        <span style="color: #636568;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="cancer.jsp">Cancer</a>
+            <a href="diabetes.jsp">Diabetes</a>
+            <a href="std.jsp">STDs</a>
+            <a href="kidney_dis.jsp">Kidney Diseases</a>
+            <a href="dengue.jsp">Dengue</a>
+            <a href="how_to.jsp">How to</a>
+            <a href="firstaid.jsp">Tips and First Aid</a>
+            <a href="religious.jsp">Religious</a>
+            <a href="entertainment.jsp">Entertainment</a>
+        </div>
+
+    <center>
+
+        <div id="main">
+
+
+
+
+            <iframe id="mainVideo" width="560" height="315" src="https://www.youtube.com/embed/Wl2_knlv_xw?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            
+
+            <div id="myDiv" onclick="changeVideo(event)">
+
+                <div id="vid1"><img src="https://img.youtube.com/vi/Wl2_knlv_xw/0.jpg"><label id="vid1_label"></label></div>
+
+                <div id="vid2"><img src="https://img.youtube.com/vi/8T8BPTihr4Q/0.jpg"><label id="vid2_label"></label></div>
+
+                <div id="vid3"><img src="https://img.youtube.com/vi/2-QJYS9Vg7c/0.jpg"><label id="vid3_label"></label></div>
+                
+                <div id="vid4"><img src="https://img.youtube.com/vi/bzmWqZS1QSU/0.jpg"><label id="vid4_label"></label></div>
+                
+
                 
 
             </div>
-        </header>
-        
+            <script type="text/javascript">
+                
+                function changeVideo(event)
+                {
+                    
+                    event = event || window.event;
 
-    <span style="color: #636568;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
+                    var targetElement = event.target || event.srcElement;
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="cancer.jsp">Cancer</a>
-  <a href="diabetes.jsp">Diabetes</a>
-  <a href="std.jsp">STDs</a>
-  <a href="kidney_dis.jsp">Kidney Diseases</a>
-  <a href="dengue.jsp">Dengue</a>
-  <a href="how_to.jsp">How to</a>
-  <a href="firstaid.jsp">Tips and First Aid</a>
-  <a href="religious.jsp">Religious</a>
-  <a href="entertainment.jsp">Entertainment</a>
-</div>
+                    // if (targetElement == "VIDEO") {
+                    var src=targetElement.src;
+                    src= src.split("/"); 
+                    
+                    src="https://www.youtube.com/embed/"+src[4]+"?autoplay=1";
+                    
+                    document.getElementById("mainVideo").src = src;
 
-<center>
+                    // }
 
-<div id="main">
+                }
+            </script>
 
+            <script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                }
 
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
+                }
+            </script>
 
+        </div>
 
-    <iframe id="mainVideo" width="560" height="315" src="https://www.youtube.com/embed/Wl2_knlv_xw?autoplay=1" frameborder="0" allowfullscreen></iframe>
-<br><br><br>
-
-<div id="myDiv" onclick="changeVideo(event)">
-
-	<video class="thumb" src="videos/Life in 4 mins.mp4" type="mp4/video"  ></video>
-
-	<video class="thumb" src="videos/Get Service.mp4" type="mp4/video"  ></video>
-
-	<video class="thumb" src="videos/Faith - a short film.mp4" type="mp4/video"  ></video>
-
-	<video class="thumb" src="videos/Dare to Be - Patient Stories.mp4" type="mp4/video"  ></video>
-
-	<video class="thumb" src="videos/The Hospital Window.mp4" type="mp4/video"  ></video>
-	
-	<video class="thumb" src="videos/The Most Beautiful Thing (Short Film).mp4" type="mp4/video"  ></video>
-
-</div>
-
-
-
-<script type="text/javascript">
-	function changeVideo(event)
-	{
-		event = event || window.event;
-
-		var targetElement = event.target || event.srcElement;
-
-		// if (targetElement == "VIDEO") {
-
-			document.getElementById("mainVideo").src = targetElement.getAttribute("src");
-
-		// }
-
-	}
-</script>
-
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-}
-</script>
-
-</div>
-
-</center>
+    </center>
 
 
 </body>
