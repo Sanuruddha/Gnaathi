@@ -3,10 +3,10 @@
 function processSelect(val) {
 
     if (val === "3") {
-        if (document.getElementById("reg-table").rows.length !== 8) {
-            $("#register-form").css("height", "320px");
+        if (document.getElementById("reg-table").rows.length !== 9) {
+            $("#register-form").css("height", "340px");
             //$("#register-form").css("width", "440px");
-            var row = document.getElementById("reg-table").insertRow(6);
+            var row = document.getElementById("reg-table").insertRow(7);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
@@ -15,9 +15,9 @@ function processSelect(val) {
             cell3.innerHTML = "";
         }
     } else {
-        if (document.getElementById("reg-table").rows.length !== 7) {
-            document.getElementById("reg-table").deleteRow(6);
-            $("#register-form").css("height", "260px");
+        if (document.getElementById("reg-table").rows.length !== 8) {
+            document.getElementById("reg-table").deleteRow(7);
+            $("#register-form").css("height", "270px");
            // $("#register-form").css("width", "440px");
         }
 

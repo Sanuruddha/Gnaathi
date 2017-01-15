@@ -3,7 +3,7 @@ package bean;
 public class User {
 
     private String user_name,email, password;
-    int user_id,user_type;
+    int user_id,user_type,area;
     
     public User(){}
     
@@ -46,5 +46,12 @@ public class User {
     public void setPassword(String pass) {
         this.password = pass;
     }
-
+    
+    public int getArea(){
+        return this.area;
+    }
+    
+    public void setArea(int area){
+        this.area=area;
+    }
 }

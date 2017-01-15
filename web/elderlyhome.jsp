@@ -29,7 +29,24 @@
                 <div id="prof-icon"><img id='picture' src="img/home/home_0007_Layer-3.png" alt="picture">
                 <img onclick="loadProfile()" id="avatar" style="z-index: 6;height:auto;width:4%;position: absolute;top:17%;right:16.5%;" src="icons/glasses.svg" alt="avatar">
                 </div>
-                <img onclick="showNotifications()" id='clock' src="img/edit/home_0000_calender.png" alt="clock">
+                <div onclick="showNotifications()" id="notfication-container">
+                    <img id='clock' src="img/edit/home_0000_calender.png" alt="clock">
+                    <!---------->
+                    <div id="noti_Counter"></div>   <!--SHOW NOTIFICATIONS COUNT.-->
+
+                    <!--A CIRCLE LIKE BUTTON TO DISPLAY NOTIFICATION DROPDOWN.-->
+                    <div id="noti_Button"></div>    
+
+                    <!--THE NOTIFICAIONS DROPDOWN BOX.-->
+                    <div id="notifications">
+                        <h3>Notifications</h3>
+                        <div id='notification-body' style="height:300px;">
+                            
+                        </div>
+                        <div class="seeAll"><a href="#">See All</a></div>
+                    </div>
+                </div>
+                <script src="js/notification.js" ></script>
                 <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
 
             </div>
@@ -148,7 +165,7 @@
             </div>
 
             <div id="chatbutton-container">
-                <img onclick="showChat()" id="chat-button" src="" alt="chat-button">
+                <img onclick="showChat()" id="chat-button" src="img/home/websiteedit_0000_chat-cloud.png" alt="chat-button">
             </div>
             <div id="chat-box">
                 <%@include file="chatlist.jsp"%>

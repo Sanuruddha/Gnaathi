@@ -5,6 +5,7 @@
 <jsp:useBean id="obj2" class="bean.User"/>  
 <%
     int usertype = Integer.parseInt(request.getParameter("user_type"));
+    int area= Integer.parseInt(request.getParameter("area"));
     String username = request.getParameter("user_name");
     String password = request.getParameter("password");
     String email = request.getParameter("email");
@@ -17,7 +18,7 @@
         obj2.setUserName(request.getParameter("user_name"));
         obj2.setPassword(request.getParameter("password"));
         obj2.setEmail(request.getParameter("email"));
-
+        obj2.setArea(area);
         boolean status = RegisterDao.register(obj2);
         if (status) {
             response.sendRedirect("home.jsp?loginpage=true&registersuccess=true");

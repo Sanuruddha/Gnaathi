@@ -20,7 +20,7 @@ $(document).ready(function () {
             element.html("");
             for (var key in data) {
                 
-                element.append("<div class='panel panel-default'><div class='panel-body'>" + data[key] + "</div></div>");
+                element.append("<div style='font-size:13px' class='panel panel-default'><div class='panel-body'>" + data[key] + "</div></div>");
                
             }
 

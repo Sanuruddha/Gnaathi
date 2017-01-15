@@ -21,12 +21,13 @@ public class RegisterDao {
             if(status){
                 return false;
             }
-            ps=con.prepareStatement("INSERT INTO user (user_name,email,password,user_type) VALUES (?,?,?,?)");
+            ps=con.prepareStatement("INSERT INTO user (user_name,email,password,user_type,area) VALUES (?,?,?,?,?)");
    
             ps.setString(1,bean.getUserName());
             ps.setString(2,bean.getEmail());
             ps.setString(3,bean.getPassword());
             ps.setInt(4,bean.getUserType());
+            ps.setInt(5,bean.getArea());
             
             int rows=ps.executeUpdate();
             if(rows!=0)

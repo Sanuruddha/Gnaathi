@@ -108,7 +108,7 @@ public class Donation extends HttpServlet {
 
                         String messageToDonor = acquisitor + " needs what you are willing to donate. "
                                 + "He/she will contact you and this is his/her contact number "
-                                + aquisitorNo + ". if the donation did not take place please be kind enough to"
+                                + aquisitorNo + ". If the donation did not take place please be kind enough to"
                                 + " register in our system again as we delete the details after notifying the users";
 
                         query = "insert into notification (user_id,notification) values (?,?) ";
@@ -119,7 +119,7 @@ public class Donation extends HttpServlet {
 
                         String messageToAcquisitor = session.getAttribute("user_name") + " is willing to donate what you need. "
                                 + "You can contact him/her with the contact number "
-                                + contactNumber + ". if the donation did not take place please be kind enough to"
+                                + contactNumber + ". If the donation did not take place please be kind enough to"
                                 + " register in our system again as we delete the details after notifying the users";
 
                         int acquisitorId = AcqSelectResult.getInt("user_id");

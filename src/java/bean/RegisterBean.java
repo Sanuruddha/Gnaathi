@@ -2,6 +2,7 @@ package bean;
 
 public class RegisterBean {
     private String email,password,name;
+    private int area;
     
     public String getEmail(){
         return this.email;
@@ -26,4 +27,6 @@ public class RegisterBean {
     public void setName(String name){
         this.name=name;
     }
+    
+    
 }
