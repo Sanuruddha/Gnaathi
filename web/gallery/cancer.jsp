@@ -6,33 +6,11 @@
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/css_after_navigation.css">
         <link rel="stylesheet" href="css/css_vidgal_home.css">
+        <link rel="stylesheet" href="css/gallery_header.css">
+        <link rel="stylesheet" href="../css/home.css">
         
-        <style type="text/css">
-
-            body{
-                font-family: "Lato", sans-serif;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-color: lightsteelblue;
-            }
-
-
-            .video {
-                background: thistle;
-                padding-bottom: 10px;
-                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-                width: 18%; /* Thumbnails 5 across */
-                height: 250px;
-                margin: 1%;
-                float: left;
-                border-color: black;
-                border-width: 5px;
-                border-radius: 15px;
-            }
-
-        </style>
-
     </head>
+    
     <body>
 
         <span style="color: #636568; font-size:30px; cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
@@ -47,11 +25,10 @@
             <a href="dengue.jsp">Dengue</a>
             <a href="how_to.jsp">How to</a>
             <a href="firstaid.jsp">Tips and First Aid</a>
+            <a href="vir_tour.jsp">Virtual Tours</a>
             <a href="religious.jsp">Religious</a>
             <a href="entertainment.jsp">Entertainment</a>
         </div>
-        
-        <br><br>
 
 
         <div class="head">
@@ -60,259 +37,83 @@
                     Let your Strength and Courage be...</h1>
             </center>
         </div>
-
-
-
-        <div class="category">
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/Ql3sIB76R1s">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/_KRFW0CeFbw/mqdefault.jpg"></a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Dear New Cancer Patients</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/QomoNyfkqvg">
-                        <img class="videoThumb" src="http://www.afaqs.com/all/news/images/news_story_grfx/2015/01/42940/Dabur-Vatika-Ad.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Brave and Beautiful</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/MGA2jhfapno?list=PLGCRpNRQB-dbw9ZviU08CXCBX5Tql7SS0">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/vxEnmFdS04g/mqdefault.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">A Week with a Cancer Patient</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/mG6PQISaAjg">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/mG6PQISaAjg/hqdefault.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">My Cancer Story</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/UwmrrCSFEPE">
-                        <img class="videoThumb" src="http://cdn.newsapi.com.au/image/v1/6924d79c026a81133aa3a2b324c55465">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Sister A Sad Story</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/xezvOLcPe48">
-                        <img class="videoThumb" src="http://thecrowdfundingformula.com/wp-content/uploads/2016/02/Crowd-Financing_Canplan.png">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Sharon Kim Story</h2></center>
-
-            </article>
-
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/yWrcfii2nKM">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/yWrcfii2nKM/0.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Inspiring Cancer Survivors</h2></center>
-
-            </article>
-
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/lRLP7LOu68I">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/lRLP7LOu68I/maxresdefault.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Cancer Survivors Inspire</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/WsE0todqBXY">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/WsE0todqBXY/maxresdefault.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">What It's Really Like To Have Cancer</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/nitxpkaoFyc">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/nitxpkaoFyc/maxresdefault.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Abby's Childhood Cancer Story</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/cH0xGjBgnks">
-                        <img class="videoThumb" src="http://i.vimeocdn.com/video/472440647_1280x720.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Katelyn shaves her head for kids with cancer</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/Sz11e0r2L_s">
-                        <img class="videoThumb" src="http://emilywhitehead.com/blog/wp-content/uploads/2013/07/emily-whitehead-june-2013-130612-001-2-600x398.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Emily's Story</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/KNIoZI7yDJU">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/KAsAFIgGxzg/mqdefault.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Best & Worst Parts Of Cancer</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="http://www.ncisl.health.gov.lk/wp-admin/admin-ajax.php?action=spiderVeideoPlayervideoonly&single=0&id_player=1&defaultAlbumId=2&defaultTrackId=3">
-                        <img class="videoThumb" src="http://www.ncisl.health.gov.lk/wp-content/uploads/2014/04/1.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Best & Worst Parts Of Cancer</h2></center>
-
-            </article>
-
-            <article class="video">
-
-                <figure>
-
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/PdUZEpW1akU">
-                        <img class="videoThumb" src="https://i.ytimg.com/vi/PdUZEpW1akU/maxresdefault.jpg">
-                    </a>
-
-                </figure>
-
-                <center><h2 class="videoTitle">Top 10 Cancer Facts</h2></center>
-
-            </article>
-
+        
+        <center>
+
+        <div id="main">
+
+            <iframe id="mainVideo" width="560" height="315" src="https://www.youtube.com/embed/Ql3sIB76R1s?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            
+            <div id="myDiv" onclick="changeVideo(event)">
+
+                <div id="vid1"><center><h6>Dear New Cancer Patients</h6></center><img src="https://img.youtube.com/vi/Ql3sIB76R1s/0.jpg"><label id="vid1_label"></label></div>
+
+                <div id="vid2"><center><h6>Brave and Beautiful</h6></center><img src="https://img.youtube.com/vi/QomoNyfkqvg/0.jpg"><label id="vid2_label"></label></div>
+
+                <div id="vid4"><center><h6>My Cancer Story</h6><img src="https://img.youtube.com/vi/mG6PQISaAjg/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Sister, a Sad Story</h6><img src="https://img.youtube.com/vi/UwmrrCSFEPE/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Sharon Kim Story</h6><img src="https://img.youtube.com/vi/xezvOLcPe48/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Inspiring Cancer Survivors</h6><img src="https://img.youtube.com/vi/yWrcfii2nKM/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Cancer Survivors Inspire</h6><img src="https://img.youtube.com/vi/lRLP7LOu68I/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>What It's Really Like to Have Cancer</h6><img src="https://img.youtube.com/vi/WsE0todqBXY/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Abby's Childhood Cancer Story</h6><img src="https://img.youtube.com/vi/nitxpkaoFyc/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Katelyn Shaves Her Head for Kids With Cancer</h6><img src="https://img.youtube.com/vi/cH0xGjBgnks/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Emily's Story</h6><img src="https://img.youtube.com/vi/Sz11e0r2L_s/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Best and Worst Parts of Cancer</h6><img src="https://img.youtube.com/vi/KNIoZI7yDJU/0.jpg"><label id="vid4_label"></label></div>
+                
+                <div id="vid4"><center><h6>Top Ten Cancer Facts</h6><img src="https://img.youtube.com/vi/PdUZEpW1akU/0.jpg"><label id="vid4_label"></label></div>
+                
+
+                
+
+            </div>
+            <script type="text/javascript">
+                
+                function changeVideo(event)
+                {
+                    
+                    event = event || window.event;
+
+                    var targetElement = event.target || event.srcElement;
+
+                    // if (targetElement == "VIDEO") {
+                    var src=targetElement.src;
+                    src= src.split("/"); 
+                    
+                    src="https://www.youtube.com/embed/"+src[4]+"?autoplay=1";
+                    
+                    document.getElementById("mainVideo").src = src;
+
+                    // }
+
+                }
+            </script>
+
+            <script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                }
+
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
+                }
+            </script>
 
         </div>
 
-        <footer>
+    </center>
 
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-            <script src="js/jquery.fancybox.min.js"></script>
-
-            <script>
-                $(document).ready(function () {
-                    $('.fancybox').fancybox({
-                        padding: 0,
-                        maxWidth: '100%',
-                        maxHeight: '100%',
-                        width: 500,
-                        height: 300,
-                        autoSize: true,
-                        closeClick: true,
-                        openEffect: 'elastic',
-                        closeEffect: 'elastic'
-                    });
-                });
-            </script>
-
-        </footer>
-
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
-            }
-        </script>
 
     </body>
 </html>

@@ -13,17 +13,11 @@
     <body>
 
 
-        <header style="height:25vh">
-            <div style="height:100%" id='header'>
+        <header>
+            <div id='header'>
                 <img id='header-background' src="../img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="../img/home/home_0008_Layer-1.png" alt="logo"></a>
-                <div style="height:100%" id="door-container">
-                    <% if(session.getAttribute("session")==null){%>
-                    <a style="height:100%;width:100%;" id='door' href="../home.jsp"><img style="top:-16%;" id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
-                    <%}else{%>
-                    <a style="height:100%;width:100%;" id='door' href="../userhome.jsp"><img style="top:-16%;" id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
-                    <%}%>
-                </div>
+
 
                 
         </header>
@@ -40,6 +34,7 @@
             <a href="dengue.jsp">Dengue</a>
             <a href="how_to.jsp">How to</a>
             <a href="firstaid.jsp">Tips and First Aid</a>
+            <a href="vir_tour.jsp">Virtual Tours</a>
             <a href="religious.jsp">Religious</a>
             <a href="entertainment.jsp">Entertainment</a>
         </div>

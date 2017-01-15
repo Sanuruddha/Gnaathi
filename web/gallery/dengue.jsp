@@ -6,36 +6,14 @@
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
 	<link rel="stylesheet" href="css/css_after_navigation.css">
         <link rel="stylesheet" href="css/css_vidgal_home.css">
-
-  <style type="text/css">
-
-    body{
-    font-family: "Lato", sans-serif;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: lightsteelblue;
-  }
-
-
-     .video {
-    background:#6398ed;
-    padding-bottom: 10px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-    width: 18%; /* Thumbnails 5 across */
-    height: 250px;
-    margin: 1%;
-    float: left;
-    border-color: black;
-    border-width: 5px;
-    border-radius: 15px;
-    }
-
-  </style>
+        <link rel="stylesheet" href="css/gallery_header.css">
+        <link rel="stylesheet" href="../css/home.css">
 
 </head>
+
 <body>
 
- <span style="color: #636568;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
+    <span style="color: #636568;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video Navigation</span>
 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -47,81 +25,70 @@
             <a href="dengue.jsp">Dengue</a>
             <a href="how_to.jsp">How to</a>
             <a href="firstaid.jsp">Tips and First Aid</a>
+            <a href="vir_tour.jsp">Virtual Tours</a>
             <a href="religious.jsp">Religious</a>
             <a href="entertainment.jsp">Entertainment</a>
         </div>
-        
-        <br><br>
 
 
 <div class="head">
+    
 <center>
 <h1>If you think you are too small to make a difference,<br> 
 try sleeping with a mosquito.</h1>
 </center>
+    
 </div>
 
+<center>
 
+        <div id="main">
 
-<div class="category">
+            <iframe id="mainVideo" width="560" height="315" src="https://www.youtube.com/embed/0PUsdv1kDTc?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            
+            <div id="myDiv" onclick="changeVideo(event)">
 
-<article class="video">
+                <div id="vid1"><center><h6>Dengue Virus Infection</h6></center><img src="https://img.youtube.com/vi/0PUsdv1kDTc/0.jpg"><label id="vid1_label"></label></div>
 
-    <figure>
+            </div>
+            
+            <script type="text/javascript">
+                
+                function changeVideo(event)
+                {
+                    
+                    event = event || window.event;
 
-      <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/0PUsdv1kDTc">
-      <img class="videoThumb" src="https://i.ytimg.com/vi/OrxYPYnro6w/maxresdefault.jpg"></a>
+                    var targetElement = event.target || event.srcElement;
 
-    </figure>
+                    // if (targetElement == "VIDEO") {
+                    var src=targetElement.src;
+                    src= src.split("/"); 
+                    
+                    src="https://www.youtube.com/embed/"+src[4]+"?autoplay=1";
+                    
+                    document.getElementById("mainVideo").src = src;
 
-    <center><h2 class="videoTitle">Dengue virus infection</h2></center>
+                    // }
 
- </article>
+                }
+            </script>
 
+            <script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                }
 
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
+                }
+            </script>
 
+        </div>
 
+    </center>
 
-    </div>
-
- <footer>
- 	
- 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-  	<script src="js/jquery.fancybox.min.js"></script>
-
-  	<script>
-    $(document).ready(function() {
-      $('.fancybox').fancybox({
-        padding   : 0,
-        maxWidth  : '100%',
-        maxHeight : '100%',
-        width   : 500,
-        height    : 300,
-        autoSize  : true,
-        closeClick  : true,
-        openEffect  : 'elastic',
-        closeEffect : 'elastic'
-      });
-    });
-  </script>
-
- </footer>
-        
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
-            }
-        </script>
-
-
-
-</body>
+    </body>
 </html>
-
-

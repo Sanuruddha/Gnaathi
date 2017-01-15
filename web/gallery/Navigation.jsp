@@ -95,6 +95,7 @@
                     <li> <a href="#">Kidney Diseases</a></li>
                     <li> <a href="#">Dengue</a></li>
                     <li> <a href="#">How to</a></li>
+                    <a href="vir_tour.jsp">Virtual Tours</a>
                     <li> <a href="#">Tips and First Aid</a></li>
                     <li> <a href="#">Religious</a>
                         <ul>
