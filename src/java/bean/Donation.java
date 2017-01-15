@@ -163,10 +163,8 @@ public class Donation extends HttpServlet {
                             ps.setString(2, nicNumber);
                             ps.setInt(3, area);
                             ps.setString(4, contactNumber);
-                            if (!ps.execute()) {
-                                RequestDispatcher rd = request.getRequestDispatcher("userhome.jsp?donationunsuccess=true");
-                                rd.forward(request, response);
-                            }
+                            ps.execute();
+                            
                         }
                         String query3 = "insert into donation (user_id,item_id,count,area,contact_no) values (?,?,?,?,?)";
 
