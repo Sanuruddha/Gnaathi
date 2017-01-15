@@ -21,23 +21,7 @@
     </head>
 
     <body>
-        <div id="loginform-container">
-            <form action="loginprocess.jsp" method="post">
-                <table style="margin: auto">
-                    <tr><td>Email:</td>
-                        <td><input type="text" name="email" placeholder="Email"></td>                      
-                    </tr>
-                    <tr><td>Password:</td>
-                        <td><input type="password" name="password" placeholder="Password"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" name="submit" value="Login"  style="width: 100px"></td>
-                    </tr>
-                </table>
 
-            </form>
-        </div>
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
@@ -50,6 +34,17 @@
 
             </div>
         </header>
+
+        <%@include file="error.html"%>
+        <%if (request.getParameter("success") != null) {
+                if (!request.getParameter("success").equals("true")) {
+                } else {%>
+        <%@include file="success.html"%>
+        <script>$(".success").css("display", "block");
+            $("#smsg").html("Successful");</script>
+            <%}
+                }%>
+
         <div id="body">
             <div style="" id="left-container">
                 <img style="height:55vh;" src="img/home/home_0004_Layer-7.png" alt="tv">
@@ -206,12 +201,12 @@
             <img src="icons/invite.png" alt="donate">
 
         </div>
-            
+
         <div id="inviteform-container">
             <%@include file="inviteform.html"%>
         </div>
-        
-        
+
+
         <div id="acquisitionform-container">
             <%@include file="acquisitionform.html"%>
         </div>

@@ -51,6 +51,17 @@
 
             </div>
         </header>
+        
+        <%@include file="error.html"%>
+        <%if (request.getParameter("success") != null) {
+                if (!request.getParameter("success").equals("true")) {
+                } else {%>
+        <%@include file="success.html"%>
+        <script>$(".success").css("display", "block");
+            $("#smsg").html("Successful");</script>
+            <%}
+                }%>
+        
         <div id="body">
             <div style="" id="left-container">
                 <img style="height:55vh;" src="img/home/home_0004_Layer-7.png" alt="tv">

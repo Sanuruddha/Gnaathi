@@ -36,6 +36,10 @@
         <servlet-name>Events</servlet-name>
         <servlet-class>bean.Events</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Invitations</servlet-name>
+        <servlet-class>bean.Invitations</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>chat</servlet-name>
         <url-pattern>/chat</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>Events</servlet-name>
         <url-pattern>/Events</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Invitations</servlet-name>
+        <url-pattern>/Invitations</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

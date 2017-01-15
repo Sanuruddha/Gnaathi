@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package bean;
 
 import java.io.IOException;
@@ -6,8 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -17,53 +21,55 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class Events extends HttpServlet {
+/**
+ *
+ * @author Lock
+ */
+public class Invitations extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             Connection con = ConnectionProvider.getCon();
             String type = request.getParameter("type");
+            String nic = request.getParameter("nic");
             String contact = request.getParameter("contact");
             String area = request.getParameter("area");
             String date = request.getParameter("date");
             String time = request.getParameter("time");
-            String regno = request.getParameter("reg-no");
-            String name = request.getParameter("name");
             String ampm = request.getParameter("am-pm");
-            String meridium="pm";
+
+            String sql = "SELECT post_id,user_id FROM posts WHERE title like  '%"+type+"%'";
+
+            PreparedStatement ps1 = con.prepareStatement(sql);
             
-            if(ampm.equals("0")){
-                meridium="am";
-            }
-            
-            Map<Integer,String> events=new HashMap<>();
-            events.put(0,"Religious activity");
-            events.put(1,"Blood donation");
-            events.put(2,"Pilgrimage");
-            events.put(3,"Get together");
-            
-            String messageToUsers = "Elderly society "+name +" is organizing a "+events.get(Integer.parseInt(type))+
-                    "event in your area on "+date+" "+time+meridium+". You can participate and help the gnaathi family grow while"
-                   + " enjoying the event. You can get the further details by contacting the number "+contact;
-            
-            String selectQuery ="select user_id from user where area=?";
-            PreparedStatement ps1=con.prepareStatement(selectQuery);
-            ps1.setInt(1,Integer.parseInt(area));
-            ResultSet rs=ps1.executeQuery();
-            String query = "insert into notification (user_id,notification) values (?,?) ";
+            ResultSet rs = ps1.executeQuery(sql);
             HttpSession session=request.getSession();
+            
+            String messageToUsers = "Researcher "+session.getAttribute("user_name") +" is conducting a research"+
+                    "regarding "+type+" on "+date+" "+time+ampm+". You can participate and help the research."
+                   + " You can get the further details by contacting the number "+contact;
+            
             while(rs.next()){
+                String query = "insert into notification (user_id,notification) values (?,?) ";
                 PreparedStatement ps = con.prepareStatement(query);
                 ps.setInt(1,rs.getInt("user_id"));
                 ps.setString(2, messageToUsers);
                 ps.execute();
             }
-            
-            RequestDispatcher rd = request.getRequestDispatcher("elderlyhome.jsp?success=true");
+            RequestDispatcher rd = request.getRequestDispatcher("researcherhome.jsp?success=true");
             rd.forward(request, response);
-            
         }
     }
 
@@ -82,7 +88,7 @@ public class Events extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Events.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Invitations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -100,7 +106,7 @@ public class Events extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Events.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Invitations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
