@@ -32,6 +32,10 @@
         <servlet-name>Notifications</servlet-name>
         <servlet-class>bean.Notifications</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Events</servlet-name>
+        <servlet-class>bean.Events</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>chat</servlet-name>
         <url-pattern>/chat</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>Notifications</servlet-name>
         <url-pattern>/Notifications</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Events</servlet-name>
+        <url-pattern>/Events</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

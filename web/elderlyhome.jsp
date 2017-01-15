@@ -21,23 +21,7 @@
     </head>
 
     <body>
-        <div id="loginform-container">
-            <form action="loginprocess.jsp" method="post">
-                <table style="margin: auto">
-                    <tr><td>Email:</td>
-                        <td><input type="text" name="email" placeholder="Email"></td>                      
-                    </tr>
-                    <tr><td>Password:</td>
-                        <td><input type="password" name="password" placeholder="Password"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" name="submit" value="Login"  style="width: 100px"></td>
-                    </tr>
-                </table>
-
-            </form>
-        </div>
+        
         <header>
             <div id='header'>
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">

@@ -35,7 +35,6 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
                        
-                        
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -132,7 +131,18 @@
                 <div id="user-manager" class="col-sm-12" style="display:none">
                     <div class="row">
                         <div class="col-sm-3">
-                            <div class="panel panel-default">
+                            <div class="panel panel-default" onclick="getUserList()">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> User List</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <img src="icons/listart.png" class="img-rounded" alt="Cinque Terre" style="height:100%;width:100%">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="panel panel-default" onclick="searchUser()">
                                 <div class="panel-heading">
                                     <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Search user</h1>
                                 </div>
@@ -142,19 +152,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Add user</h1>
-                                </div>
-                                <div class="panel-body">
-                                    <img src="icons/adduser.png" class="img-rounded" alt="Cinque Terre" style="height:100%;width:100%">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="panel panel-default">
+                        
+                        <div class="col-sm-3"> 
+                            <div class="panel panel-default" onclick="removeUser()">
                                 <div class="panel-heading">
                                     <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Remove user</h1>
                                 </div>
@@ -165,9 +165,9 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="panel panel-default">
+                            <div class="panel panel-default" onclick="blockUser()">
                                 <div class="panel-heading">
-                                    <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Logout user</h1>
+                                    <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Block user</h1>
                                 </div>
                                 <div class="panel-body">
                                     <img src="icons/signoutuser.png" class="img-rounded" alt="Cinque Terre" style="height:100%;width:100%">
@@ -177,19 +177,6 @@
                         </div>
 
 
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Search user</h1>
-                                </div>
-                                <div class="panel-body">
-                                    <img src="icons/listart.png" class="img-rounded" alt="Cinque Terre" style="height:100%;width:100%">
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
