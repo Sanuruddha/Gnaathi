@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Front-end View</a></li>
+                       
                         
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -60,13 +60,11 @@
 
                 <!-- List-Group Panel -->
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Job categories</h1>
-                    </div>
+                    
                     <div class="list-group">
-                        <a href="#" onclick="loadUserManager()" class="list-group-item">Users</a>
-                        <a href="#" onclick="loadArticleManager()" class="list-group-item">Articles<span class="badge" style="display:none">New</span></a>
-                        <a href="#" onclick="loadMediaManager()" class="list-group-item">Media</a>
+                        <a href="#" onclick="loadUserManager()" class="list-group-item">Manage Users</a>
+                        <a href="#" onclick="loadArticleManager()" class="list-group-item">Manage Articles<span class="badge" style="display:none">New</span></a>
+                        <a href="#" onclick="loadMediaManager()" class="list-group-item">Manage Media</a>
 
                     </div>
                 </div>
@@ -179,6 +177,19 @@
                         </div>
 
 
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title"><span class="glyphicon glyphicon-random"></span> Search user</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <img src="icons/listart.png" class="img-rounded" alt="Cinque Terre" style="height:100%;width:100%">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

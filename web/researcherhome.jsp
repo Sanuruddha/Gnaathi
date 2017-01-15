@@ -43,7 +43,7 @@
                 <img id='header-background' src="img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="img/home/home_0008_Layer-1.png" alt="logo"></a>
                 <div id="prof-icon"><img id='picture' src="img/home/home_0007_Layer-3.png" alt="picture">
-                <img onclick="loadProfile()" id="avatar" style="z-index: 6;height:auto;width:4%;position: absolute;top:17%;right:16.5%;" src="icons/glasses.svg" alt="avatar">
+                    <img onclick="loadProfile()" id="avatar" style="z-index: 6;height:auto;width:4%;position: absolute;top:17%;right:16.5%;" src="icons/glasses.svg" alt="avatar">
                 </div>
                 <img onclick="showNotifications()" id='clock' src="img/edit/home_0000_calender.png" alt="clock">
                 <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
@@ -56,7 +56,7 @@
                 <a id="alink" href="http://www.sgu-edu.com/intl-in-sl-fb/">
                     <div id="tv-screen">
                         <img  style="width:92%;" id="aimg" src="as/images/a1.png">
-                       
+
                     </div>
                     <div style="height:9vh;background-color: #e6edf8;position: absolute;top:31vh;width: 82%;left:8%;"><p id="acontent"><font style="text-decoration: underline">sgu-edu.com </font>Click here to secure your place</p></div>
                 </a> 
@@ -195,12 +195,13 @@
             <img src="icons/donate.png" alt="donate">
 
         </div>
-            <div id="acquire-button" onclick="openAcquisitionForm()">
+        <div id="acquire-button" onclick="openAcquisitionForm()">
             &nbsp;&nbsp;&nbsp;&nbsp;Acquire <br>
             <img src="icons/acquire.png" alt="donate">
 
         </div>
-            <div id="acquisitionform-container">
+            
+        <div id="acquisitionform-container">
             <%@include file="acquisitionform.html"%>
         </div>
         <div id="donationform-container">
