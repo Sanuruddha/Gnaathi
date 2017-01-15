@@ -36,51 +36,54 @@ public class Notifications extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        
+
         try (PrintWriter out = response.getWriter()) {
             Connection con = ConnectionProvider.getCon();
-            
-            if (request.getParameter("type") != null) {
-                if (request.getParameter("type").equals("1")) {
-                    String querySelect = "select * from notification where user_id=?";
-                    PreparedStatement selectStatement = con.prepareStatement(querySelect);
-                    selectStatement.setInt(1,(int)request.getSession().getAttribute("user_id"));
-                    ResultSet selectResult = selectStatement.executeQuery();
-                    while (selectResult.next()) {
-                        String queryInsert = "insert into old_notifications (user_id,notification) values(?,?)";
-                        PreparedStatement insertStatement = con.prepareStatement(queryInsert);
-                        insertStatement.setInt(1,(int)request.getSession().getAttribute("user_id"));
-                        insertStatement.setString(2,selectResult.getString("notification"));
-                        insertStatement.execute();
+            if (request.getSession().getAttribute("session") != null) {
+                if (request.getParameter("type") != null) {
+                    if (request.getParameter("type").equals("1")) {
+                        String querySelect = "select * from notification where user_id=?";
+                        PreparedStatement selectStatement = con.prepareStatement(querySelect);
+                        selectStatement.setInt(1, (int) request.getSession().getAttribute("user_id"));
+                        ResultSet selectResult = selectStatement.executeQuery();
+                        while (selectResult.next()) {
+                            String queryInsert = "insert into old_notifications (user_id,notification) values(?,?)";
+                            PreparedStatement insertStatement = con.prepareStatement(queryInsert);
+                            insertStatement.setInt(1, (int) request.getSession().getAttribute("user_id"));
+                            insertStatement.setString(2, selectResult.getString("notification"));
+                            insertStatement.execute();
 
-                        String queryDelete = "delete from notification where notification_id=?";
-                        PreparedStatement deleteStatement = con.prepareStatement(queryDelete);
-                        deleteStatement.setInt(1,selectResult.getInt("notification_id"));
-                        deleteStatement.execute();
-                    }
+                            String queryDelete = "delete from notification where notification_id=?";
+                            PreparedStatement deleteStatement = con.prepareStatement(queryDelete);
+                            deleteStatement.setInt(1, selectResult.getInt("notification_id"));
+                            deleteStatement.execute();
+                        }
 
-                    String sql = "select * from old_notifications where user_id=? order by notification_id desc";
-                    PreparedStatement ps = con.prepareStatement(sql);
-                    ps.setInt(1,(int)request.getSession().getAttribute("user_id"));
-                    ResultSet rs = ps.executeQuery();
-                    JSONObject obj = new JSONObject();
-                    int number = 1;
-                    while (rs.next()) {
-                        //creating the friend list as a json object by inserting all the friends and their id's
-                        obj.put(Integer.toString(number), rs.getString("notification"));
-                        number++;
-                    }
-                    obj.toString();
-                    out.print(obj);
-                } else if (request.getParameter("type").equals("0")) {
-                    String querySelect = "select * from notification where user_id=?";
-                    PreparedStatement selectStatement = con.prepareStatement(querySelect);
-                    selectStatement.setInt(1,(int)request.getSession().getAttribute("user_id"));
-                    ResultSet selectResult = selectStatement.executeQuery();
-                    if(selectResult.next()){
-                        out.println("true");
+                        String sql = "select * from old_notifications where user_id=? order by notification_id desc";
+                        PreparedStatement ps = con.prepareStatement(sql);
+                        ps.setInt(1, (int) request.getSession().getAttribute("user_id"));
+                        ResultSet rs = ps.executeQuery();
+                        JSONObject obj = new JSONObject();
+                        int number = 1;
+                        while (rs.next()) {
+                            //creating the friend list as a json object by inserting all the friends and their id's
+                            obj.put(Integer.toString(number), rs.getString("notification"));
+                            number++;
+                        }
+                        obj.toString();
+                        out.print(obj);
+                    } else if (request.getParameter("type").equals("0")) {
+                        String querySelect = "select * from notification where user_id=?";
+                        PreparedStatement selectStatement = con.prepareStatement(querySelect);
+                        selectStatement.setInt(1, (int) request.getSession().getAttribute("user_id"));
+                        ResultSet selectResult = selectStatement.executeQuery();
+                        if (selectResult.next()) {
+                            out.println("true");
+                        }
                     }
                 }
+            }else{
+                response.sendRedirect("home.jsp");
             }
         }
     }

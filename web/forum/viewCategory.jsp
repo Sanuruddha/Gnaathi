@@ -142,7 +142,7 @@
             <div class="headernav">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="forum.jsp"><img src="Forum%20%20%20New%20topic_files/logo.jpg" alt=""></a></div>
+                        <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="index.jsp"><img src="Forum%20%20%20New%20topic_files/logo.jpg" alt=""></a></div>
                         <div class="col-lg-3 col-xs-9 col-sm-5 col-md-3 selecttopic">
                             <div class="dropdown">
                                 <!--     <a data-toggle="dropdown" href="#">Borderlands 2</a> <b class="caret"></b>
@@ -231,7 +231,10 @@
                                             </div> --> <!-- that flags -->
                                     </div>
                                     <div class="posttext pull-left">
+                                        
+                                         <p><b><%=resultSet.getString("title")%></b></p>
                                         <p><%=resultSet.getString("content")%></p>
+                                        <p><%=resultSet.getString("time")%></p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>                              
@@ -336,11 +339,11 @@
 
                             <!-- -->
                             <div class="sidebarblock">
-                                <h3>Poll of the Week</h3>
-                                <div class="divline"></div>
+                         <!--     <h3>Poll of the Week</h3> -->
+                               <div class="divline"></div>
                                 <div class="blocktxt">
-                                    <p>Which event do you like for this week?</p>
-                                    <form action="#" method="post" class="form">
+                              <!--      <p>Which event do you like for this week?</p> -->
+                             <!--       <form action="#" method="post" class="form">
                                         <table class="poll">
                                             <tbody><tr>
                                                     <td>
@@ -406,10 +409,10 @@
                                                     </td>
                                                 </tr>
                                             </tbody></table>
-                                    </form>
+                                    </form> -->
                                  <!--   <p class="smal">Voting ends on 19th of October</p> -->
-                                </div>
-                            </div>
+                               </div> 
+                           </div> 
 
                             <!-- -->
                             <div class="sidebarblock">

@@ -1,3 +1,6 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.DateFormat"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Statement"%>
@@ -22,6 +25,9 @@
             String name1 = session.getAttribute("user_id").toString();
             String name2 = request.getParameter("post_id");
             String name3 = request.getParameter("content");
+              DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+        Date dateobj = new Date();
+        String name5 = df.format(dateobj);
 
           //  String name0 = request.getParameter("trick");
 
@@ -31,7 +37,7 @@
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/gnaathi", "root", "");
                 Statement st = con.createStatement();
                 
-                    st.executeUpdate("insert into comment1 (user_name,post_id,user_id,content) values('" + name0 + "','" + name2 + "','" + name1 + "','" + name3 + "')");
+                    st.executeUpdate("insert into comment1 (user_name,post_id,user_id,content,time) values('" + name0 + "','" + name2 + "','" + name1 + "','" + name3 + "','" + name5 + "')");
                     out.println("comment inserted");
                 
             } catch (Exception e) {

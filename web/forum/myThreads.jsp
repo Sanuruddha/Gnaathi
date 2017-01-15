@@ -258,8 +258,9 @@
                                             </div> --> <!-- that flags -->
                                     </div>
                                     <div class="posttext pull-left">
-                                         <p><%=resultSet.getString("title")%></p>
+                                        <p><b><%=resultSet.getString("title")%></b></p>
                                         <p><%=resultSet.getString("content")%></p>
+                                         <p><%=resultSet.getString("time")%></p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>                              

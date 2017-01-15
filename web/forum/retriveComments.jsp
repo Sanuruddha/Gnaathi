@@ -73,6 +73,7 @@
                     <div class="textwraper">
                         <!--   <div class="postreply">Post a Reply</div> -->
                         <label name="reply" id="reply" placeholder="Type your message here"><%=resultSet.getString("content")%></label>
+                        <p>  <%=resultSet.getString("time")%> </p>
                     </div>
                 </div>
                 <div class="clearfix"></div>

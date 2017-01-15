@@ -21,8 +21,7 @@ $(document).ready(function () {
             for (var key in data) {
                 
                 element.append("<div class='panel panel-default'><div class='panel-body'>" + data[key] + "</div></div>");
-                $('#notification-body').animate({
-                    scrollTop: $('#notification-body')[0].scrollHeight}, 0);
+               
             }
 
 
@@ -71,7 +70,7 @@ function checkNotifications() {
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert(jqXHR.responseText);
+            
         }
     });
 }

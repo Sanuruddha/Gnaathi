@@ -188,10 +188,12 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
-                            <div class="stnt pull-left">                            
+                            <div class="stnt pull-left">  
+                                <% if (session.getAttribute("user_id") != null) { %>
                                 <form action="new_topic.html.htm" method="post" class="form">
                                     <button class="btn btn-primary">Start New Topic</button>
                                 </form>
+                                <%}%>
                             </div>
                             <!--     <div class="env pull-left"><i class="fa fa-envelope"></i></div>
     
@@ -255,8 +257,9 @@
                                             </div> --> <!-- that flags -->
                                     </div>
                                     <div class="posttext pull-left">
-                                        <p><%=resultSet.getString("title")%></p>
+                                        <p><b><%=resultSet.getString("title")%></b></p>
                                         <p><%=resultSet.getString("content")%></p>
+                                        <p><%=resultSet.getString("time")%></p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>                              
@@ -360,12 +363,12 @@
                             </div>
 
                             <!-- -->
-                            <div class="sidebarblock">
-                                <h3>Poll of the Week</h3>
-                                <div class="divline"></div>
+                           <div class="sidebarblock">
+                             <!--  <h3>Poll of the Week</h3> -->
+                               <div class="divline"></div>
                                 <div class="blocktxt">
-                                    <p>Which event do you like for this week?</p>
-                                    <form action="#" method="post" class="form">
+                                 <!--   <p>Which event do you like for this week?</p> -->
+                             <!--       <form action="#" method="post" class="form">
                                         <table class="poll">
                                             <tbody><tr>
                                                     <td>
@@ -431,9 +434,9 @@
                                                     </td>
                                                 </tr>
                                             </tbody></table>
-                                    </form>
+                                    </form> -->
                                     <!--       <p class="smal">Voting ends on 19th of October</p> -->
-                                </div>
+                                </div> 
                             </div>
 
                             <!-- -->
