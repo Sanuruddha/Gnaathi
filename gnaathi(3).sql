@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2017 at 11:51 PM
+-- Generation Time: Jan 15, 2017 at 06:40 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -195,102 +195,18 @@ CREATE TABLE `comment1` (
   `comment_id` int(11) NOT NULL,
   `post_id` int(255) NOT NULL,
   `user_id` int(255) DEFAULT NULL,
-  `user_name` varchar(20) NOT NULL,
-  `content` varchar(255) DEFAULT NULL
+  `user_name` varchar(20) DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `time` datetime DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment1`
 --
 
-INSERT INTO `comment1` (`comment_id`, `post_id`, `user_id`, `user_name`, `content`) VALUES
-(1, 1, 1, '', 'comment1'),
-(2, 1, 1, '', 'comment1'),
-(3, 2, 1, '', 'commet2onnademma'),
-(4, 2, 1, '', 'commet2onnademma'),
-(5, 3, 1, '', 'checkchek'),
-(6, 3, 1, '', 'checkchek'),
-(7, 1, 1, '', 'null'),
-(8, 1, 1, '', 'null'),
-(9, 1, 1, '', 'null'),
-(10, 3, 1, '', 'null'),
-(11, 1, 1, '', 'null'),
-(12, 3, 1, '', 'haaaaaaaaaaaaaaaaaaaha'),
-(13, 3, 1, '', 'haaaaaaaaaaaaaaaaaaaha'),
-(14, 1, 1, '', 'null'),
-(15, 1, 1, '', 'null'),
-(16, 1, 1, '', 'well come to hotel califonia'),
-(17, 8, 2, '', 'kaden aran kanna'),
-(18, 1, 2, '', 'on adark desseet highway'),
-(19, 9, 1, '', 'what about the seminar?'),
-(20, 9, 1, '', 'great work'),
-(21, 3, 1, '', 'uncomment but bump this time'),
-(22, 4, 1, '', 'itin apita panda?'),
-(23, 10, 1, '', 'how much time do we have?'),
-(24, 11, 2, '', 'its about 20 ruppes.....conatct me 0719987280'),
-(25, 12, 1, '', 'mona magulakda?'),
-(26, 14, 1, '', '20 ruppes'),
-(27, 6, 2, '', 'hendeewema asu piatta nagida?'),
-(28, 9, 1, '', 'its alreaddy hasdone'),
-(29, 14, 2, '', 'some time not good'),
-(30, 10, 2, '', 'bump post'),
-(31, 1, 2, '', 'its 6.13 now'),
-(32, 1, 2, '', 'shanel mendis is the man '),
-(33, 4, 1, '', 'mama appa kawa'),
-(34, 16, 2, '', 'mama sil bida gatte mul sida gatte naa'),
-(35, 16, 2, '', 'duchidscgbhjvciugciusac'),
-(36, 14, 2, '', 'add new comment'),
-(37, 14, 1, '', 'select it as a manager'),
-(38, 6, 3, '', 'i will come'),
-(39, 20, 3, '', 'comment to post 20'),
-(40, 16, 3, '', 'ne comment is added'),
-(41, 16, 1, '', 'how much room is there?'),
-(42, 6, 2, '', 'add new comment pndara peradunu minihga'),
-(43, 18, 1, '', 'i want to do this'),
-(44, 9, 2, '', 'kushan '),
-(45, 9, 2, '', 'kavinda'),
-(46, 9, 3, '', 'edirisooriya'),
-(47, 9, 2, '', 'i added new comment'),
-(48, 9, 1, '', 'man kind is here'),
-(49, 14, 3, '', 'mama shanika upamali mama inne bandarwela mama is karanne'),
-(50, 7, 2, '', 'he is doing tution classes'),
-(51, 4, 2, '', 'ow welawata bath kanna ona..eka ledatat hodaineh'),
-(52, 21, 1, '', 'you can..you have so many times to do it'),
-(53, 5, 1, '', 'e bafra gei wahalata baraki'),
-(54, 2, 2, '', 'cooment i insert'),
-(55, 2, 2, '', 'cooment i insert'),
-(56, 5, 2, '', 'panadarin peradunu e miniha'),
-(57, 20, 1, '', 'chamath paw'),
-(58, 1, 1, '', 'damith shanel'),
-(59, 17, 1, '', 'haw manyyyyyyy'),
-(60, 9, 1, '', 'padam pote akurak wat behe matakaye taba ganna'),
-(61, 8, 2, '', 'how much is kottu'),
-(62, 15, 2, '', 'adding comment'),
-(63, 9, 1, '', 'every one have roles'),
-(64, 10, 1, '', '12.45 pm'),
-(65, 12, 1, '', 'donald trump'),
-(66, 6, 3, '', 'assfdg'),
-(67, 6, 1, '', 'gvcfhdht'),
-(68, 10, 1, '', 'nest tuesday'),
-(69, 4, 1, '', 'add new comment'),
-(70, 6, 1, '', 'sunil edirisinghe is the singer'),
-(71, 1, 2, '', 'tttt'),
-(72, 4, 2, '', 'vghcfghdth'),
-(73, 1, 2, '', 'adsfverbvervefbverbevergverwvreg'),
-(74, 1, 2, '', 'adsfverbvervefbverbevergverwvreg'),
-(75, 28, 1, '', 'its lucnch time'),
-(76, 28, 2, '', 'ajknkjcnci hfiuvhuijdknhjhviouh               vcdsjhviuhsiugviugvbiuhbviuvhbuwiv           dddddddddddddddd d'),
-(77, 26, 2, '', 'commnet'),
-(78, 27, 2, '', 'comment'),
-(79, 3, 1, '', 'ass'),
-(80, 1, 1, '', 'abcdefgh'),
-(81, 3, 1, '', 'a'),
-(82, 1, 1, '', 'write a commnet'),
-(83, 1, 1, '', 'axsdhudhciubhiucerv          kjvnhiuerhfiuerhgiu jkhniushiufhiufgeiubfijdskhgiurhfe'),
-(84, 1, 1, '', 'fgbvbgfbdfgrtre'),
-(85, 1, 1, '', 'sssssssssssssssssssssssssssssss sssssss ss'),
-(86, 30, 1, '', 'add commenetssxescecec'),
-(87, 24, 1, '', 'xxxsx');
+INSERT INTO `comment1` (`comment_id`, `post_id`, `user_id`, `user_name`, `content`, `time`) VALUES
+(195, 70, 2, 'regular', 'thank you good ideas', '2015-01-17 19:59:27'),
+(196, 71, 3, 'shihan', 'good points', '2015-01-17 20:03:23');
 
 -- --------------------------------------------------------
 
@@ -314,7 +230,15 @@ INSERT INTO `comments` (`comment_id`, `post_id`, `email_add`, `name`, `comment`)
 (69, 23, 'geethmadushankagamage@gmail.com', 'geeth', 'well'),
 (70, 31, 'geethmadushankagamage@gmail.com', 'suriya', 'well'),
 (71, 31, 'sd', 'sds', 'sdd'),
-(72, 27, 'rr', 'ree', 'wewe');
+(72, 27, 'rr', 'ree', 'wewe'),
+(73, 33, 'geethmadushankagamage@gmail.com', 'Kushan', 'How to Repealing Obamacare'),
+(74, 33, 'geethmadushankagamage@gmail.com', 'Arun', 'well said'),
+(75, 33, 'geeth@gmail.com', 'Geeth', 'yup'),
+(76, 33, 'g@gmail.com', 'Kp', 'good'),
+(77, 33, 'adadadad@gmail.com', 'Ara', 'why..???'),
+(78, 32, 'geeth@gmail.com', 'Homi', 'finanaly'),
+(79, 32, 'dadadad', 'Kasun', 'well'),
+(80, 32, 'adad', 'geeth', 'what..???');
 
 -- --------------------------------------------------------
 
@@ -360,6 +284,13 @@ CREATE TABLE `donation` (
   `area` int(10) NOT NULL,
   `contact_no` int(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `donation`
+--
+
+INSERT INTO `donation` (`donation_id`, `user_id`, `item_id`, `count`, `area`, `contact_no`) VALUES
+(28, 3, 1, 1, 1, 721234234);
 
 -- --------------------------------------------------------
 
@@ -479,8 +410,8 @@ CREATE TABLE `old_notifications` (
 --
 
 INSERT INTO `old_notifications` (`notification_id`, `user_id`, `notification`) VALUES
-(54, 2, 'regular needs what you are willing to donate. He/she will contact you and this is his/her contact number 0712345678. if the donation did not take the place please be kind enough toregister in our system again as we delete the details after notifying the users'),
-(53, 2, 'regular is willing to donate what you need. You can contact him/her with the contact number 712345678. if the donation did not take the place please be kind enough toregister in our system again as we delete the details after notifying the users');
+(64, 22, 'Elderly society happyfamily is organizing a Religious activityevent in your area on01/17/2017 51. You can participate and help the gnaathi family grow while enjoying the event. You can get the further details by contacting the number0727707707'),
+(63, 19, 'Elderly society happyfamily is organizing a Religious activityevent in your area on01/17/2017 51. You can participate and help the gnaathi family grow while enjoying the event. You can get the further details by contacting the number0727707707');
 
 -- --------------------------------------------------------
 
@@ -491,10 +422,11 @@ INSERT INTO `old_notifications` (`notification_id`, `user_id`, `notification`) V
 CREATE TABLE `post1` (
   `post_id` int(11) NOT NULL,
   `user_id` int(4) NOT NULL,
-  `user_name` varchar(20) NOT NULL,
+  `user_name` varchar(20) DEFAULT NULL,
   `category` varchar(255) DEFAULT NULL,
-  `title` varchar(20) NOT NULL,
+  `title` varchar(50) NOT NULL,
   `content` varchar(255) DEFAULT NULL,
+  `time` datetime(6) DEFAULT NULL,
   `likes` int(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -502,37 +434,10 @@ CREATE TABLE `post1` (
 -- Dumping data for table `post1`
 --
 
-INSERT INTO `post1` (`post_id`, `user_id`, `user_name`, `category`, `title`, `content`, `likes`) VALUES
-(1, 1, '', 'cat', '', 'content', 0),
-(2, 1, '', 'cat', '', 'content', 0),
-(3, 1, '', 'cat2', '', 'con2', 0),
-(4, 2, '', 'cat3', '', 'mamabatkeewa', 0),
-(5, 1, '', 'cat3', '', 'minisekupitanegiasaruweki', 0),
-(6, 1, '', 'cat3', '', 'panadarin peradunu e miniha', 0),
-(7, 2, '', 'cat2', '', 'sahiruwa', 0),
-(8, 1, '', 'cat1', '', 'mata kottu ona', 0),
-(9, 1, '', 'cat1', '', 'explonation club of ucsc', 0),
-(10, 1, '', 'cat1', '', 'we have to prepare for the presenation', 0),
-(11, 1, '', 'cat4', '', 'how much is a rolls?', 0),
-(12, 2, '', 'cat2', '', 'mokada ai apita ona ewwa?', 0),
-(13, 2, '', 'cat2', '', 'post1', 0),
-(14, 2, '', 'cat1', '', 'how much is a planty?', 0),
-(15, 1, '', 'cat1', '', 'next task is show comments properly?', 0),
-(16, 1, '', 'cat4', '', 'planty of room at hotel california11', 0),
-(17, 2, '', 'cat2', '', 'add new ost by me', 0),
-(18, 1, '', 'cat1', '', 'the post i publish', 0),
-(19, 1, '', 'cat1', '', 'new post i enter 11/7', 0),
-(20, 6, '', 'cat', '', 'new onee post i like ', 0),
-(21, 2, '', 'cat3', '', 'i have to work hard', 0),
-(22, 1, '', 'cat2', '', 'another new post', 0),
-(23, 1, '', 'cat2', '', 'add anthoer new to check', 0),
-(24, 1, '', 'cat2', '', 'who will be next president', 0),
-(25, 1, '', 'cat2', '', 'while loop got it', 0),
-(26, 1, '', 'cat2', '', 'trump is new president', 0),
-(27, 2, '', 'cat1', '', 'ihave 2 cats', NULL),
-(28, 1, '', 'cat2', '', 'mathc is on sl vs zim', NULL),
-(29, 1, '', 'cat2', '', 'election', NULL),
-(30, 1, '', 'cat1', '', 'cdv dfnmvkjhv bhss  dcvcvchbfjvbf       cbdshjcbehycb                                 vfhjvbciuwbhcfyuebfhuewc                                   kbcihffyuwvbfkjdsvhiu                     nmcvbyuhfru', NULL);
+INSERT INTO `post1` (`post_id`, `user_id`, `user_name`, `category`, `title`, `content`, `time`, `likes`) VALUES
+(70, 3, 'shihan', 'op3', 'about health', 'Health Forum is a strategic business enterprise of the American Hospital Association', '2015-01-17 19:51:45.000000', NULL),
+(71, 2, 'regular', 'op5', 'dengue pateint experience', 'View messages from patients providing insights into their medical experiences with Dengue Fever .Describe Your Experience with dengue', '2015-01-17 19:55:04.000000', NULL),
+(72, 3, 'shihan', 'op0', 'cancer patient feeling', 'When you were first diagnosed, you may have had trouble believing or accepting the fact that you have cancer.', '2015-01-17 20:03:03.000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -619,28 +524,76 @@ CREATE TABLE `user` (
   `user_name` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `user_type` int(1) NOT NULL
+  `user_type` int(1) NOT NULL,
+  `area` int(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`, `user_type`) VALUES
-(1, 'admin', 'shihananuruddha@gmail.com', '123456', 10),
-(2, 'regular', 'regularuser@gmail.com', '123456', 1),
-(6, 'lokka', 'shihananuruddha2@gmail.com', '123456', 1),
-(3, 'shihan', 'shihananuruddha1@gmail.com', '123456', 1),
-(12, 'eld', 'elderly@gmail.com', '123456', 3),
-(8, 'shihan1', 'shihan@gmail.com', '123456', 1),
-(9, 'anuruddha', 'anuruddha@gmail.com', '123456', 1),
-(10, 'mithsen', 'mithsen@gmail.com', '123456', 1),
-(13, 'x', 'something@gmail.com', '123456', 3),
-(14, 'res', 'researcher@gmail.com', '123456', 2),
-(15, '', 'dfgdfg', '', 1),
-(16, 'sasdasda', 'sdfsdsfsdsdas@gmail.com', '1234567', 1),
-(17, 'qwertyy', 'shihananuruddha44@gmail.com', '1234567', 1),
-(18, '234234', 'wsssdfsd@sddfsf.com', '1234511', 1);
+INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`, `user_type`, `area`) VALUES
+(1, 'admin', 'shihananuruddha@gmail.com', '123456', 10, 0),
+(23, 'shihananuruddha', 'shihananuruddha1@gmail.com', '1234567', 1, 12),
+(22, 'dulshapremarathna', 'dulshapremarathna@gmail.com', '1234567', 3, 17),
+(21, 'shanikaupamali', 'shanikaupamali@gmail.com', '1234567', 2, 7),
+(20, 'geethmadushanka', 'geethmadushanka@gmail.com', '1234567', 1, 17),
+(19, 'kushankavinda', 'kushankavinda@gmail.com', '1234567', 1, 17);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_like_event`
+--
+
+CREATE TABLE `user_like_event` (
+  `table_raw_id` int(10) NOT NULL,
+  `event_id` int(5) NOT NULL,
+  `user_id` int(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_like_event`
+--
+
+INSERT INTO `user_like_event` (`table_raw_id`, `event_id`, `user_id`) VALUES
+(1, 1, 1),
+(2, 1, 12),
+(3, 1, 12),
+(4, 1, 12),
+(5, 1, 12),
+(6, 1, 12),
+(7, 1, 12),
+(8, 1, 12),
+(9, 2, 3),
+(10, 3, 3),
+(11, 3, 3),
+(12, 2, 3),
+(13, 2, 3),
+(14, 1, 12),
+(15, 2, 3),
+(16, 3, 3),
+(17, 1, 12),
+(18, 2, 12),
+(19, 2, 3),
+(20, 2, 3),
+(21, 1, 12),
+(22, 1, 12),
+(23, 3, 2),
+(24, 3, 2),
+(25, 1, 12),
+(26, 1, 12),
+(27, 1, 12),
+(28, 1, 12),
+(29, 2, 3),
+(30, 3, 3),
+(31, 1, 12),
+(32, 2, 12),
+(33, 3, 12),
+(34, 2, 12),
+(35, 2, 12),
+(36, 2, 12),
+(37, 3, 10);
 
 --
 -- Indexes for dumped tables
@@ -671,12 +624,6 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `chats`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `comment1`
---
-ALTER TABLE `comment1`
-  ADD PRIMARY KEY (`comment_id`);
 
 --
 -- Indexes for table `comments`
@@ -743,12 +690,6 @@ ALTER TABLE `old_notifications`
   ADD PRIMARY KEY (`notification_id`);
 
 --
--- Indexes for table `post1`
---
-ALTER TABLE `post1`
-  ADD PRIMARY KEY (`post_id`);
-
---
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -801,35 +742,25 @@ ALTER TABLE `categories`
 ALTER TABLE `chats`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `comment1`
---
-ALTER TABLE `comment1`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
---
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 --
 -- AUTO_INCREMENT for table `donation`
 --
 ALTER TABLE `donation`
-  MODIFY `donation_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `donation_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `notification_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `notification_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 --
 -- AUTO_INCREMENT for table `old_notifications`
 --
 ALTER TABLE `old_notifications`
-  MODIFY `notification_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
---
--- AUTO_INCREMENT for table `post1`
---
-ALTER TABLE `post1`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `notification_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 --
 -- AUTO_INCREMENT for table `posts`
 --
@@ -839,7 +770,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
