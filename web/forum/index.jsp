@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     
-                    --><div id="forum">
+                    <div id="forum">
                         <%@include file="forum.jsp" %>
                             
                         </div>

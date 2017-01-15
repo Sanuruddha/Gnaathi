@@ -132,11 +132,11 @@
 
                     </artical>
                     </div>
-                        
-                      <br>
-                            <div class="well">
-                                <h2 >Comments</h2>
-                                
+                        <div class="well">
+                      <br><div class="panel panel-info">
+                            
+                                 <div class="panel-heading"><h2 >Comments</h2></div>
+                                <br>
                                   <%
                            
                            
@@ -146,7 +146,8 @@
                             while (rs1.next()) {
                                 
 
-                        %>
+                        %><div class="panel panel-default">
+                            <div class="panel-body">
                         <table>
                            <tr align="left">
                                 <td class="t1" ><img src="face.png"  width="30" height="30" ></td>
@@ -155,34 +156,38 @@
                              <td class="t3"><p style="font-size:18px;" ><%=rs1.getString("comment")%></p></td>
                            </tr></table>
                             
-                           
+                           </div></div>
                         <%
                             }
 
                         %>
+                        </div>
                                   
                                   
                               </div>
                       
                       <br>
+     
                        <% if(session.getAttribute("user_id")!=null){ %>
                       <div class="well">
-                          <h2 >Post a new comment</h2>
+                          <div class="panel panel-info">
+                          <div class="panel-heading"><h2 >Post a new comment</h2></div>
+                          <div class="panel-body">
                           <form action="../AddComment" method="post">
                               <div>
-                                  <label>Email Address</label><input ="text" name="email" />
+                                  <label>Email Address</label><input ="text"  class="form-control"  name="email" />
                               </div>
                               
                               <div>
-                                  <label>Name </label><input ="text" name="name"/>
+                                  <label>Name </label><input ="text"  class="form-control"  name="name"/>
                               </div>
                               
                               <div>
-                                  <label>Comment </label><textarea name="comment"></textarea>
+                                  <label>Comment </label><textarea  class="form-control"  name="comment"></textarea>
                               </div>
                               <input type="hidden" name="var" value="<% out.print(var);%>" /> 
                               <input type="submit" name="submit" value="Submit" /> 
-                              </form></div>
+                              </form></div></div></div>
                               <%}%>
                               
                        </div>  
