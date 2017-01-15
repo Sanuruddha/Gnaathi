@@ -164,11 +164,12 @@
             </div>
 
             <div id="chatbutton-container">
-                <img onclick="showChat()" id="chat-button" src="" alt="chat-button">
+                <img onclick="showChat()" id="chat-button" src="img/home/websiteedit_0000_chat-cloud.png" alt="chat-button">
             </div>
             <div id="chat-box">
                 <%@include file="chatlist.jsp"%>
             </div>
+
             <script>
                 if (window.attachEvent) {
                     window.attachEvent('onresize', function () {
@@ -200,7 +201,17 @@
             <img src="icons/acquire.png" alt="donate">
 
         </div>
+        <div id="invite-button" onclick="openInviteForm()">
+            &nbsp;&nbsp;Invite <br>
+            <img src="icons/invite.png" alt="donate">
+
+        </div>
             
+        <div id="inviteform-container">
+            <%@include file="inviteform.html"%>
+        </div>
+        
+        
         <div id="acquisitionform-container">
             <%@include file="acquisitionform.html"%>
         </div>

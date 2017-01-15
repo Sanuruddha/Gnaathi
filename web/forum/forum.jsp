@@ -448,15 +448,16 @@
 
 
                                     <%
+                                        if(session.getAttribute("user_id")!=null){
                                         String myT = session.getAttribute("user_id").toString();
-
                                         //  String w="12";
                                         try {
+                                            
                                             connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                                             statement = connection.createStatement();
 
                                             String sql = "SELECT title FROM post1   where user_id=" + myT;
-
+ 
                                             resultSet = statement.executeQuery(sql);
                                             // int countCancer = 10;
                                             while (resultSet.next()) {
@@ -473,7 +474,7 @@
 
                                         } catch (Exception e) {
                                             e.printStackTrace();
-                                        }
+                                        }}
                                     %>
 
                                 </div>

@@ -53,5 +53,12 @@ function closeAcqForm(){
     return false;
 }
 
+function openInviteForm(){
+    document.getElementById("invNav").style.width = "100%";
+    return false;
+}
 
-
+function closeInviteForm(){
+    document.getElementById("invNav").style.width = "0%";
+    return false;
+}

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package bean;
-
+  
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 /**
- *
+ * 
  * @author Lock
  */
 public class FriendList extends HttpServlet {
