@@ -16,8 +16,10 @@ $(document).ready(function () {
 
         /// insert the new notifications
         $.get("Notifications", {type: 1}, function (data) {
+            var element = $("#notification-body");
+            element.html("");
             for (var key in data) {
-                var element = $("#notification-body");
+                
                 element.append("<div class='panel panel-default'><div class='panel-body'>" + data[key] + "</div></div>");
                 $('#notification-body').animate({
                     scrollTop: $('#notification-body')[0].scrollHeight}, 0);
