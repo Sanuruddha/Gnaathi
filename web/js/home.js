@@ -96,7 +96,7 @@ function loadVideo() {
 }
 
 function loadImage() {
-    location.href = "image_gallery/index.html";
+    location.href = "image_gallery/gal_index.jsp";
 }
 
 $(document).ready(function () {

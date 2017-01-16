@@ -9,7 +9,7 @@ function sendMessage(id) {
     //insert the message into the chatbody
     $("#chat-body").append("<div class='row'><div class='col - lg - 12'><div class='media'>"
             + "<a class='pull-left' href='#'>"
-            + "<img class='media-object img-circle' src='http://lorempixel.com/30/30/people/7/' alt=''>"
+            + ""
             + "</a>"
             + "<div class='media-body'><h4 class='media-heading'>you" 
             + "<span class='small pull-right'>12:39 PM"
@@ -41,7 +41,7 @@ function getMessages(id) {
 
                 $("#chat-body").append("<div class='row'><div class='col - lg - 12'><div class='media'>"
                         + "<a class='pull-left' href='#'>"
-                        + "<img class='media-object img-circle' src='http://lorempixel.com/30/30/people/7/' alt=''>"
+                        + ""
                         + "</a>"
                         + "<div class='media-body'><h4 class='media-heading'>" + document.getElementById("heading").innerHTML
                         + "<span class='small pull-right'>12:39 PM"
