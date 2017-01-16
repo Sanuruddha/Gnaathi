@@ -175,7 +175,7 @@
 
 // autoplay video
                     function onPlayerReady(event) {
-                        event.target.pplayVideo();
+                        event.target.playVideo();
                     }
 
                     // when video ends
