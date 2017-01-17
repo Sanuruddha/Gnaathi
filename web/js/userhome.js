@@ -17,8 +17,7 @@ function showChat() {
                         + "<div class='col-lg-12'>"
                         + "<div class='media'>"
                         + "<a class='pull-left' onclick='showUser(" + key + ",\"" + data[key] + "\")' style='line-height:4;vertical-align:middle;text-align:center;'>"
-                        + "<img style='vertical-align:middle;text-align:center;' class='media-object img-circle' src='http://localhost:8080/Gnaathi/icons/chat/"
-                        + key + ".png' alt=''><p>"
+                        
                         + data[key]
                         + "</a></div></div></div>");
             }

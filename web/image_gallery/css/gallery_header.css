@@ -1,0 +1,92 @@
+#header{
+    height:200px;
+    position: relative;
+    min-width: 1340px;
+}
+
+#header{
+    position: relative;
+}
+
+#header img{
+    position: absolute;
+
+}
+
+#header-background{
+    height: 200px;
+    width: 100%;
+}
+
+#logo{
+    height: 100px;
+    top:30px;
+    left:50px;
+}
+
+#logout{
+    position: absolute;
+    top:112px;
+    right:170px;
+}
+#door{
+    position: absolute;
+    right:80px;
+    top:80px;
+}
+
+#door:hover{
+    opacity: 0.8;
+}
+
+#door:hover+#logout{
+    opacity: 0.8;
+}
+
+#login{
+    position: absolute;
+    right:117px;
+    top:130px;
+    height:47px;
+}
+
+#login:hover{
+    opacity: 0.85;
+}
+
+#picture{
+    position: absolute;
+    right:220px;
+    top:30px;
+}
+
+#picture:hover{
+    opacity: 0.85;
+}
+
+body{
+    margin:0;
+}
+
+#body {
+    margin-top: 0px;
+    position: absolute;
+    width: 100%;
+    min-width: 1340px;
+}
+
+#body div{
+    position: absolute;
+}
+
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 12, 2017, 7:49:12 PM
+    Author     : Shaii
+*/
+

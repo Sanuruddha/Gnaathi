@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Gnaathi.lk Gallery</title>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
-        <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
-        <meta name="author" content="Pedro Botelho for Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
+
+<html>
+
+<head>
+
+	<title>Image Gallery</title>
+
+	 <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/css_vidgal_home.css">
+        <link rel="stylesheet" href="css/gallery_header.css">
+        <link rel="stylesheet" href="../css/userhome.css">
+
+
+         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
         <link rel="stylesheet" type="text/css" href="css/custom.css" />
@@ -29,60 +35,121 @@
             })();
 
         </script>
-    </head>
-    <body>
-        <div class="container">		
-            <h1>Gnaathi.lk <span>a home for survivors</span></h1>
-            <div class="wrapper">
-                <ul id="sb-slider" class="sb-slider">
+
+        
+</head>
+
+<body>
+
+	<header>
+            <div id='header'>
+                <img id='header-background' src="../img/edit/websiteedit_0010_headerback.png" alt="header back">
+                <a href="home.html"><img id='logo' src="../img/home/home_0008_Layer-1.png" alt="logo"></a>
+               
+                
+                <!-------->
+
+                <a id='door' href="../logout.jsp"><img id='door-img' style="z-index:10;position: absolute;" src="../img/edit/back.png" alt="door"></a>
+
+            </div>
+        </header>
+
+
+
+
+
+    <ul id="sb-slider" class="sb-slider">
+
                     <li>
-                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src="images/1.jpg" alt="image1"/></a>
+                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank">
+                        <center>
+                        <img src="images/Piritha/image1.jpg" height="424px" width="640px" alt="image1">
+                        </center>
+                        </a>
                         <div class="sb-description">
-                            <h3>Creative Lifesaver</h3>
+                            <h3><center>Pirith Ceromony</center></h3>
                         </div>
                     </li>
+
                     <li>
-                        <a href="http://www.flickr.com/photos/strupler/2968268187" target="_blank"><img src="images/2.jpg" alt="image2"/></a>
+                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank">
+                        <center>
+                        <img src="images/Piritha/image2.jpg" height="424px" width="640px" alt="image1">
+                        </center>
+                        </a>
                         <div class="sb-description">
-                            <h3>Honest Entertainer</h3>
+                            <h3><center>Pirith Ceromony</center></h3>
                         </div>
                     </li>
+
                     <li>
-                        <a href="http://www.flickr.com/photos/strupler/2968114825" target="_blank"><img src="images/3.jpg" alt="image1"/></a>
+                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank">
+                        <center>
+                        <img src="images/Piritha/image3.jpg" height="424px" width="640px" alt="image1">
+                        </center>
+                        </a>
                         <div class="sb-description">
-                            <h3>Brave Astronaut</h3>
+                            <h3><center>Pirith Ceromony</center></h3>
                         </div>
                     </li>
+
                     <li>
-                        <a href="http://www.flickr.com/photos/strupler/2968122059" target="_blank"><img src="images/4.jpg" alt="image1"/></a>
+                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank">
+                        <center>
+                        <img src="images/Piritha/image4.jpg" height="424px" width="640px" alt="image1">
+                        </center>
+                        </a>
                         <div class="sb-description">
-                            <h3>Affectionate Decision Maker</h3>
+                            <h3><center>Pirith Ceromony</center></h3>
                         </div>
                     </li>
+
                     <li>
-                        <a href="http://www.flickr.com/photos/strupler/2969119944" target="_blank"><img src="images/5.jpg" alt="image1"/></a>
+                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank">
+                        <center>
+                        <img src="images/Piritha/image5.jpg" height="424px" width="640px" alt="image1">
+                        </center>
+                        </a>
                         <div class="sb-description">
-                            <h3>Faithful Investor</h3>
+                            <h3><center>Pirith Ceromony</center></h3>
                         </div>
                     </li>
+
                     <li>
-                        <a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="images/6.jpg" alt="image1"/></a>
+                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank">
+                        <center>
+                        <img src="images/Piritha/image6.jpg" height="424px" width="640px" alt="image1">
+                        </center>
+                        </a>
                         <div class="sb-description">
-                            <h3>Groundbreaking Artist</h3>
+                            <h3><center>Pirith Ceromony</center></h3>
                         </div>
                     </li>
+
                     <li>
-                        <a href="http://www.flickr.com/photos/strupler/2968945158" target="_blank"><img src="images/7.jpg" alt="image1"/></a>
+                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank">
+                        <center>
+                        <img src="images/Piritha/image7.jpg" height="424px" width="640px" alt="image1">
+                        </center>
+                        </a>
                         <div class="sb-description">
-                            <h3>Selfless Philantropist</h3>
+                            <h3><center>Pirith Ceromony</center></h3>
                         </div>
                     </li>
+
                     <li>
-                        <a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="images/8.jpg" alt="image1"/></a>
+                        <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank">
+                        <center>
+                        <img src="images/Piritha/image8.jpg" height="424px" width="640px" alt="image1">
+                        </center>
+                        </a>
                         <div class="sb-description">
-                            <h3>peace of soul</h3>
+                            <h3><center>Pirith Ceromony</center></h3>
                         </div>
                     </li>
+
+                    
+
                 </ul>
 
                 <div id="shadow" class="shadow"></div>
@@ -172,3 +239,8 @@
         
     </body>
 </html>	
+
+
+</body>
+
+</html>

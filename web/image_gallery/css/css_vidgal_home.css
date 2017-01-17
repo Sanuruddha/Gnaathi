@@ -1,0 +1,98 @@
+.thumb{
+    height: 70px;
+    width: 100px;
+    border:3px solid grey;
+    overflow: initial;
+    border-radius: 10px;
+}
+
+#mainVideo{
+    position: absolute;
+    top:-20px;
+    right:25%;
+    top:28%;
+    width:50%;
+    height:60vh;
+}
+
+body{
+    padding: 0;
+    margin-right: 0;
+    font-family: "Lato", sans-serif;
+    background-image: url(https://img1.123freevectors.com/wp-content/uploads/new/123fv-images/12284-abstract-valentines-day-light-color-heart-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#myDiv video:hover{
+    background-color: #4286f4;
+}
+
+#myDiv{
+    position: absolute;
+    top:-20px;
+    right:2%;
+    top:28%;
+    height:70%;
+    overflow: scroll;
+}
+
+#myDiv img{
+    height:120px;
+    width: 150px;
+}
+
+#myDiv img{
+    margin-bottom: 10px;
+    float:top;
+}
+
+#myDiv div:hover{
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ddecfc;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #7c7d7f;
+    display: block;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #0b58a4;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

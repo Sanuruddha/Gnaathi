@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="css/home.css">
         <link href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
         <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
         <script  type="text/javascript" src="js/home.js"></script>
         <script  type="text/javascript" src="js/userhome.js"></script>
@@ -30,7 +31,7 @@
                     <img onclick="loadProfile()" id="avatar" style="z-index: 6;height:auto;width:4%;position: absolute;top:17%;right:16.5%;" src="icons/glasses.svg" alt="avatar">
                 </div>
                 <img onclick="showNotifications()" id='clock' src="img/edit/home_0000_calender.png" alt="clock">
-                <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
+                <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/logouts.png" alt="door"></a>
 
             </div>
         </header>
@@ -122,7 +123,7 @@
 
 // autoplay video
                     function onPlayerReady(event) {
-                        event.targetplayVideo();
+                        event.target.playVideo();
                     }
 
                     // when video ends

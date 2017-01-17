@@ -7,19 +7,23 @@
         <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/css_vidgal_home.css">
         <link rel="stylesheet" href="css/gallery_header.css">
-        <link rel="stylesheet" href="../css/home.css">
+        <link rel="stylesheet" href="../css/userhome.css">
     </head>
 
     <body>
 
 
-        <header>
+       <header>
             <div id='header'>
                 <img id='header-background' src="../img/edit/websiteedit_0010_headerback.png" alt="header back">
                 <a href="home.html"><img id='logo' src="../img/home/home_0008_Layer-1.png" alt="logo"></a>
-
-
+               
                 
+                <!-------->
+
+                <a id='door' href="../logout.jsp"><img id='door-img' style="z-index:10;position: absolute;" src="../img/edit/back.png" alt="door"></a>
+
+            </div>
         </header>
 
 

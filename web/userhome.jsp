@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="css/home.css">
         <link href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
         <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
         <script  type="text/javascript" src="js/home.js"></script>
         <script  type="text/javascript" src="js/userhome.js"></script>
@@ -52,7 +53,7 @@
                 <script src="js/notification.js" ></script>
                 <!-------->
 
-                <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/websiteedit_0007_door.png" alt="door"></a>
+                <a id='door' href="logout.jsp"><img id='door-img' src="img/edit/logout.png" alt="door"></a>
 
             </div>
         </header>
@@ -161,7 +162,7 @@
 
 // autoplay video
                     function onPlayerReady(event) {
-                        event.targetplayVideo();
+                        event.target.playVideo();
                     }
 
                     // when video ends
