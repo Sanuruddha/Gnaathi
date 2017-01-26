@@ -43,6 +43,7 @@
         <%@include file="includes/header-home.html"%>
 
         <!--error message unsuccessful login-->
+        
         <%@include file="includes/error.html"%>
 
 
@@ -80,10 +81,8 @@
 
         <div id="body">
             <%@include file="includes/leftcolumn-home.html"%>
-
-
+            
             <%@include file="includes/middlecolumn-home.html"%>
-
 
             <%@include file="includes/rightcolumn-home.html"%>
 
