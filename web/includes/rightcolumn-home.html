@@ -1,0 +1,60 @@
+<div id="right-container">
+    <div id="projector-screen">
+
+    </div>
+    <script src="http://www.youtube.com/player_api"></script>
+    <script>
+
+        // create youtube player
+        var player;
+        var srcs = ['https://www.youtube.com/embed/XVY4DeAvnfI?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1',
+            , 'https://www.youtube.com/embed/ROcBUEVMPLU?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8080&widgetid=1'];
+        var j;
+
+        function onYouTubePlayerAPIReady() {
+            player = new YT.Player('projector-screen', {
+                height: '390',
+                width: '640',
+                videoId: 'XVY4DeAvnfI',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+// autoplay video
+        function onPlayerReady(event) {
+            //event.target.playVideo();
+        }
+
+        // when video ends
+        function onPlayerStateChange(event) {
+
+            if (event.data === 0) {
+                for (var i = 0; i < srcs.length; i++) {
+                    if (srcs[i] === $('#projector-screen').attr('src')) {
+                        j = (i + 1) % (srcs.length);
+                        $('#projector-screen').attr('src', srcs[j]);
+                        event.target.playVideo();
+                    }
+                }
+            }
+        }
+
+    </script>
+    <img src="img/home/home_0005_Layer-6.png" alt="screen">
+    <div id="button-container">
+        <div onclick="loadImage()" id="image-gallery">
+            <button type="button" class="btn gal-btn">Images
+                <img src="img/image.png" alt="image">
+            </button>
+        </div>
+        <div onclick="loadVideo()" id="video-gallery">
+            <button type="button" class="btn gal-btn">Videos
+                <img src="img/video.png" alt="video">
+            </button>
+
+        </div>
+    </div>
+</div>
